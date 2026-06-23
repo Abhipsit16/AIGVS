@@ -1,113 +1,60 @@
 # AIGVS: Attractor Indexed Graphical Vector Search
 
-A novel retrieval architecture that bridges neural-symbolic Knowledge Graphs and associative connectionism. AIGVS replaces global spatial graph traversals (O(N)) with a Continuous Modern Hopfield Network, achieving deterministic O(log N) retrieval complexity while preserving relational sub-graph topologies.
+A novel retrieval architecture that bridges neural-symbolic Knowledge Graphs and associative connectionism.
+
+**Now entirely implemented in pure C for extreme bare-metal performance.**
 
 ---
 
-## 1. The Problem
-Current enterprise Retrieval-Augmented Generation (RAG) architectures are paralyzed by a dichotomy of scale:
-* **Standard Vector Databases (HNSW):** Fast but semantically blind. HNSW searches a global spatial void, returning isolated chunks of text. It completely drops the causal and relational edges between concepts, failing at complex reasoning tasks.
-* **Knowledge Graphs (GraphRAG):** Highly relational but computationally rigid. Executing a global query requires massive LLM map-reduce overhead, and adding new documents often triggers cascading, expensive re-clustering of the entire graph structure (O(V log V)).
+## 1. The C Port Advantage
 
-## 2. The AIGVS Solution
-AIGVS solves this by decoupling the **Macro-Routing** from the **Micro-Retrieval**. 
-Instead of forcing a spatial algorithm to navigate an entire global database, AIGVS uses an associative memory matrix (a Continuous Hopfield Network) to mathematically "teleport" queries directly into highly localized, isolated Knowledge Graph communities. 
+By stripping away Python overhead and strictly controlling memory layouts, the C port of AIGVS drastically reduces latency and memory bloat. The system relies entirely on static structs and arrays, enabling the processor to heavily cache consecutive memory chunks (like Continuous Hopfield `X_matrix` networks) for blistering SIMD/Vectorization operations.
 
-* **Macro-Routing:** Continuous attractor dynamics drop queries into the correct semantic basin in O(1) iterations.
-* **Micro-Retrieval:** A local Navigable Small World (NSW) graph executes a tiny greedy search to find the exact chunk *and* its topological neighbors for unbroken LLM context.
+### Key Changes
+- **Contiguous Routing Maps:** The DisjointRouter now houses routing thresholds strictly as arrays.
+- **Pointer Hierarchy:** Nodes, routers, and storage mechanisms have been transformed into standard memory-managed pointer configurations.
+- **Dependency Elimination:** Zero external dependencies (cJSON is included natively).
 
 ---
 
-## 3. System Architecture Hierarchy
+## 2. API Usage
 
-The system operates on a composite tree design with strict decoupling of storage, routing, and search:
+To start using AIGVS in your native projects:
 
-1. **`AIGVSPipeline` (The Orchestrator):** Manages the global state, flat storage adapter (e.g., Local JSON, Postgres), and concurrent execution pools.
-2. **`DisjointFamily` (The Router Node):** A structural parent node. It holds no text. It contains a dense matrix of child prototype vectors (centroids) and uses Hopfield equations to route queries down the tree.
-3. **`JointFamily` (The Leaf Node):** A localized Knowledge Graph space. It contains actual document chunks wired together in a Navigable Small World (NSW) adjacency list. 
+```c
+#include "aigvs.h"
+
+int main() {
+    // 1. Boot up the routing pipeline (Setting Vector Dimension to 384)
+    AIGVSPipeline* pipeline = aigvs_pipeline_create(384, "./aigvs_data");
+
+    // 2. Prepare Vector Payload
+    TextChunk chunk;
+    snprintf(chunk.chunk_id, MAX_CHUNK_ID_LEN, "document_xyz");
+    chunk.text = "Continuous Attractor Networks rule.";
+    chunk.embedding = (float*)malloc(384 * sizeof(float));
+    chunk.embedding_dim = 384;
+
+    // 3. Ingest (Will recursively Hopfield Route down the tree to the NSW leaf)
+    aigvs_pipeline_ingest(pipeline, &chunk, 1);
+
+    // 4. Clean Memory
+    aigvs_pipeline_destroy(pipeline);
+    return 0;
+}
+```
 
 ---
 
-## 4. Core Mathematical Engines
+## 3. Building
 
-### 4.1 The Continuous Hopfield Macro-Router
-Queries are not searched; they are settled into energy minima. Given a query vector `q` and a matrix of community prototypes `X`, the network executes the following continuous update rule:
-
-```text
-ξ(t+1) = Normalize( X^T * softmax(β * X * ξ(t)) )
-
+The project ships with a strict `Makefile`.
+```bash
+make
+./aigvs_run
 ```
 
-The `softmax` function acts as an exponential filter. Instead of iterating, we evaluate the activation energies at `T=1`. If an activation crosses the threshold (e.g., > 0.30), the query is routed to that sub-graph. If no activation crosses the threshold, the router identifies the query as **Out-Of-Distribution (OOD)** and natively spins up a new isolated branch.
-
-### 4.2 Dynamic Temperature Scaling (β)
-
-A static temperature fails in hierarchical trees. Deep nodes have lower variance (hyper-similar concepts) and require sharper competitive filtering. AIGVS dynamically tunes `β` using **Inverse Fractional Scaling** based on the pairwise cosine variance (`σ²`) of the active routing matrix:
-
-```text
-β(σ²) = β_min + (k / (σ² + ε))
-
-```
-
-This self-tuning equation ensures macro-layers route gently while micro-layers separate concepts aggressively.
-
-### 4.3 Spherical Hopfield Bifurcation (Node Splitting)
-
-When a `JointFamily` leaf node exceeds its capacity, AIGVS does not use Euclidean K-Means, which degrades vector magnitude. Instead, it natively splits the node using **Fixed-Point Attractor Convergence**.
-Two extreme seed vectors (`ξ_1`, `ξ_2`) are placed in the dense local data pool `X_local` and evolved:
-
-```text
-ξ_i(t+1) = Normalize( X_local^T * softmax(β * X_local * ξ_i(t)) )
-
-```
-
-The seeds naturally cascade into the true localized energy minima, cleanly bifurcating the sub-graph along the hypersphere with 100% deterministic accuracy.
-
----
-
-## 5. Algorithmic Workflows
-
-### The Read Path (Querying)
-
-1. **Embed:** Convert user query to vector `q`.
-2. **Hopfield Route:** Pass `q` through the `DisjointFamily` layers. The matrix math isolates the target `JointFamily` leaf in O(1) matrix multiplications. (Overlapping targets trigger parallel thread execution).
-3. **Greedy Traversal:** Inside the leaf, execute a greedy NSW search starting from the entry node, hopping via graph edges to the mathematical minimum.
-4. **Contextual Expansion:** Return the winning chunks *plus* their 1-hop structural neighbors from the adjacency list to provide relational context.
-
-### The Write Path (Ingestion)
-
-1. **Route to Leaf:** The insertion vector falls down the Hopfield tree.
-2. **Local Insertion:** The chunk is appended to the `JointFamily` NSW graph.
-3. **O(1) Matrix Update:** The leaf recalculates its centroid via a running average:
-```text
-μ_new = ((μ_old * N_c) + x_new) / (N_c + 1)
-
-```
-
-
-4. **Lazy Propagation:** The new centroid replaces the single column in the parent's `X` matrix. No global re-indexing occurs.
-
-### The Delete Path (Tombstoning)
-
-1. **Mark as Deleted:** The chunk ID is added to a local `deleted_indices` set. The physical graph edges remain intact (Ghost Traversal).
-2. **Lazy Centroid Shift:** The vector's influence is mathematically subtracted from the running average centroid.
-3. **Compaction:** If the tombstone ratio exceeds 20%, the leaf asynchronously rebuilds its internal adjacency list.
-
----
-
-## 6. Computational Complexity
-
-By converting the top half of a standard spatial graph traversal into SIMD-accelerated dense matrix multiplications, AIGVS redefines the speed limits of vector indexing.
-
-Let `N` = total database chunks, `M` = number of communities, `b` = branching factor, `K` = graph edge evaluations.
-
-* **Standard Global HNSW Read:** `O(K * log(N) * E)`
-* **AIGVS Read:** `O(log_b(M) * E) + O(k * log(N/M) * E)`
-* **Standard GraphRAG Write:** `O(V * log(V))` (Global Re-clustering)
-* **AIGVS Write:** `O(M * E) + O(K * log(N/M) * E)`
-
-**Conclusion:** AIGVS mathematically scales logarithmically identically to the fastest pure-vector databases, but delivers the structured, cohesive relational intelligence of a Knowledge Graph with nearly zero global write-penalties.
-
-```
-
+To clean the build objects:
+```bash
+make clean
 ```
