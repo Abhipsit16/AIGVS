@@ -55,17 +55,33 @@ class AIGVSPipeline:
             )
             self.root.insert(chunk, self.storage, self)
 
-    def query(self, query_embedding: np.ndarray, top_k: int = 3) -> List[Dict]:
+    def query(self, query_embedding: np.ndarray, top_k: int = 10) -> List[Dict]:
         norm = np.linalg.norm(query_embedding)
         if norm > 0: query_embedding = query_embedding / norm
             
         matched_ids = self.root.query(query_embedding, top_k, self.storage)
+        if not matched_ids: return []
+        
+        # 1. Fast Batch Read
+        chunks = [self.storage.read_chunk(cid) for cid in matched_ids]
+        chunks = [c for c in chunks if c is not None]
+        if not chunks: return []
+        
+        # --- FIX 2: VECTORIZED RE-RANKING ---
+        # Stack all embeddings into a single C-contiguous matrix
+        embeddings_matrix = np.array([c.embedding for c in chunks], dtype=np.float32)
+        
+        # Perform 1 single matrix multiplication instead of 750 loops
+        scores = np.dot(embeddings_matrix, query_embedding)
+        
+        # Fast sort using NumPy
+        top_indices = np.argsort(-scores)[:top_k]
         
         payloads = []
-        for cid in matched_ids:
-            chunk = self.storage.read_chunk(cid)
-            if chunk:
-                payloads.append({"id": chunk.chunk_id, "text": chunk.text, "metadata": chunk.metadata})
+        for idx in top_indices:
+            chunk = chunks[idx]
+            payloads.append({"id": chunk.chunk_id, "text": chunk.text, "metadata": chunk.metadata})
+            
         return payloads
 
     def delete_chunk(self, chunk_id: str) -> bool:

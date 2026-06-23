@@ -55,21 +55,19 @@ class HopfieldRouter:
         variance = float(np.var(upper_tri))
         return self.beta_min + (self.k_scale / (variance + 1e-5))
 
-    def route_query(self, query_vector: np.ndarray) -> List[str]:
-        """Evaluates activation weights using continuous equations to locate target nodes."""
+    def route_query(self, query_vector: np.ndarray, beam_width: int = 1) -> List[str]:
+        """Uses Beam Search to return the top N most likely branches."""
         if self.X_matrix is None:
             return []
 
         q = query_vector.reshape(self.embedding_dim)
         raw_scores = np.dot(self.X_matrix, q)
-        beta = self.calculate_dynamic_beta()
         
-        # Softmax evaluation with stability shift
-        shifted = raw_scores - np.max(raw_scores)
-        exp_scores = np.exp(beta * shifted)
-        softmax_weights = exp_scores / np.sum(exp_scores)
+        # Argsort automatically handles finding the highest scoring vectors.
+        # We negate the scores (-raw_scores) so the highest values come first.
+        sorted_indices = np.argsort(-raw_scores)
         
-        passing_indices = np.where(softmax_weights >= self.activation_threshold)[0]
-        sorted_indices = passing_indices[np.argsort(-softmax_weights[passing_indices])]
+        # Safely slice up to the requested beam_width
+        best_indices = sorted_indices[:beam_width]
         
-        return [self.id_lookup[idx] for idx in sorted_indices]
+        return [self.id_lookup[idx] for idx in best_indices]
