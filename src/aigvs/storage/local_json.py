@@ -1,5 +1,6 @@
 import os
 import json
+import re 
 from typing import Optional
 from src.aigvs.core.models import TextChunk
 
@@ -11,7 +12,9 @@ class LocalJSONStorage:
         os.makedirs(self.chunks_dir, exist_ok=True)
 
     def _get_path(self, chunk_id: str) -> str:
-        return os.path.join(self.chunks_dir, f"{chunk_id}.json")
+        # Replaces illegal OS filename characters (\ / * ? : " < > |) with an underscore
+        safe_filename = re.sub(r'[\\/*?:"<>|]', '_', chunk_id)
+        return os.path.join(self.base_dir, f"{safe_filename}.json")
 
     def write_chunk(self, chunk: TextChunk) -> None:
         with open(self._get_path(chunk.chunk_id), "w", encoding="utf-8") as f:
