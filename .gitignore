@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+ingest.py
+query.py
+run_aigvs.py
+stress_test.py

@@ -157,7 +157,7 @@ class DisjointFamily(BaseNode):
         self.embedding_dim = embedding_dim
         self.children: Dict[str, BaseNode] = {}
         self.router = HopfieldRouter(embedding_dim=embedding_dim)
-        self.max_leaf_capacity = 1000  
+        self.max_leaf_capacity = 250  
 
     def query(self, query_vector: np.ndarray, top_k: int, storage: LocalJSONStorage) -> List[str]:
         target_child_ids = self.router.route_query(query_vector)

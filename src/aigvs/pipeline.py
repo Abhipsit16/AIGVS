@@ -1,19 +1,49 @@
+import os
+import pickle
 import numpy as np
 from typing import Dict, List
 from src.aigvs.core.models import TextChunk
-from src.aigvs.storage.local_json import LocalJSONStorage
+from src.aigvs.storage import LocalJSONStorage
 from src.aigvs.engine.nodes import DisjointFamily, BaseNode
 
 class AIGVSPipeline:
-    """The master framework manager handling clear write pipelines and decoupled query paths."""
     def __init__(self, embedding_dim: int, storage_path: str = "./aigvs_data"):
         self.embedding_dim = embedding_dim
+        self.storage_path = storage_path
         self.storage = LocalJSONStorage(storage_path)
         self.root = DisjointFamily(node_id="root_node", embedding_dim=embedding_dim)
         
-        # O(1) Global Registries for fast CRUD routing
         self.node_registry: Dict[str, BaseNode] = {"root_node": self.root}
         self.chunk_location_map: Dict[str, str] = {} 
+        
+        # The physical file where the mathematical graph will be frozen
+        self.index_file = os.path.join(storage_path, "aigvs_memory.pkl")
+
+    def save_index(self) -> None:
+        """Serializes the routing matrices and NSW graphs to disk."""
+        state = {
+            "root": self.root,
+            "node_registry": self.node_registry,
+            "chunk_location_map": self.chunk_location_map
+        }
+        with open(self.index_file, "wb") as f:
+            pickle.dump(state, f)
+        print(f"[SYSTEM] Index state frozen and saved to {self.index_file}")
+
+    def load_index(self) -> bool:
+        """Wakes the mathematical index back up from disk into RAM."""
+        if not os.path.exists(self.index_file):
+            print("[SYSTEM] No existing index found. Starting fresh.")
+            return False
+            
+        with open(self.index_file, "rb") as f:
+            state = pickle.load(f)
+            self.root = state["root"]
+            self.node_registry = state["node_registry"]
+            self.chunk_location_map = state["chunk_location_map"]
+        print("[SYSTEM] Index successfully loaded into memory.")
+        return True
+
 
     def ingest_hierarchical_json(self, json_data: List[Dict]) -> None:
         for chunk_entry in json_data:
