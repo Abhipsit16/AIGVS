@@ -1,0 +1,14 @@
+[package]
+name = "aigvs_rust"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "aigvs_rust"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.20", features = ["extension-module"] }
+numpy = "0.20"
+ndarray = { version = "0.15", features = ["rayon"] }
+rayon = "1.8"

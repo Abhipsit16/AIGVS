@@ -55,19 +55,49 @@ class HopfieldRouter:
         variance = float(np.var(upper_tri))
         return self.beta_min + (self.k_scale / (variance + 1e-5))
 
-    def route_query(self, query_vector: np.ndarray, beam_width: int = 1) -> List[str]:
-        """Uses Beam Search to return the top N most likely branches."""
-        if self.X_matrix is None:
+    def route_query(self, query_vector: np.ndarray, max_beam: int = 15, target_confidence: float = 0.65) -> List[str]:
+        if self._size == 0:
             return []
 
-        q = query_vector.reshape(self.embedding_dim)
-        raw_scores = np.dot(self.X_matrix, q)
-        
-        # Argsort automatically handles finding the highest scoring vectors.
-        # We negate the scores (-raw_scores) so the highest values come first.
-        sorted_indices = np.argsort(-raw_scores)
-        
-        # Safely slice up to the requested beam_width
-        best_indices = sorted_indices[:beam_width]
-        
-        return [self.id_lookup[idx] for idx in best_indices]
+        X = self.X_matrix[:self._size]  # view, no copy
+        beta = self.calculate_dynamic_beta()
+
+        q = query_vector.astype(np.float32)
+        q /= (np.linalg.norm(q) + 1e-9)
+
+        norms = np.linalg.norm(X, axis=1) + 1e-9
+        raw_scores = (X / norms[:, np.newaxis]) @ q
+
+        # Softmax gives us true probability/confidence percentages
+        scaled = beta * raw_scores
+        scaled -= scaled.max()
+        weights = np.exp(scaled)
+        weights /= weights.sum() + 1e-9
+
+        above = raw_scores >= self.activation_threshold
+        if not np.any(above):
+            return []  # OOD — DisjointFamily.insert handles the new branch spawn
+
+        # Zero out the probabilities of anything below our minimum cosine threshold
+        masked_weights = np.where(above, weights, 0.0)
+
+        # Sort indices strictly by probability (highest first)
+        sorted_indices = np.argsort(-masked_weights)
+
+        dynamic_beam_ids = []
+        cumulative_confidence = 0.0
+
+        # --- NUCLEUS ROUTING LOGIC ---
+        for idx in sorted_indices[:max_beam]:
+            w = masked_weights[idx]
+            if w == 0.0:
+                break  # Stop immediately if we hit rejected attractors
+
+            dynamic_beam_ids.append(self.idx_to_id[idx])
+            cumulative_confidence += w
+
+            # Dynamic Cutoff: If we are confident enough, stop adding branches!
+            if cumulative_confidence >= target_confidence:
+                break
+
+        return dynamic_beam_ids

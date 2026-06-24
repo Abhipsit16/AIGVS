@@ -1,3 +1,32 @@
+from rich.tree import Tree
+from rich import print as rprint
+from visualizer import export_colored_tree_diagram
+
+def print_rich_terminal_tree(pipeline_ref):
+    # Create the root of the visual tree
+    root_tree = Tree(f"[bold gold1]ROOT NODE[/bold gold1] ({pipeline_ref.root.node_id[-8:]})")
+
+    def build_rich_tree(node, current_branch):
+        if hasattr(node, 'children') and node.children:
+            # It's a branch vessel
+            for child_id, child_node in node.children.items():
+                if hasattr(child_node, 'children'):
+                    # Sub-Branch
+                    sub_branch = current_branch.add(f"[bold cyan]MACRO-COMMUNITY[/bold cyan] ({child_id[-8:]})")
+                    build_rich_tree(child_node, sub_branch)
+                else:
+                    # It's a leaf
+                    capacity = child_node._count if hasattr(child_node, '_count') else len(child_node.chunk_ids)
+                    current_branch.add(f"[bold green]LEAF[/bold green] ({child_id[-8:]}) ➜ [white]{capacity} items[/white]")
+        else:
+            # Fallback if root is just a leaf
+            capacity = node._count if hasattr(node, '_count') else len(getattr(node, 'chunk_ids', []))
+            current_branch.add(f"[bold green]LEAF[/bold green] ({node.node_id[-8:]}) ➜ [white]{capacity} items[/white]")
+
+    build_rich_tree(pipeline_ref.root, root_tree)
+    rprint()
+    rprint(root_tree)
+    rprint()
 import faulthandler
 faulthandler.enable()
 import os
@@ -86,15 +115,32 @@ def print_database_states(faiss_index, chroma_collection, aigvs_pipeline):
     print(">>> [AIGVS Custom SOTA State]")
     root_node = aigvs_pipeline.root
     active_attractors = len(root_node.children)
-    print(f"Top-Level Hopfield Attractors: {active_attractors}")
+    print(f"Top-Level Trunks/Attractors: {active_attractors}")
     
-    print("Leaf Node Distribution Profile:")
+    print("Node Distribution Profile:")
     total_chunks_found = 0
-    # Added .items() to properly unpack the dictionary!
+    
+    # Recursively dig through branches to find the true item count
+    def count_chunks_in_tree(node):
+        if hasattr(node, 'children') and node.children:
+            total = 0
+            for child in node.children.values():
+                total += count_chunks_in_tree(child)
+            return total
+        else:
+            # Check for the SOTA optimized counter, fallback to standard list
+            if hasattr(node, '_count'):
+                return node._count
+            elif hasattr(node, 'chunk_ids'):
+                return len(node.chunk_ids)
+            return 0
+
     for idx, (child_id, child_node) in enumerate(root_node.children.items()):
-        leaf_size = len(child_node.chunks) if hasattr(child_node, 'chunks') else 0
-        total_chunks_found += leaf_size
-        print(f"  - Attractor [{child_id[-8:]}]: Capacity = {leaf_size}/{root_node.max_leaf_capacity}")
+        true_capacity = count_chunks_in_tree(child_node)
+        total_chunks_found += true_capacity
+        
+        node_type = "Branch" if hasattr(child_node, 'children') else "Leaf"
+        print(f"  - {node_type} [{child_id[-8:]}]: Contains {true_capacity} chunks deep")
         
     print(f"Total Chunks Tracked in Tree:  {total_chunks_found}")
     print("==============================================\n")
@@ -341,6 +387,7 @@ def main():
             print(f"{indent}[LEAF] -> Holds {len(contents)} items")
 
     trace_tree(aigvs_pipeline.root)
+    print_rich_terminal_tree(aigvs_pipeline.root)
     print("==============================================\n")
 if __name__ == "__main__":
     main()

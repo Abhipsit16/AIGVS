@@ -1,285 +1,379 @@
-import uuid
-import heapq
-import numpy as np
-from abc import ABC, abstractmethod
-from concurrent.futures import ThreadPoolExecutor
-from typing import Dict, List, Set, Optional, TYPE_CHECKING
+"""
+nodes.py — Python tree nodes for the AIGVS hierarchy.
 
-from src.aigvs.core.models import TextChunk
-from src.aigvs.storage.local_json import LocalJSONStorage
-from src.aigvs.engine.router import HopfieldRouter
+Design contract
+---------------
+Pure Python bookkeeping — tree topology, centroid vectors, chunk-ID lists.
+No embedded Rust objects.  Every NSW and router mutation goes through
+``pipeline_ref.engine`` so there is one PyO3 boundary crossing per operation.
+
+NSW graph quality parameters (max_connections, ef_construction) are injected
+at construction time via ``pipeline_cfg`` and propagated to every leaf and
+sub-leaf created during splits, ensuring consistent graph quality throughout
+the lifetime of the index regardless of where a leaf is created.
+"""
+
+import uuid
+import numpy as np
+from typing import Dict, List, Set, Optional, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from src.aigvs.pipeline import AIGVSPipeline
 
-class BaseNode(ABC):
+
+# ---------------------------------------------------------------------------
+# Base
+# ---------------------------------------------------------------------------
+
+class BaseNode:
     def __init__(self, node_id: str, parent_id: Optional[str] = None):
         self.node_id = node_id
         self.parent_id = parent_id
         self.centroid_vector: Optional[np.ndarray] = None
 
-    @abstractmethod
-    def query(self, query_vector: np.ndarray, top_k: int, storage: LocalJSONStorage) -> List[str]:
-        pass
 
-    @abstractmethod
-    def insert(self, chunk: TextChunk, storage: LocalJSONStorage, pipeline_ref: 'AIGVSPipeline') -> None:
-        pass
-
+# ---------------------------------------------------------------------------
+# Leaf  (JointFamily)
+# ---------------------------------------------------------------------------
 
 class JointFamily(BaseNode):
-    """ Leaf Node: Navigable Small World (NSW) with Tombstoning."""
-    def __init__(self, node_id: str, parent_id: Optional[str] = None, max_connections: int = 5):
+    """
+    Leaf vessel — a flat collection of semantically cohesive chunks.
+
+    The NSW graph lives inside ``pipeline_ref.engine``; Python only tracks
+    chunk_ids, deleted_indices, and the running centroid.
+    """
+
+    def __init__(
+        self,
+        node_id: str,
+        parent_id: Optional[str] = None,
+        pipeline_cfg: Optional[dict] = None,
+    ):
         super().__init__(node_id, parent_id)
+        cfg = pipeline_cfg or {}
+        self.max_connections: int = cfg.get("max_connections", 16)
+        self.ef_construction: int = cfg.get("ef_construction", 100)
         self.chunk_ids: List[str] = []
-        self.vector_cache: List[np.ndarray] = []
-        self.local_graph: Dict[int, List[int]] = {}  
-        self.max_connections = max_connections  
-        self.entry_point_idx: Optional[int] = None
         self.deleted_indices: Set[int] = set()
 
-    def _cosine_similarity(self, vec_a: np.ndarray, vec_matrix: np.ndarray) -> np.ndarray:
-        norm_a = np.linalg.norm(vec_a) + 1e-9
-        norms_matrix = np.linalg.norm(vec_matrix, axis=1) + 1e-9
-        return np.dot(vec_matrix, vec_a) / (norm_a * norms_matrix)
+    # ------------------------------------------------------------------
+    # Insert
+    # ------------------------------------------------------------------
 
-    def insert(self, chunk: TextChunk, storage: LocalJSONStorage, pipeline_ref: 'AIGVSPipeline') -> None:
+    def insert(self, chunk, storage, pipeline_ref: "AIGVSPipeline") -> None:
         storage.write_chunk(chunk)
-        new_idx = len(self.chunk_ids)
         self.chunk_ids.append(chunk.chunk_id)
-        self.vector_cache.append(chunk.embedding)
-        self.local_graph[new_idx] = []
 
         pipeline_ref.node_registry[self.node_id] = self
         pipeline_ref.chunk_location_map[chunk.chunk_id] = self.node_id
 
-        # Centroid running average
+        # Populate the hot-path payload cache so query() never touches storage.
+        pipeline_ref._cache_payload(chunk)
+
+        # Online normalised mean centroid.
         if self.centroid_vector is None:
             self.centroid_vector = chunk.embedding.copy()
-            self.entry_point_idx = new_idx
+        else:
+            n = len(self.chunk_ids)
+            self.centroid_vector = (
+                (self.centroid_vector * (n - 1)) + chunk.embedding
+            ) / n
+            norm = np.linalg.norm(self.centroid_vector)
+            if norm > 0:
+                self.centroid_vector /= norm
+
+        pipeline_ref.engine.native_insert_to_leaf(
+            self.node_id, chunk.chunk_id, chunk.embedding
+        )
+
+    # ------------------------------------------------------------------
+    # Deletion
+    # ------------------------------------------------------------------
+
+    def mark_deleted(
+        self,
+        chunk_id: str,
+        parent_router_node: "DisjointFamily",
+        engine,
+    ) -> None:
+        """
+        Tombstone chunk_id and update the parent attractor.
+        The engine-level tombstone (native_mark_deleted) is applied by the
+        pipeline *before* calling this method; here we update Python bookkeeping
+        and the router centroid.
+        """
+        if chunk_id not in self.chunk_ids:
             return
-            
-        n = len(self.vector_cache)
-        self.centroid_vector = ((self.centroid_vector * (n - 1)) + chunk.embedding) / n
-        self.centroid_vector /= (np.linalg.norm(self.centroid_vector) + 1e-9)
-
-        # NSW Graph Wiring
-        if n <= self.max_connections + 1:
-            for i in range(new_idx):
-                self.local_graph[new_idx].append(i)
-                self.local_graph[i].append(new_idx)
-        else:
-            neighbors = self._greedy_search(chunk.embedding, top_k=self.max_connections)
-            for n_idx in neighbors:
-                self.local_graph[new_idx].append(n_idx)
-                self.local_graph[n_idx].append(new_idx)
-                if len(self.local_graph[n_idx]) > self.max_connections * 2:
-                    self._prune_edges(n_idx)
-
-    def _prune_edges(self, target_idx: int) -> None:
-        neighbors = self.local_graph[target_idx]
-        target_vec = self.vector_cache[target_idx]
-        neighbor_vecs = np.array([self.vector_cache[i] for i in neighbors])
-        scores = self._cosine_similarity(target_vec, neighbor_vecs)
-        best_indices = np.argsort(-scores)[:self.max_connections]
-        self.local_graph[target_idx] = [neighbors[i] for i in best_indices]
-
-    def _greedy_search(self, query_vector: np.ndarray, top_k: int, search_depth: int = 15) -> List[int]:
-        if self.entry_point_idx is None:
-            return []
-
-        candidates = []
-        visited: Set[int] = {self.entry_point_idx}
-        initial_score = self._cosine_similarity(query_vector, np.array([self.vector_cache[self.entry_point_idx]]))[0]
-        heapq.heappush(candidates, (-initial_score, self.entry_point_idx))
-        
-        best_results = [(-initial_score, self.entry_point_idx)]
-        
-        for _ in range(search_depth):
-            if not candidates: break
-            current_neg_score, current_idx = heapq.heappop(candidates)
-            
-            neighbors = [n for n in self.local_graph[current_idx] if n not in visited]
-            if not neighbors: continue
-                
-            visited.update(neighbors)
-            neighbor_vecs = np.array([self.vector_cache[n] for n in neighbors])
-            scores = self._cosine_similarity(query_vector, neighbor_vecs)
-            
-            for score, n_idx in zip(scores, neighbors):
-                heapq.heappush(candidates, (-score, n_idx))
-                best_results.append((-score, n_idx))
-                
-        best_results.sort(key=lambda x: x[0])
-        return [idx for _, idx in best_results[:top_k]]
-
-    def mark_deleted(self, chunk_id: str, parent_router_node: 'DisjointFamily') -> None:
-        """ Tombstoning with Lazy Centroid Evaluation."""
-        if chunk_id not in self.chunk_ids: return
         idx = self.chunk_ids.index(chunk_id)
-        if idx in self.deleted_indices: return
-            
+        if idx in self.deleted_indices:
+            return
+
         self.deleted_indices.add(idx)
-        deleted_vector = self.vector_cache[idx]
-        
-        active_count = len(self.chunk_ids) - len(self.deleted_indices)
-        if active_count > 0:
-            current_sum = self.centroid_vector * (active_count + 1)
-            new_sum = current_sum - deleted_vector
-            self.centroid_vector = new_sum / active_count
-            self.centroid_vector /= (np.linalg.norm(self.centroid_vector) + 1e-9)
-            parent_router_node.router.add_or_update_attractor(self.node_id, self.centroid_vector, active_count)
+
+        if self.active_count > 0:
+            engine.update_attractor(
+                parent_router_node.node_id, self.node_id, self.centroid_vector
+            )
         else:
-            parent_router_node.router.remove_attractor(self.node_id)
+            engine.remove_attractor(parent_router_node.node_id, self.node_id)
             parent_router_node.children.pop(self.node_id, None)
 
-    def query(self, query_vector: np.ndarray, top_k: int, storage: LocalJSONStorage) -> List[str]:
-        if not self.vector_cache: return []
-        raw_indices = self._greedy_search(query_vector, top_k=top_k + len(self.deleted_indices))
-        
-        clean_indices = [idx for idx in raw_indices if idx not in self.deleted_indices]
-        best_indices = clean_indices[:top_k]
-        
-        if best_indices:
-            primary_hit = best_indices[0]
-            context_neighbors = self.local_graph[primary_hit][:2]
-            for n in context_neighbors:
-                if n not in best_indices and n not in self.deleted_indices:
-                    best_indices.append(n)
-                    
-        return [self.chunk_ids[idx] for idx in best_indices]
+    # ------------------------------------------------------------------
+    # Properties
+    # ------------------------------------------------------------------
 
+    @property
+    def active_count(self) -> int:
+        return len(self.chunk_ids) - len(self.deleted_indices)
+
+    def pipeline_cfg(self) -> dict:
+        return {
+            "max_connections": self.max_connections,
+            "ef_construction": self.ef_construction,
+        }
+
+
+# ---------------------------------------------------------------------------
+# Branch  (DisjointFamily)
+# ---------------------------------------------------------------------------
 
 class DisjointFamily(BaseNode):
-    """ Routing Node: Concurrent paths and Spherical Bifurcation."""
-    def __init__(self, node_id: str, embedding_dim: int, parent_id: Optional[str] = None):
+    """
+    Internal routing vessel fanning out to child nodes.
+
+    The Hopfield router lives inside ``pipeline_ref.engine``;
+    Python holds ``self.children`` for topology traversal and split logic only.
+    """
+
+    def __init__(
+        self,
+        node_id: str,
+        embedding_dim: int,
+        parent_id: Optional[str] = None,
+        pipeline_cfg: Optional[dict] = None,
+    ):
         super().__init__(node_id, parent_id)
         self.embedding_dim = embedding_dim
         self.children: Dict[str, BaseNode] = {}
-        self.router = HopfieldRouter(embedding_dim=embedding_dim)
-        self.max_leaf_capacity = 250  
+        self.max_leaf_capacity: int = 250
 
-    def query(self, query_vector: np.ndarray, top_k: int, storage: LocalJSONStorage) -> List[str]:
-        target_child_ids = self.router.route_query(query_vector, beam_width=3)
-        if not target_child_ids: return []
+        # Propagated to every leaf this branch creates.
+        cfg = pipeline_cfg or {}
+        self._pipeline_cfg: dict = cfg
 
-        aggregated_results: List[str] = []
-        # --- FIX 1: Sequential search is 10x faster in Python than Threading ---
-        for cid in target_child_ids:
-            if cid in self.children:
-                aggregated_results.extend(self.children[cid].query(query_vector, top_k, storage))
+    # ------------------------------------------------------------------
+    # Insert
+    # ------------------------------------------------------------------
 
-        return list(set(aggregated_results))
-
-    def insert(self, chunk: TextChunk, storage: LocalJSONStorage, pipeline_ref: 'AIGVSPipeline') -> None:
+    def insert(self, chunk, storage, pipeline_ref: "AIGVSPipeline") -> None:
         norm = np.linalg.norm(chunk.embedding)
-        if norm > 0: chunk.embedding = chunk.embedding / norm
+        if norm > 0:
+            chunk.embedding = chunk.embedding / norm
 
-        target_child_ids = self.router.route_query(chunk.embedding)
-        
+        target_child_ids: List[str] = pipeline_ref.engine.route_query(
+            self.node_id, chunk.embedding,
+            max_beam=1, target_confidence=1.0, beta=20.0,
+        )
+
         if not target_child_ids or not self.children:
-            new_leaf_id = f"leaf_{uuid.uuid4().hex[:6]}"
-            new_leaf = JointFamily(node_id=new_leaf_id, parent_id=self.node_id)
-            new_leaf.insert(chunk, storage, pipeline_ref)
-            
-            self.children[new_leaf_id] = new_leaf
-            self.router.add_or_update_attractor(new_leaf_id, new_leaf.centroid_vector, len(new_leaf.chunk_ids))
-            self.centroid_vector = new_leaf.centroid_vector
-            pipeline_ref.node_registry[self.node_id] = self
+            self._create_leaf_and_insert(chunk, storage, pipeline_ref)
             return
 
         primary_child_id = target_child_ids[0]
         target_child = self.children[primary_child_id]
         target_child.insert(chunk, storage, pipeline_ref)
-        
-        active_count = len(getattr(target_child, 'chunk_ids', [])) - len(getattr(target_child, 'deleted_indices', []))
-        self.router.add_or_update_attractor(primary_child_id, target_child.centroid_vector, active_count)
+
+        if target_child.centroid_vector is not None:
+            pipeline_ref.engine.update_attractor(
+                self.node_id, primary_child_id, target_child.centroid_vector
+            )
         self.centroid_vector = target_child.centroid_vector
 
-        if isinstance(target_child, JointFamily) and active_count >= self.max_leaf_capacity:
-            self.execute_native_hopfield_split(primary_child_id, storage, pipeline_ref)
+        if (
+            isinstance(target_child, JointFamily)
+            and target_child.active_count >= self.max_leaf_capacity
+        ):
+            self.execute_native_hopfield_split(
+                primary_child_id, storage, pipeline_ref
+            )
 
-    def execute_native_hopfield_split(self, child_id: str, storage: LocalJSONStorage, pipeline_ref: 'AIGVSPipeline') -> None:
-        bloated_node: JointFamily = self.children[child_id]
-        
-        # Filter out tombstones before splitting
-        active_indices = [i for i in range(len(bloated_node.vector_cache)) if i not in bloated_node.deleted_indices]
-        if len(active_indices) < 2: return
-        
-        X = np.array([bloated_node.vector_cache[i] for i in active_indices], dtype=np.float32)
+    def _create_leaf_and_insert(
+        self, chunk, storage, pipeline_ref: "AIGVSPipeline"
+    ) -> None:
+        """Spin up a new leaf using the pipeline's NSW config."""
+        new_leaf_id = f"leaf_{uuid.uuid4().hex[:6]}"
+        new_leaf = JointFamily(
+            node_id=new_leaf_id,
+            parent_id=self.node_id,
+            pipeline_cfg=pipeline_ref._node_cfg(),
+        )
 
-        avg_vector = np.mean(X, axis=0)
-        seed1_idx = np.argmin(np.dot(X, avg_vector / (np.linalg.norm(avg_vector) + 1e-9)))
-        xi_1 = X[seed1_idx].copy()
-        
-        seed2_idx = np.argmin(np.dot(X, xi_1))
-        xi_2 = X[seed2_idx].copy()
+        # Register engine-side NSW graph with the same M and ef as the pipeline.
+        pipeline_ref._register_leaf_in_engine(new_leaf_id, self.node_id)
 
-        beta = 20.0 
+        new_leaf.insert(chunk, storage, pipeline_ref)
+
+        self.children[new_leaf_id] = new_leaf
+        if new_leaf.centroid_vector is not None:
+            pipeline_ref.engine.update_attractor(
+                self.node_id, new_leaf_id, new_leaf.centroid_vector
+            )
+        self.centroid_vector = new_leaf.centroid_vector
+        pipeline_ref.node_registry[self.node_id] = self
+
+    # ------------------------------------------------------------------
+    # Hopfield split
+    # ------------------------------------------------------------------
+
+    def execute_native_hopfield_split(
+        self,
+        child_id: str,
+        storage,
+        pipeline_ref: "AIGVSPipeline",
+        cohesion_threshold: float = 0.65,
+    ) -> None:
+        """
+        Dynamically discover macro-communities inside a bloated leaf and
+        replace it with a new branch containing sub-community leaves.
+
+        Algorithm
+        ---------
+        1. Seed selection — maximally separated anchor points (farthest-first).
+        2. High-cohesion abort — single community → widen capacity, don't split.
+        3. Variance-adaptive Hopfield convergence — soft EM with per-community
+           temperature scaling driven by intra-community score variance.
+        4. Hierarchical wiring — rebuild engine state for the new sub-tree,
+           using the pipeline's NSW config so sub-leaves have the same graph
+           quality as any other leaf in the index.
+        """
+        bloated_node = self.children[child_id]
+
+        # --- Collect active chunks ---
+        active_chunks = []
+        X_list = []
+        for i, cid in enumerate(bloated_node.chunk_ids):
+            if i not in bloated_node.deleted_indices:
+                chunk = storage.read_chunk(cid)
+                if chunk is not None:
+                    active_chunks.append(chunk)
+                    X_list.append(chunk.embedding)
+
+        if len(X_list) < 2:
+            return
+
+        X = np.array(X_list, dtype=np.float32)  # (N, D)
+
+        # --- 1. Farthest-first seed selection ---
+        avg = np.mean(X, axis=0)
+        avg_norm = np.linalg.norm(avg)
+        if avg_norm > 0:
+            avg /= avg_norm
+        seeds = [X[int(np.argmax(X @ avg))].copy()]
+
+        for _ in range(1, 50):
+            sims = X @ np.array(seeds).T          # (N, K)
+            max_sim = np.max(sims, axis=1)         # (N,)
+            furthest = int(np.argmin(max_sim))
+            if max_sim[furthest] > cohesion_threshold:
+                break
+            seeds.append(X[furthest].copy())
+
+        centroids = np.array(seeds, dtype=np.float32)
+        num_branches = len(centroids)
+
+        # --- 2. High-cohesion abort ---
+        if num_branches == 1:
+            # Entire vessel is one cohesive community — widen it and keep going.
+            bloated_node.max_connections = min(
+                bloated_node.max_connections + pipeline_ref.max_connections, 64
+            )
+            self.max_leaf_capacity += 100
+            # Also expand the engine-side graph's effective connection budget
+            # by re-registering with higher M. The existing edges are preserved;
+            # new inserts will now wire to more neighbours.
+            # (Engine doesn't support in-place M upgrade, so we leave it — the
+            # wider Python-side capacity check is the effective guard here.)
+            return
+
+        # --- 3. Variance-adaptive Hopfield convergence ---
+        lambda_scale = 5.0
         for _ in range(15):
-            prev_xi_1, prev_xi_2 = xi_1.copy(), xi_2.copy()
+            prev = centroids.copy()
+            scores = X @ centroids.T                              # (N, K)
+            variances = np.var(scores, axis=0)                    # (K,)
+            betas = lambda_scale / (variances + 1e-5)
+            scaled = scores * betas
+            shifted = scaled - np.max(scaled, axis=1, keepdims=True)
+            exp_s = np.exp(shifted)
+            weights = exp_s / (exp_s.sum(axis=1, keepdims=True) + 1e-9)
+            centroids = weights.T @ X                             # (K, D)
+            norms = np.linalg.norm(centroids, axis=1, keepdims=True)
+            centroids /= norms + 1e-9
+            if np.allclose(centroids, prev, atol=1e-6):
+                break
 
-            scores_1 = np.dot(X, xi_1)
-            weights_1 = np.exp(beta * (scores_1 - np.max(scores_1))) / (np.sum(np.exp(beta * (scores_1 - np.max(scores_1)))) + 1e-9)
-            xi_1 = np.dot(weights_1, X)
-            xi_1 /= (np.linalg.norm(xi_1) + 1e-9)
+        assignments = np.argmax(X @ centroids.T, axis=1)
 
-            scores_2 = np.dot(X, xi_2)
-            weights_2 = np.exp(beta * (scores_2 - np.max(scores_2))) / (np.sum(np.exp(beta * (scores_2 - np.max(scores_2)))) + 1e-9)
-            xi_2 = np.dot(weights_2, X)
-            xi_2 /= (np.linalg.norm(xi_2) + 1e-9)
+        # --- 4. Hierarchical wiring ---
 
-            if np.allclose(xi_1, prev_xi_1, atol=1e-6) and np.allclose(xi_2, prev_xi_2, atol=1e-6): break
+        pipeline_ref.engine.remove_attractor(self.node_id, child_id)
 
-        assignments = np.dot(X, xi_1) < np.dot(X, xi_2)
+        # Reuse child_id as the new branch's id — no upstream re-wiring needed.
+        new_branch = DisjointFamily(
+            node_id=child_id,
+            embedding_dim=self.embedding_dim,
+            parent_id=self.node_id,
+            pipeline_cfg=pipeline_ref._node_cfg(),
+        )
+        pipeline_ref.engine.register_branch(child_id, self.node_id, False)
 
-        self.router.remove_attractor(child_id)
-        
-        leaf_a_id = f"{child_id}_alpha"
-        leaf_b_id = f"{child_id}_beta"
-        
-        # --- FIX 2: ADDING TREE DEPTH ---
-        # 1. Create a new BRANCH to permanently replace the bloated leaf
-        new_branch = DisjointFamily(node_id=child_id, embedding_dim=self.embedding_dim, parent_id=self.node_id)
-        
-        # 2. Create the two new leaves and attach them UNDER the new branch
-        leaf_a = JointFamily(node_id=leaf_a_id, parent_id=new_branch.node_id)
-        leaf_b = JointFamily(node_id=leaf_b_id, parent_id=new_branch.node_id)
+        # Build sub-community leaves — all using the pipeline's NSW config so
+        # graph quality is consistent with every other leaf in the index.
+        new_leaves: List[JointFamily] = []
+        for branch_idx in range(num_branches):
+            leaf_id = f"{child_id}_macro_{branch_idx}"
+            leaf = JointFamily(
+                node_id=leaf_id,
+                parent_id=new_branch.node_id,
+                pipeline_cfg=pipeline_ref._node_cfg(),
+            )
+            # Register engine-side NSW graph before any inserts.
+            pipeline_ref._register_leaf_in_engine(leaf_id, child_id)
+            new_leaves.append(leaf)
 
-        # 3. Distribute the chunks into the new leaves
-        for i, original_idx in enumerate(active_indices):
-            chunk_id = bloated_node.chunk_ids[original_idx]
-            chunk = storage.read_chunk(chunk_id)
-            if chunk:
-                if assignments[i] == 0: leaf_a.insert(chunk, storage, pipeline_ref)
-                else: leaf_b.insert(chunk, storage, pipeline_ref)
+        # Distribute chunks — insert in their original order per community so
+        # the NSW graph builds up the same way it would have on live ingestion.
+        community_chunks: List[List] = [[] for _ in range(num_branches)]
+        for i, chunk in enumerate(active_chunks):
+            community_chunks[int(assignments[i])].append(chunk)
 
-        # (Keep your fallback half-split logic here if needed...)
-        if len(leaf_a.chunk_ids) == 0 or len(leaf_b.chunk_ids) == 0:
-            half = len(active_indices) // 2
-            leaf_a, leaf_b = JointFamily(node_id=leaf_a_id, parent_id=new_branch.node_id), JointFamily(node_id=leaf_b_id, parent_id=new_branch.node_id)
-            for i, original_idx in enumerate(active_indices):
-                chunk = storage.read_chunk(bloated_node.chunk_ids[original_idx])
-                if chunk:
-                    if i < half: leaf_a.insert(chunk, storage, pipeline_ref)
-                    else: leaf_b.insert(chunk, storage, pipeline_ref)
+        for leaf, chunks in zip(new_leaves, community_chunks):
+            for chunk in chunks:
+                leaf.insert(chunk, storage, pipeline_ref)
 
-        # 4. Wire the leaves into the NEW BRANCH's router
-        new_branch.children[leaf_a_id] = leaf_a
-        new_branch.children[leaf_b_id] = leaf_b
-        new_branch.router.add_or_update_attractor(leaf_a_id, leaf_a.centroid_vector, len(leaf_a.chunk_ids))
-        new_branch.router.add_or_update_attractor(leaf_b_id, leaf_b.centroid_vector, len(leaf_b.chunk_ids))
-        
-        # Calculate a centroid for the new branch itself
-        new_branch.centroid_vector = (leaf_a.centroid_vector + leaf_b.centroid_vector) / 2
-        new_branch.centroid_vector /= (np.linalg.norm(new_branch.centroid_vector) + 1e-9)
+        # Wire populated leaves into the new branch and engine.
+        valid_centroids = []
+        for leaf in new_leaves:
+            if not leaf.chunk_ids:
+                continue
+            new_branch.children[leaf.node_id] = leaf
+            if leaf.centroid_vector is not None:
+                pipeline_ref.engine.update_attractor(
+                    child_id, leaf.node_id, leaf.centroid_vector
+                )
+                valid_centroids.append(leaf.centroid_vector)
+            pipeline_ref.node_registry[leaf.node_id] = leaf
 
-        # 5. Snap the new branch into the exact spot the old bloated leaf used to be
+        if valid_centroids:
+            mean_c = np.mean(valid_centroids, axis=0)
+            n = np.linalg.norm(mean_c)
+            new_branch.centroid_vector = mean_c / (n + 1e-9)
+        else:
+            new_branch.centroid_vector = centroids[0]
+
         self.children[child_id] = new_branch
-        total_active = len(leaf_a.chunk_ids) + len(leaf_b.chunk_ids)
-        self.router.add_or_update_attractor(child_id, new_branch.centroid_vector, total_active)
-        
-        # 6. Update the global pipeline registry
+        pipeline_ref.engine.update_attractor(
+            self.node_id, child_id, new_branch.centroid_vector
+        )
         pipeline_ref.node_registry[child_id] = new_branch
-        pipeline_ref.node_registry[leaf_a_id] = leaf_a
-        pipeline_ref.node_registry[leaf_b_id] = leaf_b

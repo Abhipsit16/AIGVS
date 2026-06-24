@@ -7,25 +7,25 @@
     },
     "global_performance": {
         "faiss": {
-            "build_time_sec": 0.021578550338745117,
+            "build_time_sec": 0.01262211799621582,
             "total_hits": 100,
-            "avg_latency_ms": 1.5401790002943017,
-            "p99_latency_ms": 2.6099729852285476,
+            "avg_latency_ms": 1.5633759999764152,
+            "p99_latency_ms": 3.6255150000215792,
             "mean_mrr": 0.8634999999999999
         },
         "chroma": {
-            "build_time_sec": 12.398394346237183,
+            "build_time_sec": 13.052654266357422,
             "total_hits": 100,
-            "avg_latency_ms": 4.390573998971377,
-            "p99_latency_ms": 6.737348979804902,
+            "avg_latency_ms": 4.1645399981644005,
+            "p99_latency_ms": 6.514993993914924,
             "mean_mrr": 0.8684999999999999
         },
         "aigvs": {
-            "build_time_sec": 13.626758337020874,
-            "total_hits": 94,
-            "avg_latency_ms": 41.31598000007216,
-            "p99_latency_ms": 54.85075300937752,
-            "mean_mrr": 0.8016666666666665
+            "build_time_sec": 4.066591024398804,
+            "total_hits": 99,
+            "avg_latency_ms": 2.5791760001447983,
+            "p99_latency_ms": 4.583888997149199,
+            "mean_mrr": 0.8673333333333332
         }
     },
     "query_logs": [
@@ -37,7 +37,7 @@
                 "Ed Wood"
             ],
             "faiss_metrics": {
-                "latency_ms": 7.290000008651987,
+                "latency_ms": 9.131400001933798,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -54,7 +54,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 52.67820000881329,
+                "latency_ms": 52.57909998181276,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -71,20 +71,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 46.49410001002252,
-                "mrr": 0.5,
-                "hit_success": true,
+                "latency_ms": 4.56329999724403,
+                "mrr": 0.0,
+                "hit_success": false,
                 "returned_ids": [
-                    "Ed Wood (film)",
-                    "Ed Wood",
                     "Bob Atkins (American football)",
                     "John Scott (ice hockey)",
+                    "Scott Carson",
                     "Calvin Tyler Scott",
-                    "Helen Atkinson-Wood",
-                    "Michael Crawford",
-                    "John Ince (actor)",
                     "Scott Parkin",
-                    "Scott Young (American football)"
+                    "Scott Young (American football)",
+                    "Ian Harland",
+                    "James Packer",
+                    "Robert Edric",
+                    "Will Self"
                 ]
             }
         },
@@ -96,7 +96,7 @@
                 "Shirley Temple"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.5087999927345663,
+                "latency_ms": 1.5499000146519393,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -113,7 +113,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 5.551899987040088,
+                "latency_ms": 4.784099990502,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -130,7 +130,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 47.668400016846135,
+                "latency_ms": 2.3184999881777912,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -140,10 +140,10 @@
                     "Araby Lockhart",
                     "Janet Waldo",
                     "Francesca Eastwood",
-                    "Mamie Gummer",
-                    "Emily Jewell",
-                    "Sara Botsford",
-                    "Doddanna"
+                    "Judas Kiss (1998 film)",
+                    "The Colleen Bawn",
+                    "Pamela B. Green",
+                    "Mamie Gummer"
                 ]
             }
         },
@@ -155,7 +155,7 @@
                 "The Hork-Bajir Chronicles"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2907000200357288,
+                "latency_ms": 1.3827999937348068,
                 "mrr": 0.2,
                 "hit_success": true,
                 "returned_ids": [
@@ -172,7 +172,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.295400005299598,
+                "latency_ms": 3.96179998642765,
                 "mrr": 0.2,
                 "hit_success": true,
                 "returned_ids": [
@@ -189,7 +189,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 33.647800009930506,
+                "latency_ms": 2.5519999908283353,
                 "mrr": 0.2,
                 "hit_success": true,
                 "returned_ids": [
@@ -201,8 +201,8 @@
                     "The Hork-Bajir Chronicles",
                     "The Divide trilogy",
                     "Red Queen (novel)",
-                    "Jeff Sampson",
-                    "I Am a Dalek"
+                    "A. J. Hartley",
+                    "Jeff Sampson"
                 ]
             }
         },
@@ -214,7 +214,7 @@
                 "Esma Sultan Mansion"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.971699995920062,
+                "latency_ms": 1.3998000067658722,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -231,7 +231,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.524199990555644,
+                "latency_ms": 3.270199988037348,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -248,7 +248,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 51.2559000053443,
+                "latency_ms": 2.584500005468726,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -269,11 +269,11 @@
             "query_index": 4,
             "question": "The director of the romantic comedy \"Big Stone Gap\" is based in what New York city?",
             "golden_parameters": [
-                "Big Stone Gap (film)",
-                "Adriana Trigiani"
+                "Adriana Trigiani",
+                "Big Stone Gap (film)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3769000070169568,
+                "latency_ms": 1.2687999987974763,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -290,7 +290,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.209999984595925,
+                "latency_ms": 3.1824999896343797,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -307,7 +307,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 43.70869998820126,
+                "latency_ms": 2.439800009597093,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -328,11 +328,11 @@
             "query_index": 5,
             "question": "2014 S/S is the debut album of a South Korean boy group that was formed by who?",
             "golden_parameters": [
-                "2014 S/S",
-                "Winner (band)"
+                "Winner (band)",
+                "2014 S/S"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3125000114087015,
+                "latency_ms": 1.6168999718502164,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -349,7 +349,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.110800015041605,
+                "latency_ms": 3.1987999973353,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -366,7 +366,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 48.258099996019155,
+                "latency_ms": 2.225899981567636,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -374,12 +374,12 @@
                     "BTS discography",
                     "List of awards and nominations received by Shinee",
                     "Seventeen discography",
+                    "Seoulite (album)",
                     "History (band)",
                     "List of songs recorded by TVXQ",
                     "Cho Kyuhyun",
                     "B2K",
-                    "Madtown",
-                    "Rabid Neurosis"
+                    "Madtown"
                 ]
             }
         },
@@ -387,11 +387,11 @@
             "query_index": 6,
             "question": "Who was known by his stage name Aladin and helped organizations improve their performance as a consultant?",
             "golden_parameters": [
-                "Management consulting",
-                "Eenasul Fateh"
+                "Eenasul Fateh",
+                "Management consulting"
             ],
             "faiss_metrics": {
-                "latency_ms": 2.4923000019043684,
+                "latency_ms": 1.9848000083584338,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -408,7 +408,24 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 6.273299979511648,
+                "latency_ms": 5.381499999202788,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "Eenasul Fateh",
+                    "Claudio Fern\u00e1ndez-Ar\u00e1oz",
+                    "Management consulting",
+                    "Johnston Forbes-Robertson",
+                    "Darrell Crate",
+                    "Prospect Theatre Company",
+                    "Sean Healey",
+                    "Abdoulaye Ascofar\u00e9",
+                    "Sam E. Jonah",
+                    "Geoffrey Goodwin"
+                ]
+            },
+            "aigvs_metrics": {
+                "latency_ms": 2.460299991071224,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -422,23 +439,6 @@
                     "Abdoulaye Ascofar\u00e9",
                     "Eduardo Portela",
                     "Sam E. Jonah"
-                ]
-            },
-            "aigvs_metrics": {
-                "latency_ms": 47.06710000755265,
-                "mrr": 1.0,
-                "hit_success": true,
-                "returned_ids": [
-                    "Eenasul Fateh",
-                    "Claudio Fern\u00e1ndez-Ar\u00e1oz",
-                    "Management consulting",
-                    "Johnston Forbes-Robertson",
-                    "Darrell Crate",
-                    "Prospect Theatre Company",
-                    "Sean Healey",
-                    "Eduardo Portela",
-                    "Sam E. Jonah",
-                    "Geoffrey Goodwin"
                 ]
             }
         },
@@ -450,7 +450,7 @@
                 "Lewiston Maineiacs"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.6296000103466213,
+                "latency_ms": 1.7213000101037323,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -467,7 +467,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.8294000152964145,
+                "latency_ms": 4.505700024310499,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -484,20 +484,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 41.21100000338629,
+                "latency_ms": 2.208899997640401,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Lewiston Maineiacs",
                     "Dwyer Arena",
+                    "Portland State Vikings football under Jerry Glanville",
                     "Androscoggin Bank Colis\u00e9e",
                     "Cotai Arena",
                     "Manley Field House",
                     "Children's Mercy Park",
                     "Shawnee Mission District Stadium",
                     "2008 Kansas City Wizards season",
-                    "Branch Rickey Arena",
-                    "Toronto Argonauts"
+                    "Branch Rickey Arena"
                 ]
             }
         },
@@ -505,11 +505,11 @@
             "query_index": 8,
             "question": "Who is older, Annie Morton or Terry Richardson?",
             "golden_parameters": [
-                "Annie Morton",
-                "Terry Richardson"
+                "Terry Richardson",
+                "Annie Morton"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.421900000423193,
+                "latency_ms": 1.5323999978136271,
                 "mrr": 0.2,
                 "hit_success": true,
                 "returned_ids": [
@@ -526,7 +526,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.012100020190701,
+                "latency_ms": 4.238299996359274,
                 "mrr": 0.2,
                 "hit_success": true,
                 "returned_ids": [
@@ -543,20 +543,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 38.36310000042431,
-                "mrr": 0.25,
+                "latency_ms": 2.683699975023046,
+                "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
                     "Kenton Richardson",
-                    "Shaunna O'Grady",
-                    "Rebecca Forstadt",
+                    "Sammy Howarth",
                     "Annie Morton",
-                    "Stacey Kent",
                     "Leah Flanagan",
                     "Reed A. Albee",
+                    "Haidee Wright",
                     "Pamela B. Davis",
+                    "Cressida Bonas",
                     "Emily Glaser",
-                    "Shelley Fabares"
+                    "Meriel Forbes"
                 ]
             }
         },
@@ -564,11 +564,11 @@
             "query_index": 9,
             "question": "Are Local H and For Against both from the United States?",
             "golden_parameters": [
-                "Local H",
-                "For Against"
+                "For Against",
+                "Local H"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2833999935537577,
+                "latency_ms": 1.5536000137217343,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -585,7 +585,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.238399997120723,
+                "latency_ms": 4.122300015296787,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -602,7 +602,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 47.25719999987632,
+                "latency_ms": 2.6227000053040683,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -611,11 +611,11 @@
                     "U.S. state",
                     "Hirabayashi v. United States",
                     "United States Peace Index",
-                    "Ancient Order of Hibernians",
+                    "Council of Governors",
                     "DISCLOSE Act",
                     "New England town",
-                    "Immigration policy of Donald Trump",
-                    "Protect America Act of 2007"
+                    "United States",
+                    "Immigration policy of Donald Trump"
                 ]
             }
         },
@@ -627,7 +627,7 @@
                 "University of Kansas"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.282299985177815,
+                "latency_ms": 1.350800012005493,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -644,7 +644,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.1684999994467944,
+                "latency_ms": 3.6054999800398946,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -661,7 +661,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 36.354899988509715,
+                "latency_ms": 2.820800000336021,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -670,11 +670,11 @@
                     "Kansas Jayhawks men's basketball",
                     "KCND",
                     "Shawnee Mission District Stadium",
+                    "Truman Sports Complex",
                     "Downtown Kansas City",
                     "University of Missouri\u2013Kansas City",
                     "Bishop Carroll Catholic High School",
-                    "Kansas",
-                    "KOKO-FM"
+                    "Kansas"
                 ]
             }
         },
@@ -682,11 +682,11 @@
             "query_index": 11,
             "question": "What screenwriter with credits for \"Evolution\" co-wrote a film starring Nicolas Cage and T\u00e9a Leoni?",
             "golden_parameters": [
-                "David Weissman",
-                "The Family Man"
+                "The Family Man",
+                "David Weissman"
             ],
             "faiss_metrics": {
-                "latency_ms": 2.2234999923966825,
+                "latency_ms": 1.580099982675165,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -703,7 +703,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 5.469499999890104,
+                "latency_ms": 4.369900008896366,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -720,20 +720,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 41.66580000310205,
+                "latency_ms": 2.1360999962780625,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
-                    "David Weissman",
                     "The Family Man",
-                    "James Franco",
                     "Damien Dematra",
                     "Glen and Randa",
-                    "Ottavio Alessi",
                     "William Blake Herron",
                     "Enrico Casarosa",
-                    "John Waters",
-                    "Hossein Amini"
+                    "That Man in Istanbul",
+                    "Sebastian Gutierrez",
+                    "Tony Gatlif",
+                    "Francis (film)",
+                    "Time to Kill (1989 film)"
                 ]
             }
         },
@@ -745,7 +745,7 @@
                 "Oh My God (Guns N' Roses song)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3243999856058508,
+                "latency_ms": 1.6216000076383352,
                 "mrr": 0.25,
                 "hit_success": true,
                 "returned_ids": [
@@ -762,7 +762,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.5167000023648143,
+                "latency_ms": 4.60629997542128,
                 "mrr": 0.25,
                 "hit_success": true,
                 "returned_ids": [
@@ -779,20 +779,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 41.447299998253584,
-                "mrr": 0.25,
+                "latency_ms": 2.128899999661371,
+                "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
-                    "Arnold Schwarzenegger filmography",
                     "Guns N' Roses discography",
-                    "Steven Adler",
                     "Oh My God (Guns N' Roses song)",
                     "The Idols with Sid Vicious",
-                    "Bandits (2001 film)",
                     "Broadway Rose (film)",
-                    "Red Mountain (film)",
-                    "Drive Angry",
-                    "Jack Grinnage"
+                    "The Flowers of Romance (band)",
+                    "Last Action Hero",
+                    "Jawbreaker (film)",
+                    "Red (2010 film)",
+                    "Dennis Fimple",
+                    "Elliott Lester"
                 ]
             }
         },
@@ -804,7 +804,7 @@
                 "888 7th Avenue"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3799000007566065,
+                "latency_ms": 1.2923000031150877,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -821,7 +821,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.6476999812293798,
+                "latency_ms": 3.085600008489564,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -838,7 +838,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 46.874500025296584,
+                "latency_ms": 2.2699999972246587,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -863,7 +863,7 @@
                 "1995\u201396 Manchester United F.C. season"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.248000015038997,
+                "latency_ms": 1.2282999814487994,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -880,7 +880,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.262599988374859,
+                "latency_ms": 3.0571999959647655,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -897,7 +897,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 35.322300012921914,
+                "latency_ms": 2.971499983686954,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -922,7 +922,7 @@
                 "Brown State Fishing Lake"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3251999916974455,
+                "latency_ms": 1.3014999858569354,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -939,7 +939,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.101500013144687,
+                "latency_ms": 3.0134999833535403,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -956,7 +956,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 46.28260000026785,
+                "latency_ms": 1.9886000081896782,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -967,9 +967,9 @@
                     "Shawnee State Fishing Lake",
                     "Commanda Lake",
                     "Osage State Fishing Lake",
+                    "Higgins Lake",
                     "Yangzong Lake",
-                    "Brown County, Kansas",
-                    "List of United States cities by area"
+                    "Brown County, Kansas"
                 ]
             }
         },
@@ -977,11 +977,11 @@
             "query_index": 16,
             "question": "The Vermont Catamounts men's soccer team currently competes in a conference that was formerly known as what from 1988 to 1996?",
             "golden_parameters": [
-                "Vermont Catamounts men's soccer",
-                "America East Conference"
+                "America East Conference",
+                "Vermont Catamounts men's soccer"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3378000003285706,
+                "latency_ms": 2.4942999880295247,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -998,7 +998,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.243000003043562,
+                "latency_ms": 3.99440000182949,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1015,20 +1015,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 36.17439998197369,
+                "latency_ms": 3.0583000043407083,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Vermont Catamounts men's soccer",
                     "Vermont Catamounts men's ice hockey",
+                    "Vermont Catamounts men's basketball",
+                    "2010\u201311 Vermont Catamounts men's basketball team",
                     "2016\u201317 Vermont Catamounts men's basketball team",
                     "2013\u201314 Vermont Catamounts men's basketball team",
                     "2012\u201313 Vermont Catamounts men's basketball team",
                     "2015\u201316 Vermont Catamounts men's basketball team",
                     "2011\u201312 Vermont Catamounts men's basketball team",
-                    "Men's football at the 2015 Pacific Games",
-                    "Lewiston Maineiacs",
-                    "Sports Car Club of America"
+                    "Men's football at the 2015 Pacific Games"
                 ]
             }
         },
@@ -1036,11 +1036,11 @@
             "query_index": 17,
             "question": "Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?",
             "golden_parameters": [
-                "Giuseppe Verdi",
-                "Ambroise Thomas"
+                "Ambroise Thomas",
+                "Giuseppe Verdi"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3952000008430332,
+                "latency_ms": 1.7411999870091677,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1057,7 +1057,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.7881000025663525,
+                "latency_ms": 3.2544999849051237,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1074,20 +1074,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 47.739700006786734,
+                "latency_ms": 2.433600020594895,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
+                    "Giuseppe Verdi",
                     "Ambroise Thomas",
                     "Giuseppe Verdi (film)",
                     "Verdi, the King of Melody",
+                    "List of major opera composers",
                     "Ferdinando Provesi",
                     "Lorenzo Ratti",
                     "Tomaso Albinoni",
                     "Jacopo Puccini",
-                    "Cavalleria rusticana (1982 film)",
-                    "Pl\u00e1cido Domingo",
-                    "Domenico Scarlatti"
+                    "Cavalleria rusticana (1982 film)"
                 ]
             }
         },
@@ -1095,11 +1095,11 @@
             "query_index": 18,
             "question": "Roger O. Egeberg was Assistant Secretary for Health and Scientific Affairs during the administration of a president that served during what years?",
             "golden_parameters": [
-                "Richard Nixon",
-                "Roger O. Egeberg"
+                "Roger O. Egeberg",
+                "Richard Nixon"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.280700002098456,
+                "latency_ms": 1.2792999914381653,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1116,7 +1116,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.5721999884117395,
+                "latency_ms": 3.029699990293011,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1133,7 +1133,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 35.72270000586286,
+                "latency_ms": 2.4640000192448497,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1154,11 +1154,11 @@
             "query_index": 19,
             "question": "Which writer was from England, Henry Roth or Robert Erskine Childers?",
             "golden_parameters": [
-                "Robert Erskine Childers",
-                "Henry Roth"
+                "Henry Roth",
+                "Robert Erskine Childers"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.432099990779534,
+                "latency_ms": 1.2531999964267015,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1175,7 +1175,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.487499983748421,
+                "latency_ms": 4.573399986838922,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1192,7 +1192,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 36.691200017230585,
+                "latency_ms": 6.622199987759814,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1202,9 +1202,9 @@
                     "Robert Caesar Childers",
                     "Robert Barton",
                     "Eric Ambler",
-                    "Colin Falconer (writer)",
                     "Molly Childers",
                     "Hunter Davies",
+                    "Evelyn Waugh",
                     "Edmund Robert Harris"
                 ]
             }
@@ -1213,11 +1213,11 @@
             "query_index": 20,
             "question": "Which other Mexican Formula One race car driver has held the podium besides the Force India driver born in 1990?",
             "golden_parameters": [
-                "Formula One drivers from Mexico",
-                "Sergio P\u00e9rez"
+                "Sergio P\u00e9rez",
+                "Formula One drivers from Mexico"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3028000248596072,
+                "latency_ms": 1.4248999941628426,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1234,7 +1234,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.421900008106604,
+                "latency_ms": 3.5909000143874437,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1251,7 +1251,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 34.98369999579154,
+                "latency_ms": 2.3922999971546233,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1276,7 +1276,7 @@
                 "Jim Cummings"
             ],
             "faiss_metrics": {
-                "latency_ms": 2.099300007103011,
+                "latency_ms": 1.267400017241016,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1293,7 +1293,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.3206000118516386,
+                "latency_ms": 3.014899994013831,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1310,20 +1310,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 39.10650001489557,
+                "latency_ms": 2.7581000176724046,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Jim Cummings",
+                    "Kate Higgins",
                     "A Rather Blustery Day",
                     "Barnyard Dawg",
                     "Dan Castellaneta",
                     "Peter Mor\u00e9n (drummer)",
-                    "Brian Doyle-Murray",
                     "Don Rickles",
-                    "Mehrdad Raissi Ardali",
                     "Mark Arm",
-                    "Buddy Baker (composer)"
+                    "Buddy Baker (composer)",
+                    "The Itchy &amp; Scratchy Show"
                 ]
             }
         },
@@ -1331,11 +1331,11 @@
             "query_index": 22,
             "question": "Aside from the Apple Remote, what other device can control the program Apple Remote was originally designed to interact with?",
             "golden_parameters": [
-                "Apple Remote",
-                "Front Row (software)"
+                "Front Row (software)",
+                "Apple Remote"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3242999848444015,
+                "latency_ms": 1.437600003555417,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1352,7 +1352,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.3811999892350286,
+                "latency_ms": 3.632699983427301,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1369,20 +1369,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 39.10439999890514,
-                "mrr": 0.25,
+                "latency_ms": 1.93500000750646,
+                "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
+                    "Apple Remote",
+                    "Apple Remote Desktop",
+                    "Siri Remote",
                     "Remote control",
                     "Universal remote",
                     "NetSupport Manager",
                     "Front Row (software)",
+                    "Apple Watch",
                     "MacScan",
-                    "Proginet",
-                    "System Information (Mac)",
-                    "Mac OS X 10.2",
-                    "Chrisann Brennan",
-                    "Shepardson Microsystems"
+                    "Proginet"
                 ]
             }
         },
@@ -1390,11 +1390,11 @@
             "query_index": 23,
             "question": "Which performance act has a higher instrument to person ratio, Badly Drawn Boy or Wolf Alice? ",
             "golden_parameters": [
-                "Wolf Alice",
-                "Badly Drawn Boy"
+                "Badly Drawn Boy",
+                "Wolf Alice"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3837000005878508,
+                "latency_ms": 1.2928000069223344,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1411,7 +1411,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.790699993260205,
+                "latency_ms": 3.1002000032458454,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1428,7 +1428,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 49.20860001584515,
+                "latency_ms": 2.06090000574477,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1449,11 +1449,11 @@
             "query_index": 24,
             "question": "What was the father of Kasper Schmeichel voted to be by the IFFHS in 1992?",
             "golden_parameters": [
-                "Kasper Schmeichel",
-                "Peter Schmeichel"
+                "Peter Schmeichel",
+                "Kasper Schmeichel"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2798999960068613,
+                "latency_ms": 1.2841999996453524,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1470,7 +1470,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.279500000644475,
+                "latency_ms": 3.037399990716949,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1487,20 +1487,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 34.06259999610484,
-                "mrr": 0.0,
-                "hit_success": false,
+                "latency_ms": 2.434399997582659,
+                "mrr": 1.0,
+                "hit_success": true,
                 "returned_ids": [
+                    "Kasper Schmeichel",
                     "Kasper Hvidt",
                     "Isaak Hassler",
+                    "Peter Schmeichel",
                     "Donald Duffy",
                     "G\u00e1bor K\u00f6ves",
                     "Ernst Heinrich Lindemann",
                     "Kevin Sheehan",
                     "Carlos Cunha",
-                    "Marquinhos (footballer, born June 1989)",
-                    "Jordi Cruyff",
-                    "IFFHS World's Best Goalkeeper"
+                    "Marquinhos (footballer, born June 1989)"
                 ]
             }
         },
@@ -1508,11 +1508,11 @@
             "query_index": 25,
             "question": "Who was the writer of These Boots Are Made for Walkin' and who died in 2007?",
             "golden_parameters": [
-                "Lee Hazlewood",
-                "These Boots Are Made for Walkin'"
+                "These Boots Are Made for Walkin'",
+                "Lee Hazlewood"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.5582999913021922,
+                "latency_ms": 1.2826999882236123,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1529,7 +1529,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.0620000034105033,
+                "latency_ms": 3.0892000067979097,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1546,20 +1546,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 49.584099993808195,
+                "latency_ms": 2.4305999977514148,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "These Boots Are Made for Walkin'",
+                    "Boots (EP)",
                     "Boots (album)",
+                    "Nancy Sinatra",
                     "The Twenty-fifth Anniversary Anthology",
+                    "Puss N' Boots/These Boots Are Made for Walkin'",
                     "Kon Kan",
-                    "Charles Andrew Whitney",
+                    "Booty Luv",
                     "Clinton Walker",
-                    "Bad News (band)",
-                    "Verve (1937\u201360)",
-                    "Snow Patrol",
-                    "Darby Crash"
+                    "Bad News (band)"
                 ]
             }
         },
@@ -1567,11 +1567,11 @@
             "query_index": 26,
             "question": "The 2011\u201312 VCU Rams men's basketball team, led by third year head coach Shaka Smart, represented Virginia Commonwealth University which was founded in what year?",
             "golden_parameters": [
-                "2011\u201312 VCU Rams men's basketball team",
-                "Virginia Commonwealth University"
+                "Virginia Commonwealth University",
+                "2011\u201312 VCU Rams men's basketball team"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3291999930515885,
+                "latency_ms": 1.7033999902196229,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -1588,7 +1588,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.5917999921366572,
+                "latency_ms": 4.2212000116705894,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -1605,7 +1605,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 39.21479999553412,
+                "latency_ms": 2.401100005954504,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -1626,11 +1626,11 @@
             "query_index": 27,
             "question": "Are both Dictyosperma, and Huernia described as a genus?",
             "golden_parameters": [
-                "Huernia",
-                "Dictyosperma"
+                "Dictyosperma",
+                "Huernia"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4912000042386353,
+                "latency_ms": 1.2799999967683107,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1647,7 +1647,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 5.450199998449534,
+                "latency_ms": 3.719000000273809,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1664,12 +1664,11 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 46.459300006972626,
+                "latency_ms": 2.496299974154681,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Dictyosperma",
-                    "Huernia",
                     "Ehretia",
                     "Brintonia",
                     "Parodia",
@@ -1677,7 +1676,8 @@
                     "Phlebodium",
                     "Dregea sinensis",
                     "Eustoma russellianum",
-                    "Handleyomys fuscatus"
+                    "Handleyomys fuscatus",
+                    "Lisianthus (disambiguation)"
                 ]
             }
         },
@@ -1685,11 +1685,11 @@
             "query_index": 28,
             "question": "Kaiser Ventures corporation was founded by an American industrialist who became known as the father of modern American shipbuilding?",
             "golden_parameters": [
-                "Kaiser Ventures",
-                "Henry J. Kaiser"
+                "Henry J. Kaiser",
+                "Kaiser Ventures"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3288999907672405,
+                "latency_ms": 1.5985000063665211,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1706,7 +1706,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.8363999919965863,
+                "latency_ms": 4.0917000151239336,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1723,7 +1723,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 40.86159999133088,
+                "latency_ms": 2.359800011618063,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1748,7 +1748,7 @@
                 "Tunnels &amp; Trolls"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3873999996576458,
+                "latency_ms": 1.5319999947678298,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1765,7 +1765,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.606600006809458,
+                "latency_ms": 4.6190000139176846,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1782,7 +1782,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 42.71419998258352,
+                "latency_ms": 2.270000026328489,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1794,8 +1794,8 @@
                     "Gateways (video game)",
                     "Boggle (1997 video game)",
                     "Boggle",
-                    "Mage Gauntlet",
-                    "The Lost Vikings"
+                    "The Ruins of Cawdor",
+                    "Mage Gauntlet"
                 ]
             }
         },
@@ -1807,7 +1807,7 @@
                 "Poison (American band)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4743999927304685,
+                "latency_ms": 1.3177999935578555,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1824,7 +1824,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.8626999885309488,
+                "latency_ms": 4.04770000022836,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1841,7 +1841,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 45.34859998966567,
+                "latency_ms": 2.5846000062301755,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1862,11 +1862,11 @@
             "query_index": 31,
             "question": "Hayden is a singer-songwriter from Canada, but where does Buck-Tick hail from?",
             "golden_parameters": [
-                "Hayden (musician)",
-                "Buck-Tick"
+                "Buck-Tick",
+                "Hayden (musician)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3226000010035932,
+                "latency_ms": 1.3020000187680125,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1883,7 +1883,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 5.038100003730506,
+                "latency_ms": 3.7595000176224858,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1900,10 +1900,11 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 46.06930000591092,
-                "mrr": 0.5,
+                "latency_ms": 2.422300021862611,
+                "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
+                    "Hayden (musician)",
                     "Atsushi Sakurai",
                     "Buck-Tick",
                     "Of Montreal",
@@ -1912,8 +1913,7 @@
                     "Benjamin Clapp",
                     "Luke Laird",
                     "Bullmoose",
-                    "Nomadic Massive",
-                    "Billie Joe Armstrong"
+                    "Nomadic Massive"
                 ]
             }
         },
@@ -1925,7 +1925,7 @@
                 "Charles Nungesser"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.5343000122811645,
+                "latency_ms": 1.2537000002339482,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1942,7 +1942,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.61810001777485,
+                "latency_ms": 3.523000021232292,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1959,7 +1959,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 35.480499995173886,
+                "latency_ms": 2.598599996417761,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -1984,7 +1984,7 @@
                 "In the Realm of the Hackers"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.7921999969985336,
+                "latency_ms": 1.2861000141128898,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2001,7 +2001,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.372800001874566,
+                "latency_ms": 3.542799997376278,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2018,7 +2018,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 45.06850001052953,
+                "latency_ms": 2.6701999886427075,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2027,11 +2027,11 @@
                     "Freaky Eaters (TLC series)",
                     "In the Realm of the Hackers",
                     "American Scary",
+                    "Hackers (film)",
+                    "Freak Dance (film)",
                     "Richard Hammond's Engineering Connections",
-                    "Documentary swarm",
-                    "Television Writers Vault",
-                    "Hidden America with Jonah Ray",
-                    "Our Stories Films"
+                    "Fear (TV series)",
+                    "Documentary swarm"
                 ]
             }
         },
@@ -2043,7 +2043,7 @@
                 "Screaming Trees"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2682999949902296,
+                "latency_ms": 1.2793999921996146,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2060,7 +2060,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.158899984555319,
+                "latency_ms": 3.0325000116135925,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2077,7 +2077,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 36.33360000094399,
+                "latency_ms": 2.3702000034973025,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2098,11 +2098,11 @@
             "query_index": 35,
             "question": "Alexander Kerensky was defeated and destroyed by the Bolsheviks in the course of a civil war that ended when ?",
             "golden_parameters": [
-                "Socialist Revolutionary Party",
-                "Russian Civil War"
+                "Russian Civil War",
+                "Socialist Revolutionary Party"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.715399994282052,
+                "latency_ms": 1.272399997105822,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -2119,7 +2119,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 5.324500001734123,
+                "latency_ms": 3.359099995577708,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -2136,7 +2136,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 56.1331000062637,
+                "latency_ms": 2.091300004394725,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -2157,11 +2157,11 @@
             "query_index": 36,
             "question": "Seven Brief Lessons on Physics was written by an Italian physicist that has worked in France since what year?",
             "golden_parameters": [
-                "Carlo Rovelli",
-                "Seven Brief Lessons on Physics"
+                "Seven Brief Lessons on Physics",
+                "Carlo Rovelli"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4486000000033528,
+                "latency_ms": 1.581200020154938,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2178,7 +2178,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.242500009946525,
+                "latency_ms": 4.294699989259243,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2195,7 +2195,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 34.77189998375252,
+                "latency_ms": 2.8319999983068556,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2205,10 +2205,10 @@
                     "Guido Caldarelli",
                     "Aldo Pontremoli",
                     "Claudio Pellegrini",
+                    "Sergio Ferrara",
                     "Antonino Lo Surdo",
                     "\u00c9milie du Ch\u00e2telet",
-                    "Vincent Kling (translator)",
-                    "Antoine Quinquet"
+                    "Vincent Kling (translator)"
                 ]
             }
         },
@@ -2220,7 +2220,7 @@
                 "World War II casualties"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3103000237606466,
+                "latency_ms": 1.2886000040452927,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2237,7 +2237,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.6917999968864024,
+                "latency_ms": 3.0493000231217593,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2254,20 +2254,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 47.9951000015717,
-                "mrr": 0.0,
-                "hit_success": false,
+                "latency_ms": 2.3680999875068665,
+                "mrr": 1.0,
+                "hit_success": true,
                 "returned_ids": [
+                    "Livesey Hall War Memorial",
                     "Alamein Memorial",
+                    "Vietnam War Memorial, Hanoi",
+                    "Rainham War Memorial",
                     "Freetown Memorial",
-                    "Dras War Memorial",
-                    "Statue of the Viscount Montgomery, London",
-                    "Pondville Cemetery",
-                    "Elmo M. Haney",
-                    "2007 Memorial Cup",
-                    "John MacGregor (VC)",
-                    "Risiera di San Sabba",
-                    "Arab Peace Initiative"
+                    "Tower Hill Memorial",
+                    "Portsmouth Naval Memorial",
+                    "Aisne-Marne American Cemetery and Memorial",
+                    "Arras Flying Services Memorial",
+                    "Masni\u00e8res Newfoundland Memorial"
                 ]
             }
         },
@@ -2279,7 +2279,7 @@
                 "Elko Regional Airport"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.359799993224442,
+                "latency_ms": 1.294599991524592,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2296,7 +2296,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.297299990663305,
+                "latency_ms": 3.428299998631701,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2313,20 +2313,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 42.06720000365749,
+                "latency_ms": 2.2498999896924943,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
+                    "Gerald R. Ford International Airport",
                     "Elko Regional Airport",
+                    "John Glenn Columbus International Airport",
+                    "Bishop International Airport",
+                    "Fort Collins\u2013Loveland Municipal Airport",
+                    "Gerald R. Ford Presidential Library",
+                    "Gerald R. Ford Freeway",
+                    "Topeka Regional Airport",
                     "Eldorado Air Force Station",
-                    "Park Avenue House",
-                    "Logan International Airport",
-                    "Nashville Terminal Subdivision",
-                    "Woodford Aerodrome",
-                    "Narita International Airport",
-                    "M-66 (Michigan highway)",
-                    "Franklin County State Airport",
-                    "Grand Prairie Armed Forces Reserve Complex"
+                    "Park Avenue House"
                 ]
             }
         },
@@ -2338,7 +2338,7 @@
                 "Columbia University"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3905999949201941,
+                "latency_ms": 1.415700011420995,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2355,7 +2355,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.0593000119552016,
+                "latency_ms": 3.0752999882679433,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2372,20 +2372,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 46.10119998687878,
+                "latency_ms": 2.387200016528368,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Ralph Hefferline",
+                    "Chicago Institute for Psychoanalysis",
                     "E. Mavis Hetherington",
                     "Eric Plakun",
                     "Willard Gaylin",
+                    "Columbia University",
                     "Frederick K. Goodwin",
-                    "Jeffrey Stanley",
-                    "David S. Touretzky",
-                    "Theodore Shapiro (psychiatrist)",
-                    "Irwin Marcus",
-                    "Sidney Blatt"
+                    "David H. Bailey",
+                    "William L. Bray",
+                    "Saul V. Levine"
                 ]
             }
         },
@@ -2397,7 +2397,7 @@
                 "Scotch Collie"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3099000207148492,
+                "latency_ms": 1.276700000744313,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2414,7 +2414,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.1596999906469136,
+                "latency_ms": 3.0150999955367297,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2431,7 +2431,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 36.520699999528006,
+                "latency_ms": 2.3560000117868185,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2439,12 +2439,12 @@
                     "English Setter",
                     "Manchester Terrier",
                     "Toy Manchester Terrier",
+                    "Florence Nagle",
                     "Bulldog",
                     "Collie",
-                    "Jack and His Comrades",
-                    "The Shaggy Dog (2006 film)",
-                    "Basset Hound",
-                    "British people"
+                    "Dog Tales (1958 film)",
+                    "Teddy Roosevelt Terrier",
+                    "List of U.S. state dogs"
                 ]
             }
         },
@@ -2456,7 +2456,7 @@
                 "Tata Consultancy Services"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3421000039670616,
+                "latency_ms": 1.3327999913599342,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -2473,7 +2473,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.008199990494177,
+                "latency_ms": 3.119899978628382,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -2490,20 +2490,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 42.780699994182214,
-                "mrr": 1.0,
+                "latency_ms": 2.438600000459701,
+                "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
+                    "Sachin Bansal",
                     "Sachin Warrier",
                     "Keith Bostic",
                     "Dilip Shanghvi",
                     "Digital Media Factory",
+                    "Sachin H. Jain",
                     "Claudio Fern\u00e1ndez-Ar\u00e1oz",
                     "Jory Prum",
-                    "Hany Eitouni",
                     "Sean Healey",
-                    "John Waters",
-                    "Pramod Bhasin"
+                    "John Waters"
                 ]
             }
         },
@@ -2511,11 +2511,11 @@
             "query_index": 42,
             "question": "A Japanese manga series based on a 16 year old high school student Ichitaka Seto, is written and illustrated by someone born in what year?",
             "golden_parameters": [
-                "I&quot;s",
-                "Masakazu Katsura"
+                "Masakazu Katsura",
+                "I&quot;s"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.341299997875467,
+                "latency_ms": 1.909599988721311,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2532,7 +2532,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.740899992408231,
+                "latency_ms": 3.5792000126093626,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2549,7 +2549,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 37.36260000732727,
+                "latency_ms": 2.225799980806187,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2557,12 +2557,12 @@
                     "Hiroshi Shiibashi",
                     "The Kindaichi Case Files",
                     "Nisekoi",
-                    "Sumie Tanaka",
                     "Manga Bible (series)",
                     "Sayo Yamamoto",
-                    "Katri, Girl of the Meadows",
+                    "Naruto: Shippuden (season 21)",
                     "Kyosuke Usuta",
-                    "Morishima Ch\u016bry\u014d"
+                    "Morishima Ch\u016bry\u014d",
+                    "Toshi Ichiyanagi"
                 ]
             }
         },
@@ -2574,7 +2574,7 @@
                 "Battle of Adwa"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3396999856922776,
+                "latency_ms": 1.2669999850913882,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2591,7 +2591,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.305899997940287,
+                "latency_ms": 3.1136000179685652,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2608,20 +2608,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 47.20390000147745,
+                "latency_ms": 2.7794999768957496,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Giuseppe Arimondi",
                     "First Italo-Ethiopian War",
+                    "Battle of Adwa",
                     "Treaty of Addis Ababa",
                     "Second Battle of Agordat",
                     "Battle of Arausio",
                     "Ivo Andri\u0107",
                     "Outline of Ethiopia",
                     "Battle of the Burbia River",
-                    "Tomaso Albinoni",
-                    "Herbert S. Lewis"
+                    "Tomaso Albinoni"
                 ]
             }
         },
@@ -2633,7 +2633,7 @@
                 "Alfred Balk"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2989999959245324,
+                "latency_ms": 1.2814000074286014,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2650,7 +2650,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.0383999983314425,
+                "latency_ms": 3.084099997067824,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2667,7 +2667,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 31.884600000921637,
+                "latency_ms": 2.7325999981258065,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2676,11 +2676,11 @@
                     "Robert R. Hood",
                     "Eric Schultz",
                     "Cynthia Hogan",
+                    "Otto Reich",
                     "Executive Order 10925",
                     "Mark D. Fabiani",
                     "Gregory B. Craig",
-                    "William Allen White",
-                    "C. Hugh Holman"
+                    "William Allen White"
                 ]
             }
         },
@@ -2692,7 +2692,7 @@
                 "Dirleton Castle"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4278999879024923,
+                "latency_ms": 1.27119998796843,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2709,7 +2709,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.7614000029861927,
+                "latency_ms": 2.953900024294853,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2726,7 +2726,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 48.44859999138862,
+                "latency_ms": 2.1176000009290874,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2747,11 +2747,11 @@
             "query_index": 46,
             "question": "Who is the writer of this song that was inspired by words on a tombstone and was the first track on the box set Back to Mono?",
             "golden_parameters": [
-                "Back to Mono (1958\u20131969)",
-                "To Know Him Is to Love Him"
+                "To Know Him Is to Love Him",
+                "Back to Mono (1958\u20131969)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.6481999773532152,
+                "latency_ms": 1.6925999952945858,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -2768,7 +2768,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.08780001453124,
+                "latency_ms": 3.2675999973434955,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -2785,20 +2785,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 54.837800009408966,
+                "latency_ms": 3.511999995680526,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
                     "Ghost Rider (Suicide song)",
                     "Back to Mono (1958\u20131969)",
                     "Sawmill Road",
+                    "Michael Finnegan (song)",
                     "Legend (film score)",
                     "Wildwood Flower (album)",
+                    "The Long Road Home",
                     "Beat Happening/Screaming Trees",
                     "Rebuild (song)",
-                    "Suicide (1977 album)",
-                    "Creedence Clearwater Revival: Box Set",
-                    "We'll Burn That Bridge"
+                    "Nashville Rebel (box set)"
                 ]
             }
         },
@@ -2810,7 +2810,7 @@
                 "World Summit of Nobel Peace Laureates"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.6212000045925379,
+                "latency_ms": 1.4816999901086092,
                 "mrr": 0.25,
                 "hit_success": true,
                 "returned_ids": [
@@ -2827,7 +2827,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.87600002088584,
+                "latency_ms": 4.098299978068098,
                 "mrr": 0.25,
                 "hit_success": true,
                 "returned_ids": [
@@ -2844,7 +2844,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 46.07599999872036,
+                "latency_ms": 2.5690000038594007,
                 "mrr": 0.25,
                 "hit_success": true,
                 "returned_ids": [
@@ -2865,11 +2865,11 @@
             "query_index": 48,
             "question": "Are Ferocactus and Silene both types of plant?",
             "golden_parameters": [
-                "Silene",
-                "Ferocactus"
+                "Ferocactus",
+                "Silene"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.7765999946277589,
+                "latency_ms": 1.3094999885652214,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2886,7 +2886,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.7845999759156257,
+                "latency_ms": 3.1438999867532402,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2903,7 +2903,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 44.37799999141134,
+                "latency_ms": 2.6516999932937324,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2911,12 +2911,12 @@
                     "Silene",
                     "Silene stenophylla",
                     "Silene menziesii",
+                    "Silene suksdorfii",
                     "Silene antirrhina",
                     "Silene conoidea",
                     "Silene tomentosa",
                     "Sex determination in Silene",
-                    "Caladenia",
-                    "Silene latifolia"
+                    "Caladenia"
                 ]
             }
         },
@@ -2924,11 +2924,11 @@
             "query_index": 49,
             "question": "Which British first-generation jet-powered medium bomber was used in the South West Pacific theatre of World War II?",
             "golden_parameters": [
-                "No. 2 Squadron RAAF",
-                "English Electric Canberra"
+                "English Electric Canberra",
+                "No. 2 Squadron RAAF"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4370999997481704,
+                "latency_ms": 1.3088000123389065,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2945,7 +2945,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.44779999088496,
+                "latency_ms": 3.01210000179708,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -2962,20 +2962,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 38.405500003136694,
+                "latency_ms": 2.3569000186398625,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "English Electric Canberra",
+                    "South West Pacific theatre of World War II",
                     "No. 2 Squadron RAAF",
                     "VMF-511",
+                    "Savoia-Marchetti SM.79",
+                    "Asiatic-Pacific Theater",
                     "Edwin A. Doss",
                     "VMF-452",
-                    "No. 12 Squadron RAAF",
-                    "North American Aviation",
-                    "Avro Atlantic",
-                    "VMF-215",
-                    "VMF-222"
+                    "South West Pacific Area (command)",
+                    "No. 12 Squadron RAAF"
                 ]
             }
         },
@@ -2983,11 +2983,11 @@
             "query_index": 50,
             "question": "Which year and which conference was the 14th season for this conference as part of the NCAA Division that the Colorado Buffaloes played in with a record of 2-6 in conference play?",
             "golden_parameters": [
-                "2009 Colorado Buffaloes football team",
-                "2009 Big 12 Conference football season"
+                "2009 Big 12 Conference football season",
+                "2009 Colorado Buffaloes football team"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3632000191137195,
+                "latency_ms": 1.2956999999005347,
                 "mrr": 0.2,
                 "hit_success": true,
                 "returned_ids": [
@@ -3004,7 +3004,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.874099988024682,
+                "latency_ms": 3.2949000014923513,
                 "mrr": 0.2,
                 "hit_success": true,
                 "returned_ids": [
@@ -3021,7 +3021,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 37.28340001543984,
+                "latency_ms": 2.11130001116544,
                 "mrr": 0.2,
                 "hit_success": true,
                 "returned_ids": [
@@ -3033,8 +3033,8 @@
                     "2014 Colorado Buffaloes football team",
                     "2015 Colorado Buffaloes football team",
                     "2012 Colorado Buffaloes football team",
-                    "1956 NAIA Division I Men's Basketball Tournament",
-                    "1943 NAIA Division I Men's Basketball Tournament"
+                    "1989 Colorado Buffaloes football team",
+                    "1956 NAIA Division I Men's Basketball Tournament"
                 ]
             }
         },
@@ -3042,11 +3042,11 @@
             "query_index": 51,
             "question": "In 1991 Euromarch\u00e9 was bought by a chain that operated how any hypermarkets at the end of 2016?",
             "golden_parameters": [
-                "Carrefour",
-                "Euromarch\u00e9"
+                "Euromarch\u00e9",
+                "Carrefour"
             ],
             "faiss_metrics": {
-                "latency_ms": 2.0926999859511852,
+                "latency_ms": 3.0112999957054853,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3063,7 +3063,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.9792000025045127,
+                "latency_ms": 3.5185999877285212,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3080,7 +3080,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 46.778000018093735,
+                "latency_ms": 2.6107000012416393,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3101,11 +3101,11 @@
             "query_index": 52,
             "question": "What race track in the midwest hosts a 500 mile race eavery May?",
             "golden_parameters": [
-                "1957 Indianapolis 500",
-                "Indianapolis Motor Speedway"
+                "Indianapolis Motor Speedway",
+                "1957 Indianapolis 500"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4750999980606139,
+                "latency_ms": 1.305999991018325,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3122,7 +3122,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.8958000077400357,
+                "latency_ms": 4.09219998982735,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3139,7 +3139,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 35.22049999446608,
+                "latency_ms": 2.7957999845966697,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3147,12 +3147,12 @@
                     "1953 Indianapolis 500",
                     "1955 Indianapolis 500",
                     "1952 Indianapolis 500",
+                    "Indianapolis Motor Speedway",
                     "1954 Indianapolis 500",
                     "1951 Indianapolis 500",
                     "Lean Horse Ultramarathon",
                     "1950 Indianapolis 500",
-                    "Illinois State Fairgrounds Racetrack",
-                    "4 \u00d7 400 metres relay"
+                    "Illinois State Fairgrounds Racetrack"
                 ]
             }
         },
@@ -3164,7 +3164,7 @@
                 "Franco Corelli"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3285000168252736,
+                "latency_ms": 1.4109000039752573,
                 "mrr": 0.16666666666666666,
                 "hit_success": true,
                 "returned_ids": [
@@ -3181,7 +3181,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.298999992897734,
+                "latency_ms": 4.191800020635128,
                 "mrr": 0.16666666666666666,
                 "hit_success": true,
                 "returned_ids": [
@@ -3198,7 +3198,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 49.08559998148121,
+                "latency_ms": 2.092099981382489,
                 "mrr": 0.16666666666666666,
                 "hit_success": true,
                 "returned_ids": [
@@ -3223,7 +3223,7 @@
                 "On My Mind (Ellie Goulding song)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.255700015462935,
+                "latency_ms": 1.2878999987151474,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3240,7 +3240,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.0889000045135617,
+                "latency_ms": 3.0478000117000192,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3257,7 +3257,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 33.854100009193644,
+                "latency_ms": 2.582099987193942,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3265,12 +3265,12 @@
                     "Delirium World Tour",
                     "Halcyon (album)",
                     "List of songs recorded by Ellie Goulding",
+                    "Something in the Way You Move",
                     "Flashlight (DJ Fresh song)",
                     "Army (Ellie Goulding song)",
                     "Tori Amos discography",
-                    "On My Mind (Ellie Goulding song)",
-                    "Outside (Calvin Harris song)",
-                    "Amy Corzine"
+                    "Starry Eyed (Ellie Goulding song)",
+                    "On My Mind (Ellie Goulding song)"
                 ]
             }
         },
@@ -3278,11 +3278,11 @@
             "query_index": 55,
             "question": "Which Australian city founded in 1838 contains a boarding school opened by a Prime Minister of Australia and named after a school in London of the same name.",
             "golden_parameters": [
-                "Marion, South Australia",
-                "Westminster School, Adelaide"
+                "Westminster School, Adelaide",
+                "Marion, South Australia"
             ],
             "faiss_metrics": {
-                "latency_ms": 2.007000002777204,
+                "latency_ms": 1.3201000110711902,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3299,7 +3299,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.445400001714006,
+                "latency_ms": 3.2743999909143895,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3316,20 +3316,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 37.35269999015145,
+                "latency_ms": 1.9977999909315258,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Westminster School, Adelaide",
                     "Mossbourne Victoria Park Academy",
+                    "Lyman School for Boys",
                     "High Commission of Australia, London",
+                    "Royal Australian Navy",
                     "Royal Australian Navy Heritage Centre",
+                    "Electoral district of Port Adelaide",
                     "Ross School (East Hampton, New York)",
                     "Parkwood Academy",
-                    "Watercliffe Meadow Community Primary School",
-                    "Lanesborough School",
-                    "Frederic North",
-                    "Peter Blacker"
+                    "Watercliffe Meadow Community Primary School"
                 ]
             }
         },
@@ -3337,11 +3337,11 @@
             "query_index": 56,
             "question": "D1NZ is a series based on what oversteering technique?",
             "golden_parameters": [
-                "D1NZ",
-                "Drifting (motorsport)"
+                "Drifting (motorsport)",
+                "D1NZ"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3696000096388161,
+                "latency_ms": 1.8360000103712082,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3358,37 +3358,37 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.7641999952029437,
+                "latency_ms": 5.449499993119389,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "D1NZ",
+                    "Distal renal tubular acidosis",
                     "Boss Doctor Rhythm DR-110",
                     "Muscular Dystrophy Canada",
+                    "Durvillaea willana",
+                    "World's Toughest Fixes",
+                    "Drifting (motorsport)",
+                    "2014 Trans-Am Series",
+                    "International Harvester S-Series",
+                    "K\u014dhei Uchimura"
+                ]
+            },
+            "aigvs_metrics": {
+                "latency_ms": 2.38389999140054,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "D1NZ",
+                    "Distal renal tubular acidosis",
+                    "Boss Doctor Rhythm DR-110",
+                    "Muscular Dystrophy Canada",
+                    "Durvillaea willana",
                     "World's Toughest Fixes",
                     "Drifting (motorsport)",
                     "Algerian Ligue Professionnelle 1",
                     "2014 Trans-Am Series",
-                    "International Harvester S-Series",
-                    "Guitar Hero",
-                    "Deceit (Doctor Who novel)"
-                ]
-            },
-            "aigvs_metrics": {
-                "latency_ms": 42.09279999486171,
-                "mrr": 1.0,
-                "hit_success": true,
-                "returned_ids": [
-                    "D1NZ",
-                    "Durvillaea willana",
-                    "2014 Trans-Am Series",
-                    "K\u014dhei Uchimura",
-                    "Brylan Van Artsdalen",
-                    "Rock 'n' Roll Marathon Series",
-                    "MG J-type",
-                    "Double Dagger",
-                    "Atomweight",
-                    "Race of a Thousand Years"
+                    "International Harvester S-Series"
                 ]
             }
         },
@@ -3400,7 +3400,7 @@
                 "Jerry Glanville"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3806000060867518,
+                "latency_ms": 2.0986999734304845,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3417,7 +3417,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.4963999825995415,
+                "latency_ms": 6.049699994036928,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3434,7 +3434,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 41.423599992413074,
+                "latency_ms": 2.6307999796699733,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3442,12 +3442,12 @@
                     "Keith Bilbrey",
                     "Keith Bostic",
                     "Stacey Kent",
+                    "Jerry Glanville",
                     "Portland State Vikings football under Jerry Glanville",
                     "Brad Alexander",
+                    "The Bailey Brothers and the Happy Valley Boys",
                     "Ara Babajian",
-                    "Mike Groff",
-                    "Brian Griese",
-                    "Kevin Grubb"
+                    "Mike Groff"
                 ]
             }
         },
@@ -3459,7 +3459,7 @@
                 "Kirton End"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3239000109024346,
+                "latency_ms": 1.4717000012751669,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -3476,7 +3476,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.1421000021509826,
+                "latency_ms": 4.121600009966642,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -3493,7 +3493,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 42.10300001432188,
+                "latency_ms": 2.301899978192523,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -3503,10 +3503,10 @@
                     "Warburton, Punjab, Pakistan",
                     "Ellenbrook, Western Australia",
                     "North Kansas City, Missouri",
+                    "Bangor, Maine",
                     "Demography of Greater Manchester",
-                    "New Town, Tasmania",
-                    "2001 Bangladesh census",
-                    "Goonellabah, New South Wales"
+                    "Demographics of Nauru",
+                    "New Town, Tasmania"
                 ]
             }
         },
@@ -3514,11 +3514,11 @@
             "query_index": 59,
             "question": "Are both Cypress and Ajuga genera?",
             "golden_parameters": [
-                "Cypress",
-                "Ajuga"
+                "Ajuga",
+                "Cypress"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.6216000076383352,
+                "latency_ms": 1.2270000006537884,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -3535,7 +3535,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 2.983700018376112,
+                "latency_ms": 2.9753000126220286,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -3552,20 +3552,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 43.703599978471175,
-                "mrr": 0.5,
+                "latency_ms": 2.1855999948456883,
+                "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
                     "Ajugeae",
+                    "Cypress-pine",
                     "Cypress",
                     "Cupressus",
                     "Ajuga",
                     "Basal angiosperms",
+                    "Tibouchina",
                     "Fokienia",
                     "Libocedrus",
-                    "Cyrtandra (plant)",
-                    "Elatostema",
-                    "Austrobaileyales"
+                    "Cyrtandra (plant)"
                 ]
             }
         },
@@ -3577,7 +3577,7 @@
                 "Muggsy Bogues"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3772999809589237,
+                "latency_ms": 1.285399979678914,
                 "mrr": 0.25,
                 "hit_success": true,
                 "returned_ids": [
@@ -3594,7 +3594,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.8835999730508775,
+                "latency_ms": 3.036900016013533,
                 "mrr": 0.25,
                 "hit_success": true,
                 "returned_ids": [
@@ -3611,20 +3611,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 43.07129999506287,
-                "mrr": 1.0,
+                "latency_ms": 2.152999979443848,
+                "mrr": 0.25,
                 "hit_success": true,
                 "returned_ids": [
+                    "2014\u201315 Charlotte Hornets season",
+                    "Charlotte Hornets",
+                    "Ayana Walker",
                     "Muggsy Bogues",
                     "2003 WNBA season",
+                    "List of Charlotte Hornets seasons",
+                    "Charlotte Hornets all-time roster",
+                    "Charlotte Hornets draft history",
                     "1992\u201393 Charlotte Hornets season",
-                    "Terry Holland",
-                    "John Drew (basketball)",
-                    "Goran Dragi\u0107",
-                    "1999\u20132000 Cleveland Cavaliers season",
-                    "2013\u201314 Phoenix Suns season",
-                    "Buzz Peterson",
-                    "Commissioner of the NBA"
+                    "Terry Holland"
                 ]
             }
         },
@@ -3632,11 +3632,11 @@
             "query_index": 61,
             "question": "What is the name of the executive producer of the film that has a score composed by Jerry Goldsmith?",
             "golden_parameters": [
-                "Alien (soundtrack)",
-                "Alien (film)"
+                "Alien (film)",
+                "Alien (soundtrack)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.8334999913349748,
+                "latency_ms": 1.2897000124212354,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -3653,7 +3653,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.844399983994663,
+                "latency_ms": 3.783099993597716,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -3670,7 +3670,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 46.54789998312481,
+                "latency_ms": 3.490800008876249,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -3691,11 +3691,11 @@
             "query_index": 62,
             "question": "Who was born earlier, Emma Bull or Virginia Woolf?",
             "golden_parameters": [
-                "Virginia Woolf",
-                "Emma Bull"
+                "Emma Bull",
+                "Virginia Woolf"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3444000214803964,
+                "latency_ms": 1.2963000044692308,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3712,7 +3712,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.953899984480813,
+                "latency_ms": 3.136699990136549,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3729,7 +3729,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 41.00149997975677,
+                "latency_ms": 2.669699984835461,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3742,7 +3742,7 @@
                     "Edward F. Albee Foundation",
                     "June Thomson",
                     "Paula Patton",
-                    "Lucy Fry"
+                    "The Mark on the Wall"
                 ]
             }
         },
@@ -3754,7 +3754,7 @@
                 "What Are Little Boys Made Of?"
             ],
             "faiss_metrics": {
-                "latency_ms": 2.4185999936889857,
+                "latency_ms": 1.2978000158909708,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3771,7 +3771,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.2224000024143606,
+                "latency_ms": 3.1482999911531806,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3788,7 +3788,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 41.991000005509704,
+                "latency_ms": 2.8845000197179615,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3813,7 +3813,7 @@
                 "Scott Parkin"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3042000064160675,
+                "latency_ms": 1.2737000070046633,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3830,7 +3830,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.1236000068020076,
+                "latency_ms": 3.2301000028382987,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3847,7 +3847,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 33.22680000565015,
+                "latency_ms": 2.3649000213481486,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3858,9 +3858,9 @@
                     "Chevron Corporation",
                     "David Korten",
                     "Joseph Saunders",
-                    "Bashneft",
                     "Mobil Producing Nigeria",
-                    "Anthony Travers"
+                    "Anthony Travers",
+                    "Jay Rasulo"
                 ]
             }
         },
@@ -3872,7 +3872,7 @@
                 "Rose McGowan"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.618700014660135,
+                "latency_ms": 1.2901000154670328,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3889,7 +3889,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.890200012596324,
+                "latency_ms": 3.1420000013895333,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3906,7 +3906,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 37.778800004161894,
+                "latency_ms": 2.179300005082041,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3931,7 +3931,7 @@
                 "Vince Phillips"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2928000069223344,
+                "latency_ms": 3.569900000002235,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3948,7 +3948,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.4081999910995364,
+                "latency_ms": 4.3972999847028404,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -3965,20 +3965,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 32.6028999988921,
+                "latency_ms": 2.2271000198088586,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Vince Phillips",
+                    "Bones (bull)",
                     "WWC Universal Heavyweight Championship",
                     "Rod Carr",
                     "Jeff Malcolm",
+                    "Fatai Onikeke",
                     "Urijah Faber",
                     "Dean Francis",
                     "Baseball Hall of Fame balloting, 1971",
-                    "Andrew Murray (Guyanese boxer)",
-                    "Steve Foster (boxer)",
-                    "National Italian American Sports Hall of Fame"
+                    "Andrew Murray (Guyanese boxer)"
                 ]
             }
         },
@@ -3990,7 +3990,7 @@
                 "I Don't Wanna Know"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.5753000043332577,
+                "latency_ms": 1.3256999955046922,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -4007,7 +4007,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.171600012341514,
+                "latency_ms": 3.096100001130253,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -4024,7 +4024,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 40.495799999916926,
+                "latency_ms": 2.732799999648705,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -4049,7 +4049,7 @@
                 "The Hard Easy (Adventure Time)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3497000036295503,
+                "latency_ms": 1.2836999958381057,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -4066,7 +4066,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.391299997223541,
+                "latency_ms": 3.363700001500547,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -4083,20 +4083,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 43.985199998132885,
-                "mrr": 0.5,
+                "latency_ms": 2.012299984926358,
+                "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
-                    "The Hard Easy (film)",
                     "The Hard Easy (Adventure Time)",
                     "Hard Ball",
                     "Hard Sell (film)",
                     "Brother from Another Series",
-                    "John Pappas",
+                    "Vanda &amp; Young",
                     "World's Toughest Fixes",
                     "Jeff Hephner",
-                    "Eric Brown (actor)",
-                    "Leo Little's Big Show"
+                    "Double Trouble (U.S. TV series)",
+                    "Leo Little's Big Show",
+                    "Kevin Grubb"
                 ]
             }
         },
@@ -4108,7 +4108,7 @@
                 "2017\u201318 Wigan Athletic F.C. season"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2919000000692904,
+                "latency_ms": 1.3264000008348376,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4125,7 +4125,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 5.685500014806166,
+                "latency_ms": 2.970300003653392,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4142,7 +4142,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 49.03860000194982,
+                "latency_ms": 2.6033000031020492,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4153,9 +4153,9 @@
                     "1978\u201379 Wigan Athletic F.C. season",
                     "List of Wigan Borough F.C. players",
                     "2006\u201307 Ipswich Town F.C. season",
+                    "EFL Cup",
                     "2016 COTIF Tournament",
-                    "Mark Aston",
-                    "Newington Youth F.C."
+                    "Mark Aston"
                 ]
             }
         },
@@ -4167,7 +4167,7 @@
                 "Teen Titans Go! (TV series)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3500000059138983,
+                "latency_ms": 1.365900010569021,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -4184,7 +4184,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.701400011777878,
+                "latency_ms": 2.941800019470975,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4201,12 +4201,12 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 45.247600006405264,
-                "mrr": 1.0,
+                "latency_ms": 2.2438000014517456,
+                "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
-                    "Tara Strong",
                     "Tara Strong filmography",
+                    "Tara Strong",
                     "Teen Titans (season 1)",
                     "List of Teen Titans episodes",
                     "List of Teen Titans Go! episodes",
@@ -4226,7 +4226,7 @@
                 "122nd SS-Standarte"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.8362999835517257,
+                "latency_ms": 2.355600008741021,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4243,7 +4243,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.2179999980144203,
+                "latency_ms": 4.249799996614456,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4260,20 +4260,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 36.67409997433424,
-                "mrr": 0.0,
-                "hit_success": false,
+                "latency_ms": 3.4792999795172364,
+                "mrr": 1.0,
+                "hit_success": true,
                 "returned_ids": [
+                    "122nd SS-Standarte",
+                    "Southaven, Mississippi",
                     "Schutzstaffel",
+                    "SS General von Steuben",
                     "Suorva",
+                    "15th Division (North Korea)",
+                    "Samo's Empire",
+                    "122d Fighter Squadron",
                     "Vilsandi",
-                    "Insubres",
-                    "Finnish presidential election, 1931",
-                    "Montezuma Castle National Monument",
-                    "Land Tenure Reform Association",
-                    "Geography of the Czech Republic",
-                    "Centro de Congresos Queretaro",
-                    "Scharfenstein Castle (Kiedrich)"
+                    "Insubres"
                 ]
             }
         },
@@ -4281,11 +4281,11 @@
             "query_index": 72,
             "question": "What color clothing do people of the Netherlands wear during Oranjegekte or to celebrate the national holiday Koningsdag? ",
             "golden_parameters": [
-                "Koningsdag",
-                "Oranjegekte"
+                "Oranjegekte",
+                "Koningsdag"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3067999971099198,
+                "latency_ms": 1.3433000131044537,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4302,7 +4302,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.402800008188933,
+                "latency_ms": 3.844299993943423,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4319,20 +4319,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 34.46470000199042,
+                "latency_ms": 2.6357000169809908,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Oranjegekte",
                     "Koningsdag",
                     "Queen's Day (disambiguation)",
+                    "Christmas in the Basque Country",
                     "Kanakkan",
                     "Teknival",
-                    "Festival of New Songs",
-                    "Pretty Little Dutch Girl",
-                    "Grand Duke's Official Birthday",
-                    "IK Start",
-                    "Pennacook"
+                    "Dutch language",
+                    "Armed Forces Day (Poland)",
+                    "Children's Day (Japan)",
+                    "Festival of New Songs"
                 ]
             }
         },
@@ -4340,11 +4340,11 @@
             "query_index": 73,
             "question": "What was the name of the 1996 loose adaptation of William Shakespeare's \"Romeo & Juliet\" written by James Gunn?",
             "golden_parameters": [
-                "Tromeo and Juliet",
-                "James Gunn"
+                "James Gunn",
+                "Tromeo and Juliet"
             ],
             "faiss_metrics": {
-                "latency_ms": 2.562699984991923,
+                "latency_ms": 1.4201000158209354,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -4361,7 +4361,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 5.0740999868139625,
+                "latency_ms": 3.09799998649396,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -4378,7 +4378,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 42.08680000738241,
+                "latency_ms": 2.356700017116964,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -4387,11 +4387,11 @@
                     "Romeo and Juliet (1954 film)",
                     "The Tragedy of Romeo and Juliet (film)",
                     "Hamlet (1996 film)",
+                    "Romeo \u00d7 Juliet",
                     "Romeo and Juliet on screen",
                     "Love's Labour's Won",
                     "Macbeth",
-                    "Titus Andronicus",
-                    "Shakespearean tragedy"
+                    "Titus Andronicus"
                 ]
             }
         },
@@ -4403,7 +4403,7 @@
                 "Robert Suettinger"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4702000189572573,
+                "latency_ms": 1.349300000583753,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4420,7 +4420,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.885700018145144,
+                "latency_ms": 4.73519999650307,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4437,20 +4437,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 37.996400002157316,
+                "latency_ms": 2.43130000308156,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Robert Suettinger",
                     "Lawrence Eagleburger",
                     "Robert Barton",
+                    "A. D. Loganathan",
                     "Burton Phillips",
                     "Robert R. Hood",
                     "Robert Caesar Childers",
                     "Lee Terry",
                     "Director of the Defense Intelligence Agency",
-                    "Mark Whitacre",
-                    "Edmund Robert Harris"
+                    "Winfield W. Scott Jr."
                 ]
             }
         },
@@ -4458,11 +4458,11 @@
             "query_index": 75,
             "question": "What American professional Hawaiian surfer born 18 October 1992 won the Rip Curl Pro Portugal?",
             "golden_parameters": [
-                "MEO Rip Curl Pro Portugal",
-                "John John Florence"
+                "John John Florence",
+                "MEO Rip Curl Pro Portugal"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.7460000235587358,
+                "latency_ms": 1.3319999852683395,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4479,7 +4479,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.970399993704632,
+                "latency_ms": 3.501800005324185,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4496,20 +4496,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 46.093499986454844,
+                "latency_ms": 1.9687000021804124,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "MEO Rip Curl Pro Portugal",
                     "John John Florence",
                     "MEO Rip Curl Pro Portugal 2016",
+                    "MEO Rip Curl Pro Portugal 2017",
                     "Andy Irons",
                     "Coco Ho",
                     "Moche Rip Curl Pro Portugal 2015",
                     "Barton Lynch",
-                    "Supertubos",
-                    "Donald Wailan-Walalangi",
-                    "Joseph Benavidez"
+                    "Moche Rip Curl Pro Portugal 2014",
+                    "Supertubos"
                 ]
             }
         },
@@ -4521,7 +4521,7 @@
                 "Bobbi Bacha"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.326699974015355,
+                "latency_ms": 1.262200006749481,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4538,7 +4538,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.1356999825220555,
+                "latency_ms": 3.049299994017929,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4555,20 +4555,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 35.806900006718934,
+                "latency_ms": 3.5342000192031264,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Bobbi Bacha",
                     "Suburban Madness",
+                    "Trabbi Goes to Hollywood",
                     "Madhuri Dixit filmography",
                     "Amy Smart",
                     "Matilda Lutz",
                     "Amy Sewell",
                     "Rebecca Forstadt",
-                    "Charlie McDermott",
-                    "Dennis Fimple",
-                    "Laura Osnes"
+                    "Raz-B",
+                    "Charlie McDermott"
                 ]
             }
         },
@@ -4576,11 +4576,11 @@
             "query_index": 77,
             "question": "Alvaro Mexia had a diplomatic mission with which tribe of indigenous people?",
             "golden_parameters": [
-                "Indigenous peoples of Florida",
-                "Alvaro Mexia"
+                "Alvaro Mexia",
+                "Indigenous peoples of Florida"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.352099992800504,
+                "latency_ms": 1.994000020204112,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4597,7 +4597,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.290200013201684,
+                "latency_ms": 4.214299988234416,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4614,20 +4614,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 37.787699984619394,
+                "latency_ms": 2.436100010527298,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Alvaro Mexia",
-                    "Casqui",
                     "Amaruk Kayshapanta",
                     "Maestro Armando Ortega",
+                    "Mascogos",
                     "Dayuma",
+                    "Tecumseh",
                     "Fernando Tapias Stahelin",
                     "Baltasar Hidalgo de Cisneros",
                     "Eduardo Arellano F\u00e9lix",
-                    "ALBA",
-                    "List of Colombian writers"
+                    "Americo-Liberians"
                 ]
             }
         },
@@ -4639,7 +4639,7 @@
                 "Edmund Leach"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4170999929774553,
+                "latency_ms": 1.2928000069223344,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4656,7 +4656,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.882499993778765,
+                "latency_ms": 3.3343999821227044,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4673,7 +4673,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 40.362500003539026,
+                "latency_ms": 2.6904000260401517,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4694,11 +4694,11 @@
             "query_index": 79,
             "question": "In which year was the King who made the 1925 Birthday Honours born?",
             "golden_parameters": [
-                "George V",
-                "1925 Birthday Honours"
+                "1925 Birthday Honours",
+                "George V"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.7577999969944358,
+                "latency_ms": 1.299199997447431,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4715,7 +4715,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.201000003376976,
+                "latency_ms": 3.0095999827608466,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4732,10 +4732,11 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 37.90120000485331,
-                "mrr": 0.1,
+                "latency_ms": 2.562000008765608,
+                "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
+                    "1925 Birthday Honours",
                     "1951 Birthday Honours",
                     "Birthday Honours",
                     "2017 Birthday Honours",
@@ -4744,8 +4745,7 @@
                     "1965 Birthday Honours",
                     "2013 Birthday Honours",
                     "2015 Birthday Honours",
-                    "Grand Duke's Official Birthday",
-                    "George V"
+                    "Grand Duke's Official Birthday"
                 ]
             }
         },
@@ -4753,11 +4753,11 @@
             "query_index": 80,
             "question": "What is the county seat of the county where East Lempster, New Hampshire is located?",
             "golden_parameters": [
-                "East Lempster, New Hampshire",
-                "Sullivan County, New Hampshire"
+                "Sullivan County, New Hampshire",
+                "East Lempster, New Hampshire"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2764999992214143,
+                "latency_ms": 1.3163999828975648,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4774,7 +4774,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.0485000170301646,
+                "latency_ms": 3.065600001718849,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4791,7 +4791,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 33.52019999874756,
+                "latency_ms": 2.372899994952604,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4812,11 +4812,11 @@
             "query_index": 81,
             "question": "The Album Against the Wind was the 11th Album of a Rock singer Robert C Seger born may 6 1945. What was the Rock singers stage name ?",
             "golden_parameters": [
-                "Against the Wind (album)",
-                "Bob Seger"
+                "Bob Seger",
+                "Against the Wind (album)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3179999950807542,
+                "latency_ms": 1.3841000036336482,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4833,7 +4833,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.6687999963760376,
+                "latency_ms": 3.0801999964751303,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4850,20 +4850,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 42.94669997761957,
+                "latency_ms": 2.744400000665337,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Against the Wind (album)",
                     "Bob Seger",
                     "Orpheo McCord",
+                    "Barbara Higbie",
                     "Lee Hazlewood",
                     "Ride Out (album)",
                     "Jakob Danger",
                     "Pirates of the Mississippi",
                     "Stranger in Town (album)",
-                    "S\u00f8ren Solk\u00e6r",
-                    "Motion City Soundtrack discography"
+                    "S\u00f8ren Solk\u00e6r"
                 ]
             }
         },
@@ -4871,11 +4871,11 @@
             "query_index": 82,
             "question": "Rostker v. Goldberg held that the practice of what way of filling armed forces vacancies was consitutional?",
             "golden_parameters": [
-                "Rostker v. Goldberg",
-                "Conscription in the United States"
+                "Conscription in the United States",
+                "Rostker v. Goldberg"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2520999880507588,
+                "latency_ms": 1.3599999947473407,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4892,7 +4892,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.137899999273941,
+                "latency_ms": 4.832000005990267,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4909,20 +4909,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 34.91139999823645,
+                "latency_ms": 2.9746000072918832,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Rostker v. Goldberg",
+                    "Berghuis v. Thompkins",
+                    "Jane Marum Roush",
                     "Max Hoffmann",
                     "West v. Barnes",
                     "McNeill's Rangers",
                     "Reynolds v. United States",
                     "Friedrich Wilhelm von Steuben",
                     "Craig v. Boren",
-                    "Mississippi University for Women v. Hogan",
-                    "Russian Civil War",
-                    "Irish Brigade (World War I)"
+                    "David Waksberg"
                 ]
             }
         },
@@ -4934,7 +4934,7 @@
                 "Mondelez International"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3233000063337386,
+                "latency_ms": 1.8140999891329557,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4951,7 +4951,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.7985999952070415,
+                "latency_ms": 4.274999984772876,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4968,7 +4968,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 44.523200020194054,
+                "latency_ms": 2.216199995018542,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -4976,12 +4976,12 @@
                     "Mondelez International",
                     "Snack Foods Limited",
                     "Snackbox Food Holdings",
+                    "Jennie-O",
+                    "Twistees",
                     "Robert's American Gourmet Food",
                     "Twisties",
                     "Hormel",
-                    "Vegas Chips",
-                    "Restaurant Brands International",
-                    "Chicago Pizza and Oven Grinder Company"
+                    "Vegas Chips"
                 ]
             }
         },
@@ -4989,11 +4989,11 @@
             "query_index": 84,
             "question": "What was the name of a woman from the book titled \"Their Lives: The Women Targeted by the Clinton Machine \" and was also a former white house intern?",
             "golden_parameters": [
-                "Their Lives",
-                "Monica Lewinsky"
+                "Monica Lewinsky",
+                "Their Lives"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4019999944139272,
+                "latency_ms": 1.2645000242628157,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5010,7 +5010,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.0775999766774476,
+                "latency_ms": 3.6331999872345477,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5027,20 +5027,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 41.09179999795742,
+                "latency_ms": 2.511600003344938,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Their Lives",
                     "Monica Lewinsky",
                     "The White House Doctor",
+                    "Kate Millett",
                     "Sexual Politics",
                     "William H. Ginsburg",
                     "Peter W. Smith",
                     "Sonya Taaffe",
                     "Once Upon a Secret",
-                    "Jeanne Marie Ford",
-                    "Lady Mary Fox"
+                    "Jeanne Marie Ford"
                 ]
             }
         },
@@ -5048,11 +5048,11 @@
             "query_index": 85,
             "question": "When was the American lawyer, lobbyist and political consultant who was a senior member of the presidential campaign of Donald Trump born?",
             "golden_parameters": [
-                "Paul Manafort",
-                "Trump campaign\u2013Russian meeting"
+                "Trump campaign\u2013Russian meeting",
+                "Paul Manafort"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3635000213980675,
+                "latency_ms": 1.312199980020523,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5069,7 +5069,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.180100018857047,
+                "latency_ms": 3.284999984316528,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5086,7 +5086,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 42.10839999723248,
+                "latency_ms": 2.5403000181540847,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5111,7 +5111,7 @@
                 "Louren\u00e7o Mutarelli"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3145999982953072,
+                "latency_ms": 1.5247999981511384,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5128,7 +5128,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.0243999790400267,
+                "latency_ms": 3.847099986160174,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5145,7 +5145,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 34.36330001568422,
+                "latency_ms": 2.30679998639971,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5170,7 +5170,7 @@
                 "Garajonay National Park"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3393000117503107,
+                "latency_ms": 1.2678999919444323,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5187,7 +5187,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.621400003088638,
+                "latency_ms": 3.295899980003014,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5204,20 +5204,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 47.42600000463426,
+                "latency_ms": 2.2920000192243606,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Garajonay National Park",
+                    "Teide National Park",
                     "Traeger Park",
-                    "Andrew Johnson National Historic Site",
                     "Crater Lake National Park",
                     "National parks of Taiwan",
                     "Alpine National Park",
                     "Prophetstown State Park",
+                    "Escalante Petrified Forest State Park",
                     "Roque Cinchado",
-                    "Temagami-Lorrain Mine",
-                    "North Cascades National Park"
+                    "Temagami-Lorrain Mine"
                 ]
             }
         },
@@ -5229,7 +5229,7 @@
                 "Roald Dahl"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2965000059921294,
+                "latency_ms": 1.2857000110670924,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5246,7 +5246,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 2.950599999167025,
+                "latency_ms": 3.044499986572191,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5263,7 +5263,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 39.86260000965558,
+                "latency_ms": 3.933800006052479,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5288,7 +5288,7 @@
                 "Aram Avakian"
             ],
             "faiss_metrics": {
-                "latency_ms": 2.2733999940101057,
+                "latency_ms": 1.8145999929402024,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5305,7 +5305,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.73819999024272,
+                "latency_ms": 3.1768000044394284,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5322,10 +5322,11 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 42.730099987238646,
-                "mrr": 0.5,
+                "latency_ms": 2.499900001566857,
+                "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
+                    "Chris Menges",
                     "Yannis Pappas",
                     "Aram Avakian",
                     "Ara Babajian",
@@ -5334,8 +5335,7 @@
                     "Albert Ant\u00e9bi",
                     "Alistair Grant",
                     "Claudio Fern\u00e1ndez-Ar\u00e1oz",
-                    "Mat Dan",
-                    "Ottavio Alessi"
+                    "Mat Dan"
                 ]
             }
         },
@@ -5347,7 +5347,7 @@
                 "The Conversation (website)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.272399997105822,
+                "latency_ms": 1.3137999922037125,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5364,7 +5364,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.136999992420897,
+                "latency_ms": 3.0891000060364604,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5381,7 +5381,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 34.096799994586036,
+                "latency_ms": 2.175399975385517,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5406,7 +5406,7 @@
                 "John Waters"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4402000233530998,
+                "latency_ms": 1.3343000027816743,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5423,7 +5423,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.7047000078018755,
+                "latency_ms": 3.7229000008665025,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5440,10 +5440,11 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 47.007600020151585,
-                "mrr": 0.0,
-                "hit_success": false,
+                "latency_ms": 2.5270000041928142,
+                "mrr": 1.0,
+                "hit_success": true,
                 "returned_ids": [
+                    "18th Independent Spirit Awards",
                     "32nd Independent Spirit Awards",
                     "28th Independent Spirit Awards",
                     "Independent Spirit Award for Best Cinematography",
@@ -5452,8 +5453,7 @@
                     "Independent Spirit Awards",
                     "74th Academy Awards",
                     "Governors Awards",
-                    "2014 Young Hollywood Awards",
-                    "2016 MTV Movie Awards"
+                    "2014 Young Hollywood Awards"
                 ]
             }
         },
@@ -5461,11 +5461,11 @@
             "query_index": 92,
             "question": "Where does the hotel and casino located in which Bill Cosby's third album was recorded?",
             "golden_parameters": [
-                "Flamingo Las Vegas",
-                "Why Is There Air?"
+                "Why Is There Air?",
+                "Flamingo Las Vegas"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.2679999927058816,
+                "latency_ms": 1.356699998723343,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -5482,7 +5482,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.0974000110290945,
+                "latency_ms": 3.8144999998621643,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -5499,7 +5499,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 33.919100009370595,
+                "latency_ms": 2.4611999979242682,
                 "mrr": 0.3333333333333333,
                 "hit_success": true,
                 "returned_ids": [
@@ -5520,11 +5520,11 @@
             "query_index": 93,
             "question": "Do the drinks Gibson and Zurracapote both contain gin?",
             "golden_parameters": [
-                "Gibson (cocktail)",
-                "Zurracapote"
+                "Zurracapote",
+                "Gibson (cocktail)"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.5612999850418419,
+                "latency_ms": 1.384199975291267,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -5541,7 +5541,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.865900002187118,
+                "latency_ms": 4.220700007863343,
                 "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
@@ -5558,20 +5558,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 37.781599996378645,
-                "mrr": 1.0,
+                "latency_ms": 3.165300004184246,
+                "mrr": 0.5,
                 "hit_success": true,
                 "returned_ids": [
+                    "Phillips Distilling Company",
                     "Gibson (cocktail)",
                     "Zurracapote",
                     "Ratafia",
                     "Liquidambar",
+                    "List of soft drinks by country",
+                    "Soft drink",
                     "Caesar (cocktail)",
                     "Gin pennant",
-                    "Liquidambar styraciflua",
-                    "Brabejum",
-                    "Light cavalerie vodka",
-                    "Bacon martini"
+                    "Liquidambar styraciflua"
                 ]
             }
         },
@@ -5583,7 +5583,7 @@
                 "London Review of Books"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.4631999947596341,
+                "latency_ms": 1.3297999976202846,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5600,7 +5600,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.311799984658137,
+                "latency_ms": 3.9210999966599047,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5617,11 +5617,12 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 32.99340000376105,
+                "latency_ms": 2.693999995244667,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "London International Documentary Festival",
+                    "Docville",
                     "Doc NYC",
                     "New Haven Documentary Film Festival",
                     "Chagrin Documentary Film Festival",
@@ -5629,8 +5630,7 @@
                     "Le Conversazioni",
                     "Blog Wars",
                     "FreedomFilmFest",
-                    "Palm Springs International Film Festival",
-                    "British Journal"
+                    "Palm Springs International Film Festival"
                 ]
             }
         },
@@ -5642,7 +5642,7 @@
                 "McLean, Virginia"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.287799997953698,
+                "latency_ms": 1.2913999962620437,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5659,7 +5659,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.3665000228211284,
+                "latency_ms": 3.3057999971788377,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5676,20 +5676,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 45.70269997930154,
+                "latency_ms": 2.07419999060221,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
                     "Tysons Galleria",
                     "Tysons, Virginia",
                     "Tysons Corner Center",
+                    "Poughkeepsie Galleria",
+                    "Spring Hill station",
                     "McLean station",
                     "Androscoggin Bank Colis\u00e9e",
-                    "Ring En Espa\u00f1ol",
-                    "The Ring (magazine)",
-                    "Iron Mike Productions",
-                    "Cromwell's Run Rural Historic District",
-                    "Gardnerville, Nevada"
+                    "Gardnerville Branch Jail",
+                    "Cobb Galleria Centre",
+                    "Iron Mike Productions"
                 ]
             }
         },
@@ -5701,7 +5701,7 @@
                 "Viglen"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3367999927140772,
+                "latency_ms": 1.8394000071566552,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5718,7 +5718,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 3.126299998257309,
+                "latency_ms": 4.623000015271828,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5735,20 +5735,20 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 33.76379999099299,
-                "mrr": 0.0,
-                "hit_success": false,
+                "latency_ms": 2.7178000018466264,
+                "mrr": 1.0,
+                "hit_success": true,
                 "returned_ids": [
+                    "Bordan Tkachuk",
                     "TJX Companies",
                     "Jim Lentz",
                     "Ron Joyce",
-                    "Kohlberg Kravis Roberts",
+                    "Keith Bostic",
                     "The Weinstein Company",
                     "Eugene Melnyk",
                     "Darrell Crate",
                     "Alex Algard",
-                    "Jim Puplava",
-                    "David Berry (inventor)"
+                    "Jim Puplava"
                 ]
             }
         },
@@ -5756,11 +5756,11 @@
             "query_index": 97,
             "question": "Which filmmaker was known for animation, Lev Yilmaz or Pamela B. Green?",
             "golden_parameters": [
-                "Pamela B. Green",
-                "Lev Yilmaz"
+                "Lev Yilmaz",
+                "Pamela B. Green"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3581000093836337,
+                "latency_ms": 2.2461000189650804,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5777,7 +5777,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.043699998874217,
+                "latency_ms": 5.802300001960248,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5794,17 +5794,17 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 37.62440002174117,
+                "latency_ms": 3.1319000117946416,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
+                    "Pamela B. Green",
                     "Lev Yilmaz",
                     "Tiz Zaqyah",
-                    "Ralph Bakshi",
                     "Mehrdad Raissi Ardali",
-                    "George Montgomery (actor)",
-                    "Sinclair Hill",
+                    "Semyon Aranovich",
                     "Yair Qedar",
+                    "Maya Gallus",
                     "Aryanto Yuniawan",
                     "A. C. Tirulokchandar",
                     "Bridget Hoffman"
@@ -5819,7 +5819,7 @@
                 "Rabat"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.350599981378764,
+                "latency_ms": 1.6524000093340874,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5836,7 +5836,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 4.049699986353517,
+                "latency_ms": 5.185999994864687,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5853,10 +5853,12 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 44.093299977248535,
-                "mrr": 0.0,
-                "hit_success": false,
+                "latency_ms": 2.5716999953147024,
+                "mrr": 1.0,
+                "hit_success": true,
                 "returned_ids": [
+                    "Moroccan Ambassador to China",
+                    "Rabat",
                     "Urad Rear Banner",
                     "Chahar Right Rear Banner",
                     "Karen Narasaki",
@@ -5864,9 +5866,7 @@
                     "Sinuiju Special Administrative Region",
                     "Yunnan Provincial Museum",
                     "Gwangjang Market",
-                    "Xiapu County",
-                    "Jiangyan District",
-                    "Rong Jing"
+                    "Xiapu County"
                 ]
             }
         },
@@ -5878,7 +5878,7 @@
                 "Fuding"
             ],
             "faiss_metrics": {
-                "latency_ms": 1.3189000019337982,
+                "latency_ms": 1.9162000098731369,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5895,7 +5895,7 @@
                 ]
             },
             "chroma_metrics": {
-                "latency_ms": 5.204399989452213,
+                "latency_ms": 4.50409998302348,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
@@ -5912,7 +5912,7 @@
                 ]
             },
             "aigvs_metrics": {
-                "latency_ms": 40.299100015545264,
+                "latency_ms": 3.2524999987799674,
                 "mrr": 1.0,
                 "hit_success": true,
                 "returned_ids": [
