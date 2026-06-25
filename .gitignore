@@ -3,6 +3,11 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+
+
+msmarco_embeddings_cache_v2_10000.npy
+msmarco_embeddings_cache_v2_100000.npy
+
 # C extensions
 *.so
 

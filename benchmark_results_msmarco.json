@@ -1,0 +1,43 @@
+{
+    "experiment_parameters": {
+        "sample_size": 10000,
+        "total_queries_tested": 200,
+        "top_k_retrieved": 10,
+        "embedding_model": "all-MiniLM-L6-v2"
+    },
+    "global_performance": {
+        "faiss": {
+            "build_time_sec": 4.13583517074585,
+            "total_hits": 199,
+            "avg_latency_ms": 0.5841029999555758,
+            "p99_latency_ms": 0.839660000438016,
+            "mean_mrr": 0.9816666666666667,
+            "memory_mb": 1205.5625
+        },
+        "chroma": {
+            "build_time_sec": 3.299422264099121,
+            "total_hits": 199,
+            "avg_latency_ms": 1.3586149999264308,
+            "p99_latency_ms": 1.755901998913032,
+            "mean_mrr": 0.9816666666666667,
+            "memory_mb": 1312.72265625
+        },
+        "aigvs": {
+            "build_time_sec": 1.9728219509124756,
+            "total_hits": 186,
+            "avg_latency_ms": 1.3181429999895045,
+            "p99_latency_ms": 1.753485998960968,
+            "mean_mrr": 0.9166666666666667,
+            "memory_mb": 1371.1875
+        },
+        "aigvs_c": {
+            "build_time_sec": 0,
+            "total_hits": 0,
+            "avg_latency_ms": 0,
+            "p99_latency_ms": 0,
+            "mean_mrr": 0,
+            "memory_mb": 0
+        }
+    },
+    "query_logs": []
+}

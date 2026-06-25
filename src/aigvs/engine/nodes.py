@@ -155,8 +155,9 @@ class DisjointFamily(BaseNode):
     ):
         super().__init__(node_id, parent_id)
         self.embedding_dim = embedding_dim
-        self.children: Dict[str, BaseNode] = {}
-        self.max_leaf_capacity: int = 250
+        self.children: Dict[str, Union["JointFamily", "DisjointFamily"]] = {}
+        self.chunk_count = 0
+        self.max_leaf_capacity: int = 5000
 
         # Propagated to every leaf this branch creates.
         cfg = pipeline_cfg or {}
@@ -173,22 +174,35 @@ class DisjointFamily(BaseNode):
 
         target_child_ids: List[str] = pipeline_ref.engine.route_query(
             self.node_id, chunk.embedding,
-            max_beam=1, target_confidence=1.0, beta=20.0,
+            max_beam=1, target_confidence=0.95, beta=10.0,
         )
 
         if not target_child_ids or not self.children:
             self._create_leaf_and_insert(chunk, storage, pipeline_ref)
             return
 
+        for child_id in target_child_ids:
+            target_child = self.children[child_id]
+            target_child.insert(chunk, storage, pipeline_ref)
+
         primary_child_id = target_child_ids[0]
         target_child = self.children[primary_child_id]
-        target_child.insert(chunk, storage, pipeline_ref)
 
         if target_child.centroid_vector is not None:
             pipeline_ref.engine.update_attractor(
                 self.node_id, primary_child_id, target_child.centroid_vector
             )
-        self.centroid_vector = target_child.centroid_vector
+            
+        if self.centroid_vector is None:
+            self.centroid_vector = chunk.embedding.copy()
+        else:
+            self.centroid_vector = (
+                (self.centroid_vector * self.chunk_count) + chunk.embedding
+            ) / (self.chunk_count + 1)
+            norm = np.linalg.norm(self.centroid_vector)
+            if norm > 0:
+                self.centroid_vector /= norm
+        self.chunk_count += 1
 
         if (
             isinstance(target_child, JointFamily)
@@ -231,7 +245,7 @@ class DisjointFamily(BaseNode):
         child_id: str,
         storage,
         pipeline_ref: "AIGVSPipeline",
-        cohesion_threshold: float = 0.65,
+        cohesion_threshold: float = 0.70,
     ) -> None:
         """
         Dynamically discover macro-communities inside a bloated leaf and
@@ -271,7 +285,8 @@ class DisjointFamily(BaseNode):
             avg /= avg_norm
         seeds = [X[int(np.argmax(X @ avg))].copy()]
 
-        for _ in range(1, 50):
+        max_seeds = min(15, max(3, int(np.sqrt(len(X)))))
+        for _ in range(1, max_seeds):
             sims = X @ np.array(seeds).T          # (N, K)
             max_sim = np.max(sims, axis=1)         # (N,)
             furthest = int(np.argmin(max_sim))
@@ -313,7 +328,8 @@ class DisjointFamily(BaseNode):
             if np.allclose(centroids, prev, atol=1e-6):
                 break
 
-        assignments = np.argmax(X @ centroids.T, axis=1)
+        sims = X @ centroids.T
+        max_sims = np.max(sims, axis=1)
 
         # --- 4. Hierarchical wiring ---
 
@@ -341,15 +357,17 @@ class DisjointFamily(BaseNode):
             # Register engine-side NSW graph before any inserts.
             pipeline_ref._register_leaf_in_engine(leaf_id, child_id)
             new_leaves.append(leaf)
-
         # Distribute chunks — insert in their original order per community so
         # the NSW graph builds up the same way it would have on live ingestion.
+        assignments = np.argmax(sims, axis=1)
+
         community_chunks: List[List] = [[] for _ in range(num_branches)]
         for i, chunk in enumerate(active_chunks):
             community_chunks[int(assignments[i])].append(chunk)
 
-        for leaf, chunks in zip(new_leaves, community_chunks):
-            for chunk in chunks:
+        for branch_idx in range(num_branches):
+            leaf = new_leaves[branch_idx]
+            for chunk in community_chunks[branch_idx]:
                 leaf.insert(chunk, storage, pipeline_ref)
 
         # Wire populated leaves into the new branch and engine.
@@ -377,3 +395,16 @@ class DisjointFamily(BaseNode):
             self.node_id, child_id, new_branch.centroid_vector
         )
         pipeline_ref.node_registry[child_id] = new_branch
+
+        # --- Recursive depth building ---
+        # If any sub-leaf still exceeds capacity after redistribution,
+        # recursively split it so the tree grows deeper than 2 levels.
+        for leaf in new_leaves:
+            if (
+                isinstance(leaf, JointFamily)
+                and leaf.active_count >= new_branch.max_leaf_capacity
+                and leaf.active_count < 0.9 * len(active_chunks)
+            ):
+                new_branch.execute_native_hopfield_split(
+                    leaf.node_id, storage, pipeline_ref
+                )
