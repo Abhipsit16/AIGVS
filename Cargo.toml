@@ -12,3 +12,6 @@ pyo3 = { version = "0.20", features = ["extension-module"] }
 numpy = "0.20"
 ndarray = { version = "0.15", features = ["rayon"] }
 rayon = "1.8"
+rand = { version = "0.8.5", features = ["std", "std_rng"] }
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.3"

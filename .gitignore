@@ -221,3 +221,5 @@ ingest.py
 query.py
 run_aigvs.py
 stress_test.py
+beir_scidocs_embeddings_cache.npy
+benchmark_results.json

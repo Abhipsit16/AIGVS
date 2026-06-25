@@ -234,7 +234,7 @@ def main():
     aigvs_pipeline = AIGVSPipeline(embedding_dim=EMBEDDING_DIM, storage_path="./benchmark_data")
     from aigvs.storage import InMemoryStorage
     aigvs_pipeline.storage = InMemoryStorage()
-    aigvs_pipeline.root.max_leaf_capacity = 250
+    aigvs_pipeline.root.max_leaf_capacity = 4096
     
     start_time = time.time()
     aigvs_pipeline.ingest_hierarchical_json(aigvs_payload)

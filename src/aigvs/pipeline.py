@@ -6,6 +6,8 @@ from typing import Dict, List, Optional
 from src.aigvs.core.models import TextChunk
 from src.aigvs.storage import LocalJSONStorage
 from src.aigvs.engine.nodes import DisjointFamily, BaseNode, JointFamily
+import time
+from src.aigvs.profiler import add, PROFILE, COUNTS
 import aigvs_rust
 
 
@@ -204,31 +206,26 @@ class AIGVSPipeline:
         self,
         query_embedding: np.ndarray,
         top_k: int = 10,
-        max_beam: int = 30,
-        target_confidence: float = 0.99,
-        beta: float = 5.0,
+        max_beam: int = 5,           # Tighten the default beam
+        target_confidence: float = 0.99, 
+        beta: float = 18.0,          # THE CLIFF
         ef_search: Optional[int] = None,
     ) -> List[dict]:
-        """
-        Parameters
-        ----------
-        ef_search : int, optional
-            NSW candidate pool per leaf at query time.
-            Default: max(top_k * 4, 50).
-            This is the cheapest recall lever — raise it before anything else.
-        beta : float
-            Router softmax temperature.
-            Lower (~2) = exploratory, broader beam.
-            Higher (~20) = greedy, fastest path to the best leaf.
-        """
+        
+        t_total_start = time.perf_counter()
+
+        # 1. Normalization Profiling
+        t_norm_start = time.perf_counter()
         norm = np.linalg.norm(query_embedding)
         if norm > 0:
             query_embedding = query_embedding / norm
+        add("py_01_normalization_ms", (time.perf_counter() - t_norm_start) * 1000)
 
         ef = ef_search if ef_search is not None else max(top_k * 4, 50)
 
-        # Single PyO3 crossing — Rust does all routing + parallel leaf search.
-        matched_ids: List[str] = self.engine.unified_search(
+        # 2. Rust Engine Profiling
+        t_rust_call = time.perf_counter()
+        matched_ids, rust_telemetry = self.engine.unified_search(
             query_embedding,
             top_k=top_k,
             max_beam=max_beam,
@@ -236,16 +233,29 @@ class AIGVSPipeline:
             beta=beta,
             ef_search=ef,
         )
+        add("rust_unified_search_call", (time.perf_counter() - t_rust_call) * 1000)
 
+        # Ingest Rust telemetry into global profile
+        for key, value in rust_telemetry.items():
+            if key in ["attractors_visited_per_query", "leaves_visited_per_query", "total_candidates_scored"]:
+                PROFILE[key] += value  # Pure counters: Add to sum, don't increment calls
+            else:
+                add(key, value) # Timings: Add to sum, increment calls
         if not matched_ids:
             return []
 
-        # O(1) dict lookup per result — no I/O, no deserialization.
-        return [
+        # 3. Payload Cache Lookup Profiling
+        t_cache_start = time.perf_counter()
+        results = [
             self.payload_cache[cid]
             for cid in matched_ids
             if cid in self.payload_cache
         ]
+        add("py_02_payload_cache_ms", (time.perf_counter() - t_cache_start) * 1000)
+        
+        add("py_total_query_ms", (time.perf_counter() - t_total_start) * 1000)
+        
+        return results
 
     # ------------------------------------------------------------------
     # Deletion & Update
