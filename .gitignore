@@ -3,10 +3,14 @@ __pycache__/
 *.py[codz]
 *$py.class
 
-
+hotpot_bench_data
+aigvs_data
+benchmark_data*
+hotpot_embeddings_cache.npy
 
 msmarco_embeddings_cache_v2_10000.npy
 msmarco_embeddings_cache_v2_100000.npy
+msmarco_embeddings_cache_v2*
 
 # C extensions
 *.so

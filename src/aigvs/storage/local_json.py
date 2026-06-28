@@ -2,7 +2,7 @@ import os
 import json
 import re 
 from typing import Optional
-from src.aigvs.core.models import TextChunk
+from aigvs.core.models import TextChunk
 
 class LocalJSONStorage:
     """Manages the raw text payload records on disk, keeping the memory index thin."""

@@ -18,7 +18,7 @@ import numpy as np
 from typing import Dict, List, Set, Optional, TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from src.aigvs.pipeline import AIGVSPipeline
+    from aigvs.pipeline import AIGVSPipeline
 
 
 # ---------------------------------------------------------------------------

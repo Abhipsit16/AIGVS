@@ -181,6 +181,21 @@ fn router_beam_search(
     }
     if !any_above { return vec![]; }
 
+    let mut dynamic_beta = beta;
+    if beta == 0.0 && n > 1 {
+        let mut mean = 0.0;
+        for &s in raw_scores.iter() { mean += s; }
+        mean /= n as f32;
+        let mut var = 0.0;
+        for &s in raw_scores.iter() { var += (s - mean) * (s - mean); }
+        var /= n as f32;
+        if var > 1e-6 {
+            dynamic_beta = 1.0 / var.sqrt();
+        } else {
+            dynamic_beta = 1.0;
+        }
+    }
+
     // Numerically stable softmax with temperature beta, only over activated children.
     let mut exp_sum = 0.0f32;
     let mut probs: Vec<(usize, f32)> = raw_scores
@@ -190,7 +205,7 @@ fn router_beam_search(
             if s < activation_threshold {
                 (i, 0.0f32)
             } else {
-                let e = ((s - max_s) * beta).exp();
+                let e = ((s - max_s) * dynamic_beta).exp();
                 exp_sum += e;
                 (i, e)
             }

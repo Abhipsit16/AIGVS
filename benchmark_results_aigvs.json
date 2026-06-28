@@ -1,0 +1,4831 @@
+{
+    "experiment_parameters": {
+        "sample_size": 100000,
+        "total_queries_tested": 200,
+        "top_k_retrieved": 10,
+        "embedding_model": "all-MiniLM-L6-v2"
+    },
+    "global_performance": {
+        "aigvs": {
+            "build_time_sec": 24.9060378074646,
+            "total_hits": 179,
+            "avg_latency_ms": 1.061342000066361,
+            "p99_latency_ms": 1.7098169987366207,
+            "mean_mrr": 0.8164305555555554,
+            "memory_mb": 373.6171875
+        }
+    },
+    "query_logs": [
+        {
+            "query_index": 0,
+            "question": "define extreme",
+            "golden_parameters": [
+                "2912794"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.2646000013774028,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2912794",
+                    "40214",
+                    "40211",
+                    "40219",
+                    "40217",
+                    "7712",
+                    "40216",
+                    "51459",
+                    "40220",
+                    "39125"
+                ]
+            }
+        },
+        {
+            "query_index": 1,
+            "question": "what does chattel mean on credit history",
+            "golden_parameters": [
+                "1668221"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.1377999999240274,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "73507",
+                    "44554",
+                    "44558",
+                    "69958",
+                    "72717",
+                    "72726",
+                    "54847",
+                    "83084",
+                    "36099",
+                    "36519"
+                ]
+            }
+        },
+        {
+            "query_index": 2,
+            "question": "what was the great leap forward brainly",
+            "golden_parameters": [
+                "3285660"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9463999995205086,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3285660",
+                    "33934",
+                    "70981",
+                    "61624",
+                    "70984",
+                    "70990",
+                    "70983",
+                    "42678",
+                    "70985",
+                    "72563"
+                ]
+            }
+        },
+        {
+            "query_index": 3,
+            "question": "tattoo fixers how much does it cost",
+            "golden_parameters": [
+                "1879754"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7407000011880882,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1879754",
+                    "73752",
+                    "62625",
+                    "73750",
+                    "26586",
+                    "89077",
+                    "92536",
+                    "92533",
+                    "94792",
+                    "82761"
+                ]
+            }
+        },
+        {
+            "query_index": 4,
+            "question": "what is decentralization process.",
+            "golden_parameters": [
+                "189333"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0309999997843988,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "189333",
+                    "59123",
+                    "82237",
+                    "92392",
+                    "64139",
+                    "86179",
+                    "7643",
+                    "4014",
+                    "51028",
+                    "72800"
+                ]
+            }
+        },
+        {
+            "query_index": 5,
+            "question": "what is a bank transit number",
+            "golden_parameters": [
+                "1170310"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.6865999987203395,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "43749",
+                    "35773",
+                    "34902",
+                    "52891",
+                    "35777",
+                    "54479",
+                    "34903",
+                    "53634",
+                    "38767",
+                    "37946"
+                ]
+            }
+        },
+        {
+            "query_index": 6,
+            "question": "how much can i contribute to nondeductible ira",
+            "golden_parameters": [
+                "6487240"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9037999989232048,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6487240",
+                    "7440",
+                    "86308",
+                    "7441",
+                    "7447",
+                    "86310",
+                    "7439",
+                    "7443",
+                    "7444",
+                    "30064"
+                ]
+            }
+        },
+        {
+            "query_index": 7,
+            "question": "what are the four major groups of elements",
+            "golden_parameters": [
+                "299069"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7322000001295237,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "299069",
+                    "735",
+                    "734",
+                    "732",
+                    "37451",
+                    "738",
+                    "1973",
+                    "69677",
+                    "736",
+                    "9627"
+                ]
+            }
+        },
+        {
+            "query_index": 8,
+            "question": "sanitizer temperature",
+            "golden_parameters": [
+                "1147449"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.029299999572686,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "65596",
+                    "81017",
+                    "81015",
+                    "27418",
+                    "54785",
+                    "89724",
+                    "43630",
+                    "72877",
+                    "62472",
+                    "4169"
+                ]
+            }
+        },
+        {
+            "query_index": 9,
+            "question": "blood clots in urine after menopause",
+            "golden_parameters": [
+                "2984158"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7345000012719538,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2984158",
+                    "91504",
+                    "15172",
+                    "4251",
+                    "28499",
+                    "9729",
+                    "28501",
+                    "4252",
+                    "28502",
+                    "28497"
+                ]
+            }
+        },
+        {
+            "query_index": 10,
+            "question": "what is delta in2ition",
+            "golden_parameters": [
+                "6967300"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.006000000415952,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6967300",
+                    "95223",
+                    "24492",
+                    "53883",
+                    "64131",
+                    "24487",
+                    "53881",
+                    "53018",
+                    "23912",
+                    "42871"
+                ]
+            }
+        },
+        {
+            "query_index": 11,
+            "question": "symptoms of an enlarged heart in dogs",
+            "golden_parameters": [
+                "556790"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8619999989605276,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "556790",
+                    "28145",
+                    "1821",
+                    "76762",
+                    "35343",
+                    "45986",
+                    "61722",
+                    "76766",
+                    "28139",
+                    "87137"
+                ]
+            }
+        },
+        {
+            "query_index": 12,
+            "question": "number of times congress voted to repeal aca",
+            "golden_parameters": [
+                "4681169"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8634000005258713,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4681169",
+                    "16624",
+                    "41687",
+                    "16632",
+                    "16629",
+                    "39805",
+                    "16627",
+                    "39803",
+                    "16625",
+                    "41692"
+                ]
+            }
+        },
+        {
+            "query_index": 13,
+            "question": "how is a behavioral crisis defined?",
+            "golden_parameters": [
+                "2918389"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.843699999677483,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2918389",
+                    "83870",
+                    "83868",
+                    "99526",
+                    "43139",
+                    "1650",
+                    "8973",
+                    "30600",
+                    "36190",
+                    "1645"
+                ]
+            }
+        },
+        {
+            "query_index": 14,
+            "question": "how does a firefly light up",
+            "golden_parameters": [
+                "1734362"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.2031999995087972,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "22953",
+                    "96884",
+                    "22951",
+                    "96883",
+                    "96885",
+                    "81617",
+                    "54386",
+                    "96882",
+                    "96881",
+                    "96886"
+                ]
+            }
+        },
+        {
+            "query_index": 15,
+            "question": "what was introduced to the human diet in what year",
+            "golden_parameters": [
+                "5439788",
+                "38114"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0629999997036066,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5439788",
+                    "4887",
+                    "60651",
+                    "10737",
+                    "71189",
+                    "60912",
+                    "6941",
+                    "15569",
+                    "67755",
+                    "16432"
+                ]
+            }
+        },
+        {
+            "query_index": 16,
+            "question": "can you use wallapop on your computer",
+            "golden_parameters": [
+                "5496866"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9115000011661323,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "88418",
+                    "85813",
+                    "85816",
+                    "80039",
+                    "54324",
+                    "76448",
+                    "80042",
+                    "73073",
+                    "3761",
+                    "63501"
+                ]
+            }
+        },
+        {
+            "query_index": 17,
+            "question": "what to add to your water to be healthier",
+            "golden_parameters": [
+                "3463469"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9819999995670514,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "79731",
+                    "79737",
+                    "77990",
+                    "27159",
+                    "77988",
+                    "77993",
+                    "76415",
+                    "89478",
+                    "43168",
+                    "84791"
+                ]
+            }
+        },
+        {
+            "query_index": 18,
+            "question": "is there a generic for ciprodex ear drops",
+            "golden_parameters": [
+                "2060878"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9824999997363193,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2060878",
+                    "23605",
+                    "45947",
+                    "81424",
+                    "81427",
+                    "96871",
+                    "85185",
+                    "32958",
+                    "91442",
+                    "23603"
+                ]
+            }
+        },
+        {
+            "query_index": 19,
+            "question": "what is reinforced mesh",
+            "golden_parameters": [
+                "2268614"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.3002000014239457,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "65671",
+                    "65878",
+                    "2448",
+                    "10965",
+                    "20517",
+                    "53417",
+                    "62394",
+                    "65882",
+                    "40179",
+                    "61416"
+                ]
+            }
+        },
+        {
+            "query_index": 20,
+            "question": "how long can i freeze pork",
+            "golden_parameters": [
+                "2410544"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.6761999993614154,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "84478",
+                    "2410544",
+                    "46605",
+                    "46606",
+                    "92159",
+                    "40680",
+                    "40679",
+                    "25376",
+                    "40686",
+                    "84483"
+                ]
+            }
+        },
+        {
+            "query_index": 21,
+            "question": "which cal state schools have football teams",
+            "golden_parameters": [
+                "2575598"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9356999998999527,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2575598",
+                    "73653",
+                    "73309",
+                    "38568",
+                    "38569",
+                    "38566",
+                    "73647",
+                    "4784",
+                    "51528",
+                    "38564"
+                ]
+            }
+        },
+        {
+            "query_index": 22,
+            "question": "what is the rarest form of iron",
+            "golden_parameters": [
+                "4721621"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.2792000015906524,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4721621",
+                    "39264",
+                    "93781",
+                    "93783",
+                    "93785",
+                    "35368",
+                    "61459",
+                    "13345",
+                    "41668",
+                    "8623"
+                ]
+            }
+        },
+        {
+            "query_index": 23,
+            "question": "what age does pediatrics go up to",
+            "golden_parameters": [
+                "539300"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9830999988480471,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "539300",
+                    "57122",
+                    "57118",
+                    "4364",
+                    "91029",
+                    "4356",
+                    "76952",
+                    "4358",
+                    "76947",
+                    "56012"
+                ]
+            }
+        },
+        {
+            "query_index": 24,
+            "question": "does gasoline come from natural gas",
+            "golden_parameters": [
+                "4922264"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7269000016094651,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4922264",
+                    "87576",
+                    "87585",
+                    "63404",
+                    "63400",
+                    "63401",
+                    "78439",
+                    "63398",
+                    "63403",
+                    "87577"
+                ]
+            }
+        },
+        {
+            "query_index": 25,
+            "question": "routing number hdfc",
+            "golden_parameters": [
+                "6974993"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.6783000007999362,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6974993",
+                    "52892",
+                    "38767",
+                    "37410",
+                    "30549",
+                    "90759",
+                    "53146",
+                    "53029",
+                    "54476",
+                    "53399"
+                ]
+            }
+        },
+        {
+            "query_index": 26,
+            "question": "how much does it cost to screen in a window",
+            "golden_parameters": [
+                "4306603"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7937000009405892,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4306603",
+                    "9669",
+                    "40171",
+                    "9663",
+                    "9670",
+                    "60309",
+                    "71504",
+                    "9664",
+                    "71511",
+                    "11794"
+                ]
+            }
+        },
+        {
+            "query_index": 27,
+            "question": "average temperature in london in august in celsius",
+            "golden_parameters": [
+                "1357377"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7972999992489349,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1357377",
+                    "28600",
+                    "28598",
+                    "63642",
+                    "34826",
+                    "34818",
+                    "34825",
+                    "6932336",
+                    "63638",
+                    "63637"
+                ]
+            }
+        },
+        {
+            "query_index": 28,
+            "question": "average temperatures barcelona israel",
+            "golden_parameters": [
+                "99809",
+                "6932336"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.6791999985580333,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6932336",
+                    "99809",
+                    "98335",
+                    "98337",
+                    "2454",
+                    "2460",
+                    "2455",
+                    "2456",
+                    "98334",
+                    "98333"
+                ]
+            }
+        },
+        {
+            "query_index": 29,
+            "question": "what kind of enzymes produces the streptomyces janthinus?",
+            "golden_parameters": [
+                "4731707"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8705000000190921,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4731707",
+                    "63892",
+                    "11989",
+                    "89281",
+                    "22005",
+                    "23993",
+                    "84620",
+                    "15210",
+                    "28402",
+                    "69694"
+                ]
+            }
+        },
+        {
+            "query_index": 30,
+            "question": "types of roof lines",
+            "golden_parameters": [
+                "6941765"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9393999989697477,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "57797",
+                    "6941765",
+                    "22449",
+                    "32473",
+                    "57804",
+                    "47649",
+                    "57800",
+                    "47650",
+                    "12406",
+                    "22453"
+                ]
+            }
+        },
+        {
+            "query_index": 31,
+            "question": "lewisville texas is in what county",
+            "golden_parameters": [
+                "678404"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8601000008638948,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "678404",
+                    "16349",
+                    "81847",
+                    "69364",
+                    "81165",
+                    "51898",
+                    "87285",
+                    "83099",
+                    "87288",
+                    "82818"
+                ]
+            }
+        },
+        {
+            "query_index": 32,
+            "question": "largest laser cutter in the world",
+            "golden_parameters": [
+                "7024478"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9942000015144004,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "7024478",
+                    "3854",
+                    "63903",
+                    "3092",
+                    "48869",
+                    "54860",
+                    "3089",
+                    "56302",
+                    "3090",
+                    "20479"
+                ]
+            }
+        },
+        {
+            "query_index": 33,
+            "question": "why use cypress mulch",
+            "golden_parameters": [
+                "2590076"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0184000002482207,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2590076",
+                    "80225",
+                    "64270",
+                    "64273",
+                    "64271",
+                    "64267",
+                    "80234",
+                    "80228",
+                    "99168",
+                    "64276"
+                ]
+            }
+        },
+        {
+            "query_index": 34,
+            "question": "does hypokalemia cause dysrhythmias",
+            "golden_parameters": [
+                "5804209"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7508000016969163,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5804209",
+                    "84871",
+                    "7005",
+                    "84988",
+                    "67741",
+                    "54756",
+                    "84987",
+                    "67744",
+                    "994",
+                    "84878"
+                ]
+            }
+        },
+        {
+            "query_index": 35,
+            "question": "human body flexion definition",
+            "golden_parameters": [
+                "1133162"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8147999997163424,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1133162",
+                    "84553",
+                    "33430",
+                    "22106",
+                    "37480",
+                    "1970",
+                    "1969",
+                    "22104",
+                    "37481",
+                    "40220"
+                ]
+            }
+        },
+        {
+            "query_index": 36,
+            "question": "what does it mean to get a headache when you eat sugar",
+            "golden_parameters": [
+                "5971362"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.6503000004158821,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5971362",
+                    "19578",
+                    "44284",
+                    "6564",
+                    "6572",
+                    "15554",
+                    "77659",
+                    "58948",
+                    "24995",
+                    "68162"
+                ]
+            }
+        },
+        {
+            "query_index": 37,
+            "question": "definition of anthropophobia",
+            "golden_parameters": [
+                "6458692",
+                "3678052"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9408000005350914,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3678052",
+                    "6458692",
+                    "4445",
+                    "4449",
+                    "4442",
+                    "79119",
+                    "79120",
+                    "4446",
+                    "79122",
+                    "4447"
+                ]
+            }
+        },
+        {
+            "query_index": 38,
+            "question": "what's the population of baltimore maryland",
+            "golden_parameters": [
+                "1689088"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.897999998414889,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1689088",
+                    "60565",
+                    "58054",
+                    "60568",
+                    "77437",
+                    "74163",
+                    "52768",
+                    "74166",
+                    "49473",
+                    "24824"
+                ]
+            }
+        },
+        {
+            "query_index": 39,
+            "question": "number of seats in rice eccles stadium",
+            "golden_parameters": [
+                "918612"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8760999990045093,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "918612",
+                    "67510",
+                    "67507",
+                    "92096",
+                    "92095",
+                    "56809",
+                    "92099",
+                    "54161",
+                    "92094",
+                    "6668"
+                ]
+            }
+        },
+        {
+            "query_index": 40,
+            "question": "work study average pay",
+            "golden_parameters": [
+                "6216444"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.6914999994478421,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6216444",
+                    "92061",
+                    "37234",
+                    "92063",
+                    "75082",
+                    "37237",
+                    "92640",
+                    "57539",
+                    "67045",
+                    "94139"
+                ]
+            }
+        },
+        {
+            "query_index": 41,
+            "question": "how to straighten a tree that is growing slanted?",
+            "golden_parameters": [
+                "8010584"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8717000000615371,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "8010584",
+                    "31928",
+                    "79232",
+                    "20254",
+                    "35444",
+                    "96843",
+                    "96841",
+                    "20248",
+                    "87785",
+                    "58075"
+                ]
+            }
+        },
+        {
+            "query_index": 42,
+            "question": "what is .arf file",
+            "golden_parameters": [
+                "5229874"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9465999992244178,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5229874",
+                    "14201",
+                    "51510",
+                    "71139",
+                    "48031",
+                    "80655",
+                    "81388",
+                    "80654",
+                    "58325",
+                    "27934"
+                ]
+            }
+        },
+        {
+            "query_index": 43,
+            "question": "what size pump do i need for a 24 above ground pool",
+            "golden_parameters": [
+                "3847218"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9143999996013008,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3847218",
+                    "82746",
+                    "88971",
+                    "82748",
+                    "88973",
+                    "88975",
+                    "82744",
+                    "11515",
+                    "64522",
+                    "88969"
+                ]
+            }
+        },
+        {
+            "query_index": 44,
+            "question": "Keena name meaning",
+            "golden_parameters": [
+                "1595231"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7194999998318963,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1595231",
+                    "75568",
+                    "20545",
+                    "68320",
+                    "37689",
+                    "7663",
+                    "9642",
+                    "8643",
+                    "33396",
+                    "75565"
+                ]
+            }
+        },
+        {
+            "query_index": 45,
+            "question": "define hypersonic",
+            "golden_parameters": [
+                "6385803"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9086000009119743,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6385803",
+                    "18236",
+                    "19792",
+                    "5808",
+                    "851",
+                    "19789",
+                    "33103",
+                    "5803",
+                    "47212",
+                    "47205"
+                ]
+            }
+        },
+        {
+            "query_index": 46,
+            "question": "how long does a letter airmail take",
+            "golden_parameters": [
+                "3540640"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8192999994207639,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3540640",
+                    "34612",
+                    "88124",
+                    "24835",
+                    "52378",
+                    "60800",
+                    "89571",
+                    "79094",
+                    "13627",
+                    "13621"
+                ]
+            }
+        },
+        {
+            "query_index": 47,
+            "question": "what is smog caused by ?",
+            "golden_parameters": [
+                "384114"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7808000009390526,
+                "mrr": 0.3333333333333333,
+                "hit_success": true,
+                "returned_ids": [
+                    "61566",
+                    "61563",
+                    "384114",
+                    "61560",
+                    "61562",
+                    "61565",
+                    "61559",
+                    "61561",
+                    "61567",
+                    "61564"
+                ]
+            }
+        },
+        {
+            "query_index": 48,
+            "question": "how many pools on norwegian epic",
+            "golden_parameters": [
+                "6138466"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0696999997890089,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6138466",
+                    "82609",
+                    "88500",
+                    "26974",
+                    "66036",
+                    "69506",
+                    "88971",
+                    "15464",
+                    "85128",
+                    "88502"
+                ]
+            }
+        },
+        {
+            "query_index": 49,
+            "question": "weight watchers tech support number",
+            "golden_parameters": [
+                "5661384"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8739999993849779,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5661384",
+                    "16482",
+                    "90853",
+                    "52020",
+                    "61536",
+                    "53168",
+                    "90127",
+                    "49952",
+                    "16485",
+                    "71405"
+                ]
+            }
+        },
+        {
+            "query_index": 50,
+            "question": "who were the actresses in cheers?",
+            "golden_parameters": [
+                "3473153"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8422000009886688,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3473153",
+                    "44951",
+                    "35567",
+                    "25207",
+                    "65071",
+                    "82919",
+                    "68503",
+                    "24258",
+                    "41225",
+                    "97903"
+                ]
+            }
+        },
+        {
+            "query_index": 51,
+            "question": "us anesthesia partners nevada",
+            "golden_parameters": [
+                "5255949"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9988999991037417,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5255949",
+                    "12614",
+                    "70639",
+                    "34162",
+                    "58424",
+                    "15119",
+                    "80786",
+                    "64811",
+                    "34156",
+                    "93584"
+                ]
+            }
+        },
+        {
+            "query_index": 52,
+            "question": "what does it mean when your fingernails peel",
+            "golden_parameters": [
+                "1944629"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7936999991215998,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1944629",
+                    "37289",
+                    "12358",
+                    "25854",
+                    "37291",
+                    "25857",
+                    "37295",
+                    "25855",
+                    "37294",
+                    "12361"
+                ]
+            }
+        },
+        {
+            "query_index": 53,
+            "question": "what is a nuclear fuel pellet",
+            "golden_parameters": [
+                "6288427"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8982999988802476,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6288427",
+                    "28191",
+                    "33497",
+                    "33494",
+                    "33493",
+                    "78438",
+                    "28194",
+                    "28190",
+                    "28192",
+                    "28196"
+                ]
+            }
+        },
+        {
+            "query_index": 54,
+            "question": "are ketones ever used for energy",
+            "golden_parameters": [
+                "3422171"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8273999992525205,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3422171",
+                    "60483",
+                    "97826",
+                    "72408",
+                    "97835",
+                    "85744",
+                    "9002",
+                    "78661",
+                    "20875",
+                    "57651"
+                ]
+            }
+        },
+        {
+            "query_index": 55,
+            "question": "what main the function of vacuole",
+            "golden_parameters": [
+                "4452859"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8528999987902353,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4452859",
+                    "12600",
+                    "73843",
+                    "11191",
+                    "72730",
+                    "2323",
+                    "44317",
+                    "65106",
+                    "29429",
+                    "3672"
+                ]
+            }
+        },
+        {
+            "query_index": 56,
+            "question": "what will happen if I connect a 110v motor to a 220v supply",
+            "golden_parameters": [
+                "5065180"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8330000000569271,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "27962",
+                    "13828",
+                    "27959",
+                    "27960",
+                    "13827",
+                    "92802",
+                    "16195",
+                    "13829",
+                    "17798",
+                    "13823"
+                ]
+            }
+        },
+        {
+            "query_index": 57,
+            "question": "how are polymers made",
+            "golden_parameters": [
+                "3118965"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9532999993098201,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "18423",
+                    "3118965",
+                    "13030",
+                    "18432",
+                    "962",
+                    "13031",
+                    "47065",
+                    "960",
+                    "11489",
+                    "18431"
+                ]
+            }
+        },
+        {
+            "query_index": 58,
+            "question": "maranda name meaning",
+            "golden_parameters": [
+                "4598804"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8932000000640983,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4598804",
+                    "21858",
+                    "21850",
+                    "31768",
+                    "21849",
+                    "27031",
+                    "21853",
+                    "47510",
+                    "96412",
+                    "37693"
+                ]
+            }
+        },
+        {
+            "query_index": 59,
+            "question": "how many pairs of chromosomes in a human cell",
+            "golden_parameters": [
+                "302810"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.626300001385971,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "37638",
+                    "302810",
+                    "32337",
+                    "66057",
+                    "66060",
+                    "37642",
+                    "66058",
+                    "99368",
+                    "37643",
+                    "66062"
+                ]
+            }
+        },
+        {
+            "query_index": 60,
+            "question": "schmidt natural corporate address",
+            "golden_parameters": [
+                "386502"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.1439000008977018,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "386502",
+                    "70914",
+                    "64358",
+                    "28955",
+                    "48268",
+                    "86661",
+                    "14953",
+                    "86659",
+                    "367",
+                    "41202"
+                ]
+            }
+        },
+        {
+            "query_index": 61,
+            "question": "symbolism of the bear in native american culture",
+            "golden_parameters": [
+                "6206855"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9565000000293367,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6206855",
+                    "41906",
+                    "80406",
+                    "76613",
+                    "80404",
+                    "76617",
+                    "41900",
+                    "23749",
+                    "8606",
+                    "99787"
+                ]
+            }
+        },
+        {
+            "query_index": 62,
+            "question": "how much is perez hilton worth",
+            "golden_parameters": [
+                "959427"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7512000011047348,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "959427",
+                    "3974",
+                    "3969",
+                    "3970",
+                    "3976",
+                    "3968",
+                    "3971",
+                    "49198",
+                    "10282",
+                    "76231"
+                ]
+            }
+        },
+        {
+            "query_index": 63,
+            "question": "when is the new season of street outlaws",
+            "golden_parameters": [
+                "6137224"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9943000004568603,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6137224",
+                    "29836",
+                    "25504",
+                    "87814",
+                    "17940",
+                    "77971",
+                    "58765",
+                    "56973",
+                    "54273",
+                    "25509"
+                ]
+            }
+        },
+        {
+            "query_index": 64,
+            "question": "what nba rank is westbrook in",
+            "golden_parameters": [
+                "3353380"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7924000001366949,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3353380",
+                    "19349",
+                    "4782",
+                    "91745",
+                    "73033",
+                    "91748",
+                    "29750",
+                    "91741",
+                    "80717",
+                    "73030"
+                ]
+            }
+        },
+        {
+            "query_index": 65,
+            "question": "when to start timeouts with toddlers",
+            "golden_parameters": [
+                "2301983"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8013999995455379,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2301983",
+                    "28948",
+                    "42017",
+                    "19553",
+                    "11679",
+                    "84109",
+                    "11680",
+                    "71180",
+                    "88269",
+                    "42016"
+                ]
+            }
+        },
+        {
+            "query_index": 66,
+            "question": "ardent love definition",
+            "golden_parameters": [
+                "6553421"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9181000004900852,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6553421",
+                    "44996",
+                    "2340006",
+                    "31500",
+                    "81457",
+                    "7109",
+                    "54084",
+                    "63152",
+                    "54087",
+                    "88383"
+                ]
+            }
+        },
+        {
+            "query_index": 67,
+            "question": "what parts of the body does valley fever affect?",
+            "golden_parameters": [
+                "1888234"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8484000009048032,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1888234",
+                    "27577",
+                    "77340",
+                    "78510",
+                    "87162",
+                    "77346",
+                    "14788",
+                    "35888",
+                    "14786",
+                    "77345"
+                ]
+            }
+        },
+        {
+            "query_index": 68,
+            "question": "CLAREMO POST CODE",
+            "golden_parameters": [
+                "4040078"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0261000006721588,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "1983",
+                    "14160",
+                    "44072",
+                    "72389",
+                    "24380",
+                    "24135",
+                    "7311",
+                    "5928",
+                    "31960",
+                    "50986"
+                ]
+            }
+        },
+        {
+            "query_index": 69,
+            "question": "becoming a certified tax consultant",
+            "golden_parameters": [
+                "6423965"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8137999993778067,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6423965",
+                    "27176",
+                    "16591",
+                    "16584",
+                    "16585",
+                    "16588",
+                    "16587",
+                    "27174",
+                    "16589",
+                    "45767"
+                ]
+            }
+        },
+        {
+            "query_index": 70,
+            "question": "what does the washington monument commemorate",
+            "golden_parameters": [
+                "7063688"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.879599998370395,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "7063688",
+                    "11548",
+                    "20216",
+                    "20217",
+                    "20213",
+                    "20215",
+                    "8018",
+                    "82477",
+                    "74474",
+                    "52734"
+                ]
+            }
+        },
+        {
+            "query_index": 71,
+            "question": "difference between half-life and source",
+            "golden_parameters": [
+                "5463889"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9420000005775364,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5463889",
+                    "55801",
+                    "55795",
+                    "55793",
+                    "55797",
+                    "55794",
+                    "55798",
+                    "55800",
+                    "55796",
+                    "60417"
+                ]
+            }
+        },
+        {
+            "query_index": 72,
+            "question": "temperature in april for dublin ireland",
+            "golden_parameters": [
+                "6712997"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7783999990351731,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6712997",
+                    "59129",
+                    "54816",
+                    "59130",
+                    "11884",
+                    "11883",
+                    "59133",
+                    "70551",
+                    "50335",
+                    "49294"
+                ]
+            }
+        },
+        {
+            "query_index": 73,
+            "question": "who is scheherazade",
+            "golden_parameters": [
+                "4998845"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9987000012188219,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4998845",
+                    "75691",
+                    "75690",
+                    "75689",
+                    "73438",
+                    "86658",
+                    "59615",
+                    "86663",
+                    "83353",
+                    "12126"
+                ]
+            }
+        },
+        {
+            "query_index": 74,
+            "question": "what to do with orchid after blossoms fall?",
+            "golden_parameters": [
+                "2776013"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8158000000548782,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2776013",
+                    "52141",
+                    "52142",
+                    "52139",
+                    "52134",
+                    "60373",
+                    "52137",
+                    "52135",
+                    "52143",
+                    "60379"
+                ]
+            }
+        },
+        {
+            "query_index": 75,
+            "question": "what's the peloton",
+            "golden_parameters": [
+                "4602076"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0027999996964354,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4602076",
+                    "19839",
+                    "19838",
+                    "80254",
+                    "19842",
+                    "19843",
+                    "19844",
+                    "83424",
+                    "19835",
+                    "35653"
+                ]
+            }
+        },
+        {
+            "query_index": 76,
+            "question": "starting salary of chiropractor",
+            "golden_parameters": [
+                "6206744"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7420000001729932,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6206744",
+                    "77266",
+                    "89873",
+                    "43086",
+                    "464",
+                    "17448",
+                    "41186",
+                    "75082",
+                    "58423",
+                    "63923"
+                ]
+            }
+        },
+        {
+            "query_index": 77,
+            "question": "what was the ottoman empire before it existed",
+            "golden_parameters": [
+                "1869722"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0285999996995088,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1869722",
+                    "60712",
+                    "77831",
+                    "77335",
+                    "45419",
+                    "26925",
+                    "37304",
+                    "26926",
+                    "45414",
+                    "77826"
+                ]
+            }
+        },
+        {
+            "query_index": 78,
+            "question": "how to study for exam on the bones",
+            "golden_parameters": [
+                "6868040"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.899199998457334,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6868040",
+                    "6725",
+                    "7523",
+                    "43215",
+                    "7524",
+                    "25884",
+                    "34846",
+                    "9172",
+                    "3354",
+                    "25882"
+                ]
+            }
+        },
+        {
+            "query_index": 79,
+            "question": "what is pultrusion",
+            "golden_parameters": [
+                "4588083"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9379000002809335,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4588083",
+                    "27009",
+                    "27002",
+                    "27003",
+                    "27007",
+                    "27006",
+                    "7206",
+                    "32203",
+                    "11486",
+                    "961"
+                ]
+            }
+        },
+        {
+            "query_index": 80,
+            "question": "temp for cooking pork loin",
+            "golden_parameters": [
+                "244737"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9931999993568752,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "244737",
+                    "88147",
+                    "9793",
+                    "46608",
+                    "45175",
+                    "98515",
+                    "9801",
+                    "4886311",
+                    "63020",
+                    "84479"
+                ]
+            }
+        },
+        {
+            "query_index": 81,
+            "question": "what sign does gemini get along with",
+            "golden_parameters": [
+                "3326456"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.132800000050338,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3326456",
+                    "64871",
+                    "30761",
+                    "64933",
+                    "30755",
+                    "64935",
+                    "64934",
+                    "64940",
+                    "19469",
+                    "19472"
+                ]
+            }
+        },
+        {
+            "query_index": 82,
+            "question": "how old is john peter lozinak jr",
+            "golden_parameters": [
+                "4334461"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.919999998586718,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4334461",
+                    "99687",
+                    "37624",
+                    "91533",
+                    "64482",
+                    "2557",
+                    "90923",
+                    "88635",
+                    "99688",
+                    "77932"
+                ]
+            }
+        },
+        {
+            "query_index": 83,
+            "question": "marijuana for weight loss",
+            "golden_parameters": [
+                "6679459"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7406000004266389,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6679459",
+                    "34969",
+                    "34974",
+                    "43060",
+                    "30563",
+                    "83827",
+                    "16574",
+                    "2225567",
+                    "30564",
+                    "34972"
+                ]
+            }
+        },
+        {
+            "query_index": 84,
+            "question": "how to clean a ring around the toilet bowl",
+            "golden_parameters": [
+                "5474431"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.1642999998002779,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5474431",
+                    "5856",
+                    "21686",
+                    "78027",
+                    "35218",
+                    "31734",
+                    "93021",
+                    "93017",
+                    "43354",
+                    "10122"
+                ]
+            }
+        },
+        {
+            "query_index": 85,
+            "question": "what is medieval times",
+            "golden_parameters": [
+                "3270480"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9867999997368315,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "84519",
+                    "42750",
+                    "54060",
+                    "21868",
+                    "55506",
+                    "55509",
+                    "55505",
+                    "75920",
+                    "33677",
+                    "18177"
+                ]
+            }
+        },
+        {
+            "query_index": 86,
+            "question": "slap tear in shoulder definition",
+            "golden_parameters": [
+                "951230"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0860000002139714,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "951230",
+                    "93441",
+                    "93443",
+                    "93442",
+                    "93439",
+                    "93445",
+                    "24105",
+                    "28484",
+                    "95565",
+                    "28490"
+                ]
+            }
+        },
+        {
+            "query_index": 87,
+            "question": "what shoes do most nba players wear",
+            "golden_parameters": [
+                "3681577"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7187999999587191,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3681577",
+                    "26676",
+                    "26678",
+                    "26671",
+                    "73767",
+                    "26674",
+                    "18536",
+                    "26672",
+                    "59478",
+                    "26673"
+                ]
+            }
+        },
+        {
+            "query_index": 88,
+            "question": "what is cultured stone",
+            "golden_parameters": [
+                "1846944"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8328000003530178,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1846944",
+                    "64876",
+                    "7169",
+                    "45314",
+                    "57970",
+                    "87625",
+                    "60795",
+                    "60796",
+                    "87633",
+                    "64880"
+                ]
+            }
+        },
+        {
+            "query_index": 89,
+            "question": "which trimester do we find out sex of child",
+            "golden_parameters": [
+                "262503"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0812000000441913,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "29907",
+                    "29910",
+                    "29904",
+                    "35443",
+                    "11230",
+                    "95995",
+                    "35437",
+                    "28835",
+                    "2127",
+                    "28834"
+                ]
+            }
+        },
+        {
+            "query_index": 90,
+            "question": "what are some of the compounds that are salts",
+            "golden_parameters": [
+                "3731180"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7495000008930219,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3731180",
+                    "18292",
+                    "43635",
+                    "18289",
+                    "72914",
+                    "43634",
+                    "89607",
+                    "58552",
+                    "88629",
+                    "14035"
+                ]
+            }
+        },
+        {
+            "query_index": 91,
+            "question": "what leader created the people's republic of china",
+            "golden_parameters": [
+                "5080680"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7970999995450256,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "60990",
+                    "5080680",
+                    "46369",
+                    "60992",
+                    "46372",
+                    "60985",
+                    "46373",
+                    "60991",
+                    "46365",
+                    "46374"
+                ]
+            }
+        },
+        {
+            "query_index": 92,
+            "question": "what is causing my bruising",
+            "golden_parameters": [
+                "2231550"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0504000001674285,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2231550",
+                    "94856",
+                    "90930",
+                    "90926",
+                    "90932",
+                    "86585",
+                    "86586",
+                    "98692",
+                    "74077",
+                    "54749"
+                ]
+            }
+        },
+        {
+            "query_index": 93,
+            "question": "what does a snapping turtle look like",
+            "golden_parameters": [
+                "7989561"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.226899999892339,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "78197",
+                    "97470",
+                    "59484",
+                    "78198",
+                    "78196",
+                    "84363",
+                    "38626",
+                    "97465",
+                    "75218",
+                    "91396"
+                ]
+            }
+        },
+        {
+            "query_index": 94,
+            "question": "what are the stages of a cold sore",
+            "golden_parameters": [
+                "1387741"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.90979999913543,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1387741",
+                    "55532",
+                    "52546",
+                    "52551",
+                    "52549",
+                    "55528",
+                    "15133",
+                    "52544",
+                    "15136",
+                    "15137"
+                ]
+            }
+        },
+        {
+            "query_index": 95,
+            "question": "what is a gondola",
+            "golden_parameters": [
+                "782787"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.3447000001178822,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "782787",
+                    "86906",
+                    "34677",
+                    "81915",
+                    "3908",
+                    "34676",
+                    "81922",
+                    "9422",
+                    "81921",
+                    "44723"
+                ]
+            }
+        },
+        {
+            "query_index": 96,
+            "question": "what size syringe for insulin",
+            "golden_parameters": [
+                "2964201"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.954999999521533,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2964201",
+                    "89589",
+                    "13236",
+                    "11842",
+                    "33700",
+                    "89591",
+                    "11844",
+                    "21172",
+                    "16270",
+                    "13240"
+                ]
+            }
+        },
+        {
+            "query_index": 97,
+            "question": "fastest animal running in the world",
+            "golden_parameters": [
+                "2695840"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8801000003586523,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "63108",
+                    "63105",
+                    "63107",
+                    "63109",
+                    "16241",
+                    "16242",
+                    "4751",
+                    "43007",
+                    "9366",
+                    "16246"
+                ]
+            }
+        },
+        {
+            "query_index": 98,
+            "question": "when can you change to a booster seat",
+            "golden_parameters": [
+                "4858541"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9343000001535984,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4858541",
+                    "65530",
+                    "1886",
+                    "1888",
+                    "17980",
+                    "1887",
+                    "65532",
+                    "1891",
+                    "65533",
+                    "1883"
+                ]
+            }
+        },
+        {
+            "query_index": 99,
+            "question": "where is the port orleans resort compared to port orleans french quarter resort at disney",
+            "golden_parameters": [
+                "4860308"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8796000001893844,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4860308",
+                    "14552",
+                    "14547",
+                    "14550",
+                    "14555",
+                    "14554",
+                    "14548",
+                    "14549",
+                    "41157",
+                    "14551"
+                ]
+            }
+        },
+        {
+            "query_index": 100,
+            "question": "how many calories in cucumber salad with vinegar",
+            "golden_parameters": [
+                "5425668"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9170000012090895,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5425668",
+                    "19903",
+                    "19900",
+                    "19902",
+                    "19896",
+                    "19897",
+                    "95804",
+                    "95798",
+                    "85490",
+                    "95801"
+                ]
+            }
+        },
+        {
+            "query_index": 101,
+            "question": "difference between nucleophile and electrophile",
+            "golden_parameters": [
+                "2797615"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.777699999161996,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2797615",
+                    "38827",
+                    "63884",
+                    "44229",
+                    "63889",
+                    "28901",
+                    "95379",
+                    "15549",
+                    "70703",
+                    "481"
+                ]
+            }
+        },
+        {
+            "query_index": 102,
+            "question": "what gpa is needed to get into cortland",
+            "golden_parameters": [
+                "1732311"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9446999993087957,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1732311",
+                    "98205",
+                    "98201",
+                    "88115",
+                    "96975",
+                    "1573",
+                    "96971",
+                    "43881",
+                    "44348",
+                    "88112"
+                ]
+            }
+        },
+        {
+            "query_index": 103,
+            "question": "hither definition",
+            "golden_parameters": [
+                "1634793"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0947000009764452,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "86541",
+                    "14356",
+                    "85565",
+                    "98720",
+                    "85560",
+                    "85567",
+                    "21341",
+                    "85562",
+                    "62791",
+                    "21340"
+                ]
+            }
+        },
+        {
+            "query_index": 104,
+            "question": "define larynx",
+            "golden_parameters": [
+                "6648445"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0196999992331257,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6648445",
+                    "65758",
+                    "27147",
+                    "71819",
+                    "71825",
+                    "65751",
+                    "58093",
+                    "65755",
+                    "43265",
+                    "83424"
+                ]
+            }
+        },
+        {
+            "query_index": 105,
+            "question": "labor cost to install tile shower",
+            "golden_parameters": [
+                "92544"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.6664000011369353,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "92542",
+                    "92544",
+                    "92548",
+                    "92543",
+                    "92551",
+                    "16771",
+                    "92549",
+                    "92550",
+                    "92545",
+                    "92547"
+                ]
+            }
+        },
+        {
+            "query_index": 106,
+            "question": "causes of dry sockets",
+            "golden_parameters": [
+                "904260",
+                "904266"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8085000008577481,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "904260",
+                    "904266",
+                    "80723",
+                    "10626",
+                    "36701",
+                    "94980",
+                    "80728",
+                    "56670",
+                    "80721",
+                    "94981"
+                ]
+            }
+        },
+        {
+            "query_index": 107,
+            "question": "how long fry pork chop",
+            "golden_parameters": [
+                "4886311"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.890600000275299,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "84483",
+                    "4886311",
+                    "25377",
+                    "63023",
+                    "63017",
+                    "84482",
+                    "84480",
+                    "25380",
+                    "25379",
+                    "25382"
+                ]
+            }
+        },
+        {
+            "query_index": 108,
+            "question": "are gsa schedule rates fair and reasonable",
+            "golden_parameters": [
+                "3193952"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0094999997818377,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3193952",
+                    "1671",
+                    "1663",
+                    "1670",
+                    "1662",
+                    "3117",
+                    "1664",
+                    "1665",
+                    "29612",
+                    "93738"
+                ]
+            }
+        },
+        {
+            "query_index": 109,
+            "question": "average cost of overnight stay in hospital",
+            "golden_parameters": [
+                "5849447"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7624999998370185,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5849447",
+                    "72225",
+                    "10239",
+                    "15843",
+                    "2044",
+                    "72222",
+                    "27317",
+                    "38859",
+                    "76488",
+                    "96065"
+                ]
+            }
+        },
+        {
+            "query_index": 110,
+            "question": "what can syphilis cause",
+            "golden_parameters": [
+                "251892",
+                "251893",
+                "251895",
+                "251897",
+                "251899"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8954000004450791,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "251893",
+                    "251897",
+                    "251892",
+                    "1420",
+                    "251899",
+                    "251895",
+                    "1414",
+                    "90927",
+                    "72307",
+                    "96212"
+                ]
+            }
+        },
+        {
+            "query_index": 111,
+            "question": "when is the new apple ipad available",
+            "golden_parameters": [
+                "4809807"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.957800000833231,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4809807",
+                    "27990",
+                    "73706",
+                    "27997",
+                    "31911",
+                    "5652",
+                    "82595",
+                    "32949",
+                    "14701",
+                    "58619"
+                ]
+            }
+        },
+        {
+            "query_index": 112,
+            "question": "are Lumbee indians aboriginals",
+            "golden_parameters": [
+                "2170991"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9289999998145504,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2170991",
+                    "78678",
+                    "46052",
+                    "86353",
+                    "41908",
+                    "46056",
+                    "46053",
+                    "4601",
+                    "46057",
+                    "86354"
+                ]
+            }
+        },
+        {
+            "query_index": 113,
+            "question": "how many teeth does the average person lose",
+            "golden_parameters": [
+                "3097424"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7714999992458615,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "91488",
+                    "83945",
+                    "92613",
+                    "71184",
+                    "83946",
+                    "92621",
+                    "58920",
+                    "71177",
+                    "83947",
+                    "59391"
+                ]
+            }
+        },
+        {
+            "query_index": 114,
+            "question": "what do u understand by SI units",
+            "golden_parameters": [
+                "1226804"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7767000006424496,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1226804",
+                    "37363",
+                    "89752",
+                    "23650",
+                    "54379",
+                    "37358",
+                    "96159",
+                    "44960",
+                    "37357",
+                    "89822"
+                ]
+            }
+        },
+        {
+            "query_index": 115,
+            "question": "who sings fly me to the moon in the commercial",
+            "golden_parameters": [
+                "3630583"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9038999996846542,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3630583",
+                    "39857",
+                    "28358",
+                    "21661",
+                    "28359",
+                    "21660",
+                    "28364",
+                    "86790",
+                    "37851",
+                    "52028"
+                ]
+            }
+        },
+        {
+            "query_index": 116,
+            "question": "autism spectrum disorder definition",
+            "golden_parameters": [
+                "480054"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8510000006936025,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "480054",
+                    "18978",
+                    "96601",
+                    "14338",
+                    "70444",
+                    "18980",
+                    "46919",
+                    "14344",
+                    "66112",
+                    "14343"
+                ]
+            }
+        },
+        {
+            "query_index": 117,
+            "question": "what is meant by crib death?",
+            "golden_parameters": [
+                "2337901"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.5304000007745344,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2337901",
+                    "17540",
+                    "97632",
+                    "97636",
+                    "47048",
+                    "4960",
+                    "34312",
+                    "17539",
+                    "47050",
+                    "97634"
+                ]
+            }
+        },
+        {
+            "query_index": 118,
+            "question": "are shareholder loan repayments taxable",
+            "golden_parameters": [
+                "6661555"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0111999999935506,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6661555",
+                    "81176",
+                    "49460",
+                    "91205",
+                    "42575",
+                    "22207",
+                    "91211",
+                    "42576",
+                    "42101",
+                    "84754"
+                ]
+            }
+        },
+        {
+            "query_index": 119,
+            "question": "what is the box ticking",
+            "golden_parameters": [
+                "4832468"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.008300001558382,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4832468",
+                    "79159",
+                    "32535",
+                    "76512",
+                    "71142",
+                    "32008",
+                    "82882",
+                    "935",
+                    "931",
+                    "50754"
+                ]
+            }
+        },
+        {
+            "query_index": 120,
+            "question": "how did dr. myles munroe die",
+            "golden_parameters": [
+                "4265924"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.1432999999669846,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4265924",
+                    "72607",
+                    "14876",
+                    "14872",
+                    "41624",
+                    "14873",
+                    "39237",
+                    "71443",
+                    "23622",
+                    "43185"
+                ]
+            }
+        },
+        {
+            "query_index": 121,
+            "question": "what is the best protein powder for smoothies",
+            "golden_parameters": [
+                "3137708"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7365000001300359,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3137708",
+                    "12410",
+                    "16580",
+                    "16582",
+                    "16576",
+                    "16579",
+                    "15996",
+                    "16578",
+                    "12415",
+                    "65128"
+                ]
+            }
+        },
+        {
+            "query_index": 122,
+            "question": "what does the name hesper mean",
+            "golden_parameters": [
+                "4522819"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7982999995874707,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4522819",
+                    "51314",
+                    "95731",
+                    "51308",
+                    "26424",
+                    "51305",
+                    "95740",
+                    "51306",
+                    "51309",
+                    "51310"
+                ]
+            }
+        },
+        {
+            "query_index": 123,
+            "question": "Vessels that carry blood away from the heart are",
+            "golden_parameters": [
+                "1158717"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.5915000001550652,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1158717",
+                    "25755",
+                    "13063",
+                    "75664",
+                    "13057",
+                    "46649",
+                    "13062",
+                    "34717",
+                    "13061",
+                    "34725"
+                ]
+            }
+        },
+        {
+            "query_index": 124,
+            "question": "what is algebraic geometry",
+            "golden_parameters": [
+                "6271708"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8352000004379079,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6271708",
+                    "41917",
+                    "41916",
+                    "21287",
+                    "21284",
+                    "74957",
+                    "72657",
+                    "96458",
+                    "21288",
+                    "93382"
+                ]
+            }
+        },
+        {
+            "query_index": 125,
+            "question": "what are some example of quasi experiment",
+            "golden_parameters": [
+                "1274845"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.921199998629163,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1274845",
+                    "65112",
+                    "71228",
+                    "77703",
+                    "65117",
+                    "77704",
+                    "71231",
+                    "16325",
+                    "49569",
+                    "77098"
+                ]
+            }
+        },
+        {
+            "query_index": 126,
+            "question": "what is the function of male reproductive system",
+            "golden_parameters": [
+                "5352814"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.6970999984332593,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "81765",
+                    "5352814",
+                    "31006",
+                    "31001",
+                    "31010",
+                    "81763",
+                    "81762",
+                    "31003",
+                    "34353",
+                    "34351"
+                ]
+            }
+        },
+        {
+            "query_index": 127,
+            "question": "definition extradition",
+            "golden_parameters": [
+                "6548524"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8047000010265037,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6548524",
+                    "69124",
+                    "69115",
+                    "90627",
+                    "90624",
+                    "87231",
+                    "39286",
+                    "90622",
+                    "69121",
+                    "18126"
+                ]
+            }
+        },
+        {
+            "query_index": 128,
+            "question": "how is property divided in a common law situation",
+            "golden_parameters": [
+                "467837"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9392000010848278,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "56960",
+                    "2597",
+                    "66935",
+                    "30821",
+                    "47475",
+                    "63364",
+                    "37022",
+                    "37020",
+                    "65990",
+                    "52694"
+                ]
+            }
+        },
+        {
+            "query_index": 129,
+            "question": "what are two types of continental margins?",
+            "golden_parameters": [
+                "1445091"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8940000006987248,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1445091",
+                    "52515",
+                    "52519",
+                    "52522",
+                    "52516",
+                    "31487",
+                    "92779",
+                    "7538",
+                    "52523",
+                    "31494"
+                ]
+            }
+        },
+        {
+            "query_index": 130,
+            "question": "how marijuana is used?",
+            "golden_parameters": [
+                "2225567"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7265000003826572,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "83832",
+                    "2225567",
+                    "83828",
+                    "30563",
+                    "43420",
+                    "45571",
+                    "83827",
+                    "43421",
+                    "83834",
+                    "45574"
+                ]
+            }
+        },
+        {
+            "query_index": 131,
+            "question": "what is chicken afritada",
+            "golden_parameters": [
+                "1182690"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.583899998877314,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1182690",
+                    "77236",
+                    "89844",
+                    "37999",
+                    "37996",
+                    "5630",
+                    "39931",
+                    "94294",
+                    "45438",
+                    "71193"
+                ]
+            }
+        },
+        {
+            "query_index": 132,
+            "question": "how do you loop a song on spotify",
+            "golden_parameters": [
+                "2501370"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.983500000074855,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "75774",
+                    "55128",
+                    "75769",
+                    "75768",
+                    "28604",
+                    "39853",
+                    "83164",
+                    "49468",
+                    "94463",
+                    "94465"
+                ]
+            }
+        },
+        {
+            "query_index": 133,
+            "question": "what nationality is surname gan",
+            "golden_parameters": [
+                "4234763"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.1525999998411862,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4234763",
+                    "73837",
+                    "73835",
+                    "73833",
+                    "53935",
+                    "73838",
+                    "73839",
+                    "72394",
+                    "73834",
+                    "79379"
+                ]
+            }
+        },
+        {
+            "query_index": 134,
+            "question": "what is one example of showing someone humility",
+            "golden_parameters": [
+                "3282119"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0342999994463753,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3282119",
+                    "88708",
+                    "88706",
+                    "88707",
+                    "88709",
+                    "60008",
+                    "88704",
+                    "88702",
+                    "88710",
+                    "60015"
+                ]
+            }
+        },
+        {
+            "query_index": 135,
+            "question": "how often should you really change your oil on a chrysler van",
+            "golden_parameters": [
+                "4192103"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9205000005749753,
+                "mrr": 0.25,
+                "hit_success": true,
+                "returned_ids": [
+                    "49677",
+                    "49675",
+                    "49678",
+                    "4192103",
+                    "49673",
+                    "24614",
+                    "24608",
+                    "80706",
+                    "49676",
+                    "49682"
+                ]
+            }
+        },
+        {
+            "query_index": 136,
+            "question": "how alkalize your body",
+            "golden_parameters": [
+                "4990440"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.769899999795598,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4990440",
+                    "17716",
+                    "17712",
+                    "17715",
+                    "17713",
+                    "17714",
+                    "73673",
+                    "17711",
+                    "17709",
+                    "17710"
+                ]
+            }
+        },
+        {
+            "query_index": 137,
+            "question": "burger king serves lunch hours",
+            "golden_parameters": [
+                "2688130"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.2982000007468741,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2688130",
+                    "29719",
+                    "29720",
+                    "29718",
+                    "29721",
+                    "29724",
+                    "49635",
+                    "29715",
+                    "29717",
+                    "29716"
+                ]
+            }
+        },
+        {
+            "query_index": 138,
+            "question": "what is hotel transylvania rated",
+            "golden_parameters": [
+                "1799851"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9405000000697328,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1799851",
+                    "86924",
+                    "32442",
+                    "37731",
+                    "73219",
+                    "62849",
+                    "62019",
+                    "32446",
+                    "37728",
+                    "71774"
+                ]
+            }
+        },
+        {
+            "query_index": 139,
+            "question": "when did rogue one open",
+            "golden_parameters": [
+                "3997424"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9946999998646788,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3997424",
+                    "67104",
+                    "67102",
+                    "51219",
+                    "67109",
+                    "51221",
+                    "80938",
+                    "12388",
+                    "49512",
+                    "36696"
+                ]
+            }
+        },
+        {
+            "query_index": 140,
+            "question": "how much a sourcing specialist/buyer makes?",
+            "golden_parameters": [
+                "5971971"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8132000002660789,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5971971",
+                    "57877",
+                    "57878",
+                    "57882",
+                    "56071",
+                    "25794",
+                    "94235",
+                    "7096",
+                    "56070",
+                    "56069"
+                ]
+            }
+        },
+        {
+            "query_index": 141,
+            "question": "home remedies cleaning",
+            "golden_parameters": [
+                "5028659"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8803000000625616,
+                "mrr": 0.125,
+                "hit_success": true,
+                "returned_ids": [
+                    "85009",
+                    "97006",
+                    "35221",
+                    "43348",
+                    "89652",
+                    "10096",
+                    "89647",
+                    "5028659",
+                    "46356",
+                    "22070"
+                ]
+            }
+        },
+        {
+            "query_index": 142,
+            "question": "who wrote the protestant ethic and the spirit of capitalism?",
+            "golden_parameters": [
+                "5207504"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0347999996156432,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5207504",
+                    "8753",
+                    "33820",
+                    "87552",
+                    "95926",
+                    "7722",
+                    "30940",
+                    "33822",
+                    "37303",
+                    "11296"
+                ]
+            }
+        },
+        {
+            "query_index": 143,
+            "question": "feistiness definition",
+            "golden_parameters": [
+                "2100063"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0065000005852198,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2100063",
+                    "40630",
+                    "87459",
+                    "7712",
+                    "87462",
+                    "86623",
+                    "60495",
+                    "30635",
+                    "14352",
+                    "54528"
+                ]
+            }
+        },
+        {
+            "query_index": 144,
+            "question": "is pippa middleton older than kate",
+            "golden_parameters": [
+                "981676"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8266999993793434,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "981676",
+                    "47604",
+                    "47607",
+                    "47612",
+                    "47606",
+                    "47609",
+                    "83077",
+                    "74500",
+                    "83078",
+                    "83076"
+                ]
+            }
+        },
+        {
+            "query_index": 145,
+            "question": "can i request prior years tax returns from the irs",
+            "golden_parameters": [
+                "209971"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7419999983540038,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "24525",
+                    "209971",
+                    "73499",
+                    "95507",
+                    "95504",
+                    "60355",
+                    "66620",
+                    "93252",
+                    "93704",
+                    "83685"
+                ]
+            }
+        },
+        {
+            "query_index": 146,
+            "question": "where is dr. pol located",
+            "golden_parameters": [
+                "51894"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.754300001062802,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "51894",
+                    "51889",
+                    "51893",
+                    "51890",
+                    "51896",
+                    "51892",
+                    "51891",
+                    "51888",
+                    "95150",
+                    "99257"
+                ]
+            }
+        },
+        {
+            "query_index": 147,
+            "question": "university of phoenix american psychology association accreditation",
+            "golden_parameters": [
+                "1968937"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8540999988326803,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1968937",
+                    "8152",
+                    "98527",
+                    "76972",
+                    "8145",
+                    "12882",
+                    "98523",
+                    "8143",
+                    "98197",
+                    "91380"
+                ]
+            }
+        },
+        {
+            "query_index": 148,
+            "question": "appraisal meaning in hindi",
+            "golden_parameters": [
+                "618287"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.051200000802055,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "618287",
+                    "670",
+                    "33859",
+                    "673",
+                    "672",
+                    "669",
+                    "678",
+                    "674",
+                    "90690",
+                    "55424"
+                ]
+            }
+        },
+        {
+            "query_index": 149,
+            "question": "do parents go to their kids college orientation",
+            "golden_parameters": [
+                "6625882"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9093000007851515,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6625882",
+                    "48325",
+                    "42336",
+                    "48323",
+                    "42332",
+                    "48320",
+                    "48324",
+                    "48322",
+                    "34705",
+                    "95311"
+                ]
+            }
+        },
+        {
+            "query_index": 150,
+            "question": "calories snack pudding",
+            "golden_parameters": [
+                "4259306",
+                "4259308"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7346000002144137,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4259308",
+                    "4259306",
+                    "37356",
+                    "76604",
+                    "46214",
+                    "38390",
+                    "80380",
+                    "38388",
+                    "38384",
+                    "37347"
+                ]
+            }
+        },
+        {
+            "query_index": 151,
+            "question": "biggest holder of us debt",
+            "golden_parameters": [
+                "3949556"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9372000004077563,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3949556",
+                    "59742",
+                    "59745",
+                    "59743",
+                    "59744",
+                    "59748",
+                    "59740",
+                    "98671",
+                    "59746",
+                    "38714"
+                ]
+            }
+        },
+        {
+            "query_index": 152,
+            "question": "what does epidemiologists do",
+            "golden_parameters": [
+                "6785840"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0259000009682495,
+                "mrr": 0.25,
+                "hit_success": true,
+                "returned_ids": [
+                    "41435",
+                    "41431",
+                    "41436",
+                    "6785840",
+                    "41430",
+                    "41428",
+                    "41433",
+                    "33583",
+                    "41434",
+                    "33582"
+                ]
+            }
+        },
+        {
+            "query_index": 153,
+            "question": "what is the structure of germany government",
+            "golden_parameters": [
+                "2347054"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8873999995557824,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2347054",
+                    "76984",
+                    "93724",
+                    "93720",
+                    "93721",
+                    "31554",
+                    "93725",
+                    "16953",
+                    "56708",
+                    "5951"
+                ]
+            }
+        },
+        {
+            "query_index": 154,
+            "question": "which county is black station, ca",
+            "golden_parameters": [
+                "2732645"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.1206999988644384,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2732645",
+                    "14091",
+                    "10127",
+                    "49742",
+                    "99268",
+                    "11629",
+                    "46582",
+                    "9697",
+                    "66289",
+                    "13399"
+                ]
+            }
+        },
+        {
+            "query_index": 155,
+            "question": "why doesnt my blackberry connect with pc",
+            "golden_parameters": [
+                "5060377"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.126200000726385,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5060377",
+                    "53899",
+                    "40127",
+                    "53898",
+                    "53932",
+                    "71149",
+                    "53903",
+                    "19513",
+                    "52970",
+                    "53902"
+                ]
+            }
+        },
+        {
+            "query_index": 156,
+            "question": "what vitamins if your hair is falling out",
+            "golden_parameters": [
+                "2079806",
+                "2079807"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7623000001331093,
+                "mrr": 0.3333333333333333,
+                "hit_success": true,
+                "returned_ids": [
+                    "28525",
+                    "75503",
+                    "2079807",
+                    "75500",
+                    "75498",
+                    "75496",
+                    "75502",
+                    "2897",
+                    "2079806",
+                    "79827"
+                ]
+            }
+        },
+        {
+            "query_index": 157,
+            "question": "handwriting ocr for windows",
+            "golden_parameters": [
+                "5232466"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8321000004798407,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5232466",
+                    "96107",
+                    "96103",
+                    "96110",
+                    "93389",
+                    "96105",
+                    "93395",
+                    "93392",
+                    "16988",
+                    "93393"
+                ]
+            }
+        },
+        {
+            "query_index": 158,
+            "question": "how tall is the oroville dam in feet",
+            "golden_parameters": [
+                "3149438"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8638000017526792,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "81128",
+                    "3149438",
+                    "81121",
+                    "81125",
+                    "81123",
+                    "81124",
+                    "75868",
+                    "81127",
+                    "81126",
+                    "81129"
+                ]
+            }
+        },
+        {
+            "query_index": 159,
+            "question": "average fee to put an animal to sleep?",
+            "golden_parameters": [
+                "885367"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.1761999994632788,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "885367",
+                    "93477",
+                    "97817",
+                    "36051",
+                    "94941",
+                    "15263",
+                    "94944",
+                    "31051",
+                    "94947",
+                    "44215"
+                ]
+            }
+        },
+        {
+            "query_index": 160,
+            "question": "average nascar lap",
+            "golden_parameters": [
+                "6370436"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9246999998140382,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "77972",
+                    "77970",
+                    "77968",
+                    "77974",
+                    "91409",
+                    "77965",
+                    "76239",
+                    "77966",
+                    "77967",
+                    "91412"
+                ]
+            }
+        },
+        {
+            "query_index": 161,
+            "question": "how long does an mri last",
+            "golden_parameters": [
+                "2749969"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7743000005575595,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "74061",
+                    "34859",
+                    "45105",
+                    "92821",
+                    "47637",
+                    "27363",
+                    "82753",
+                    "35436",
+                    "84389",
+                    "82752"
+                ]
+            }
+        },
+        {
+            "query_index": 162,
+            "question": "hellcat dodge challenger retail price",
+            "golden_parameters": [
+                "5639238"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8094999993772944,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5639238",
+                    "17216",
+                    "17215",
+                    "17213",
+                    "15833",
+                    "64440",
+                    "15835",
+                    "64442",
+                    "87475",
+                    "87476"
+                ]
+            }
+        },
+        {
+            "query_index": 163,
+            "question": "who was lillie johnson",
+            "golden_parameters": [
+                "2789286"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.996599999780301,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2789286",
+                    "74124",
+                    "33625",
+                    "4690",
+                    "26290",
+                    "4682",
+                    "41796",
+                    "80520",
+                    "35356",
+                    "62093"
+                ]
+            }
+        },
+        {
+            "query_index": 164,
+            "question": "is amortization an asset or liability",
+            "golden_parameters": [
+                "5942834"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.076900000043679,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "84852",
+                    "5942834",
+                    "94359",
+                    "84850",
+                    "81399",
+                    "94361",
+                    "94362",
+                    "84857",
+                    "81406",
+                    "35467"
+                ]
+            }
+        },
+        {
+            "query_index": 165,
+            "question": "what county is waldwick in",
+            "golden_parameters": [
+                "775691"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.86850000116101,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "775691",
+                    "92915",
+                    "68379",
+                    "43918",
+                    "61230",
+                    "41325",
+                    "57312",
+                    "33085",
+                    "68375",
+                    "77444"
+                ]
+            }
+        },
+        {
+            "query_index": 166,
+            "question": "what are ajanta caves",
+            "golden_parameters": [
+                "6867924"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9759000004123664,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6867924",
+                    "3835",
+                    "79620",
+                    "81602",
+                    "36353",
+                    "3836",
+                    "81599",
+                    "36349",
+                    "79621",
+                    "79623"
+                ]
+            }
+        },
+        {
+            "query_index": 167,
+            "question": "what dose of bactrim for uti adult",
+            "golden_parameters": [
+                "2011612"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.6957999994483544,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2011612",
+                    "78963",
+                    "64453",
+                    "56405",
+                    "78959",
+                    "78958",
+                    "94478",
+                    "45058",
+                    "749",
+                    "78964"
+                ]
+            }
+        },
+        {
+            "query_index": 168,
+            "question": "different hemoglobin levels",
+            "golden_parameters": [
+                "5845656"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7433999999193475,
+                "mrr": 0.25,
+                "hit_success": true,
+                "returned_ids": [
+                    "16617",
+                    "16620",
+                    "41052",
+                    "5845656",
+                    "16618",
+                    "41058",
+                    "35611",
+                    "3401",
+                    "30958",
+                    "47460"
+                ]
+            }
+        },
+        {
+            "query_index": 169,
+            "question": "iron maiden janick",
+            "golden_parameters": [
+                "1376526"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9551000002829824,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1376526",
+                    "38963",
+                    "25487",
+                    "56755",
+                    "67039",
+                    "47680",
+                    "74905",
+                    "12370",
+                    "8219",
+                    "12375"
+                ]
+            }
+        },
+        {
+            "query_index": 170,
+            "question": "provogue aviator price",
+            "golden_parameters": [
+                "899823"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.937000000703847,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "899823",
+                    "72016",
+                    "1431",
+                    "42783",
+                    "87574",
+                    "87569",
+                    "33261",
+                    "1794",
+                    "12525",
+                    "56845"
+                ]
+            }
+        },
+        {
+            "query_index": 171,
+            "question": "what happened during the missouri compromise",
+            "golden_parameters": [
+                "2460106"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8123999996314524,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "79177",
+                    "2460106",
+                    "79181",
+                    "79184",
+                    "79183",
+                    "79179",
+                    "79176",
+                    "96327",
+                    "75823",
+                    "36737"
+                ]
+            }
+        },
+        {
+            "query_index": 172,
+            "question": "what is an rf modulator used for",
+            "golden_parameters": [
+                "6749275",
+                "6749280"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8827000001474516,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6749280",
+                    "6749275",
+                    "79592",
+                    "16094",
+                    "421",
+                    "1835",
+                    "55169",
+                    "47375",
+                    "68578",
+                    "16098"
+                ]
+            }
+        },
+        {
+            "query_index": 173,
+            "question": "definition of courtly love",
+            "golden_parameters": [
+                "2340006"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.1267999998381129,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2340006",
+                    "44996",
+                    "6553421",
+                    "63152",
+                    "7301",
+                    "63159",
+                    "96802",
+                    "88383",
+                    "54082",
+                    "54087"
+                ]
+            }
+        },
+        {
+            "query_index": 174,
+            "question": "what is another name for niacin deficiency",
+            "golden_parameters": [
+                "954284"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8264999996754341,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "954284",
+                    "61840",
+                    "79413",
+                    "94178",
+                    "95661",
+                    "60775",
+                    "62887",
+                    "11284",
+                    "70103",
+                    "32519"
+                ]
+            }
+        },
+        {
+            "query_index": 175,
+            "question": "what are semitic peoples",
+            "golden_parameters": [
+                "3553319"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.032800000757561,
+                "mrr": 0.1,
+                "hit_success": true,
+                "returned_ids": [
+                    "69970",
+                    "69968",
+                    "69971",
+                    "69963",
+                    "69969",
+                    "4322",
+                    "15441",
+                    "15446",
+                    "4320",
+                    "3553319"
+                ]
+            }
+        },
+        {
+            "query_index": 176,
+            "question": "what is sg&a",
+            "golden_parameters": [
+                "6091897"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0295000010955846,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6091897",
+                    "283",
+                    "280",
+                    "281",
+                    "71541",
+                    "45761",
+                    "45764",
+                    "285",
+                    "282",
+                    "22213"
+                ]
+            }
+        },
+        {
+            "query_index": 177,
+            "question": "how does a provost relate to leadership",
+            "golden_parameters": [
+                "6150185"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8174999984476017,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6150185",
+                    "41542",
+                    "81291",
+                    "81296",
+                    "87677",
+                    "81290",
+                    "87678",
+                    "87675",
+                    "87683",
+                    "87684"
+                ]
+            }
+        },
+        {
+            "query_index": 178,
+            "question": "what county is richland mi",
+            "golden_parameters": [
+                "1620409"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8847000008245232,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "53889",
+                    "3827",
+                    "44923",
+                    "37445",
+                    "63036",
+                    "6549",
+                    "33221",
+                    "96957",
+                    "63042",
+                    "30171"
+                ]
+            }
+        },
+        {
+            "query_index": 179,
+            "question": "can bananas make you sick",
+            "golden_parameters": [
+                "1637963"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8610999993834412,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "55726",
+                    "1637963",
+                    "71971",
+                    "71964",
+                    "55547",
+                    "71968",
+                    "71969",
+                    "55545",
+                    "55546",
+                    "55731"
+                ]
+            }
+        },
+        {
+            "query_index": 180,
+            "question": "what are the names of preventer inhalers",
+            "golden_parameters": [
+                "5743215"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9749999990162905,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5743215",
+                    "1766",
+                    "1771",
+                    "35481",
+                    "35483",
+                    "85185",
+                    "1769",
+                    "1768",
+                    "17974",
+                    "35477"
+                ]
+            }
+        },
+        {
+            "query_index": 181,
+            "question": "what is the population of austin?",
+            "golden_parameters": [
+                "1622599"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.014900000882335,
+                "mrr": 0.1111111111111111,
+                "hit_success": true,
+                "returned_ids": [
+                    "15052",
+                    "15058",
+                    "16349",
+                    "3826",
+                    "48583",
+                    "15054",
+                    "5908",
+                    "15053",
+                    "1622599",
+                    "1751"
+                ]
+            }
+        },
+        {
+            "query_index": 182,
+            "question": "is iodine in spinach",
+            "golden_parameters": [
+                "6705924"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9688000009191455,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6705924",
+                    "39913",
+                    "39920",
+                    "39914",
+                    "39918",
+                    "39919",
+                    "39917",
+                    "39916",
+                    "39921",
+                    "39915"
+                ]
+            }
+        },
+        {
+            "query_index": 183,
+            "question": "how long can you keep open tomato sauce",
+            "golden_parameters": [
+                "2907858"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7577000014862278,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2907858",
+                    "32860",
+                    "31472",
+                    "41011",
+                    "33095",
+                    "88791",
+                    "11812",
+                    "64104",
+                    "92150",
+                    "97600"
+                ]
+            }
+        },
+        {
+            "query_index": 184,
+            "question": "who invented cha cha cha",
+            "golden_parameters": [
+                "3275814"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8077999991655815,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3275814",
+                    "73885",
+                    "40425",
+                    "11199",
+                    "33211",
+                    "28016",
+                    "33218",
+                    "1533",
+                    "12802",
+                    "1849"
+                ]
+            }
+        },
+        {
+            "query_index": 185,
+            "question": "what county is elk river, mn",
+            "golden_parameters": [
+                "2944546"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8357000006071758,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "2944546",
+                    "34623",
+                    "61400",
+                    "34933",
+                    "34622",
+                    "2719",
+                    "66739",
+                    "66741",
+                    "39064",
+                    "34627"
+                ]
+            }
+        },
+        {
+            "query_index": 186,
+            "question": "define inheritance biology",
+            "golden_parameters": [
+                "2623138"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7777999999234453,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "31514",
+                    "2623138",
+                    "31512",
+                    "74652",
+                    "31511",
+                    "38887",
+                    "31513",
+                    "74651",
+                    "63024",
+                    "31506"
+                ]
+            }
+        },
+        {
+            "query_index": 187,
+            "question": "what major role did galileo play in the scientific revolution",
+            "golden_parameters": [
+                "4463643"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.2824000004911795,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "4463643",
+                    "49002",
+                    "12801",
+                    "32231",
+                    "12804",
+                    "1030",
+                    "13713",
+                    "71705",
+                    "90526",
+                    "11851"
+                ]
+            }
+        },
+        {
+            "query_index": 188,
+            "question": "which spacecraft deployed the chandra x-ray observatory",
+            "golden_parameters": [
+                "2589493"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9506999995210208,
+                "mrr": 0.0,
+                "hit_success": false,
+                "returned_ids": [
+                    "73993",
+                    "66417",
+                    "59407",
+                    "89346",
+                    "66415",
+                    "71660",
+                    "71547",
+                    "66533",
+                    "4907",
+                    "23340"
+                ]
+            }
+        },
+        {
+            "query_index": 189,
+            "question": "how much are roosevelt dimes worth",
+            "golden_parameters": [
+                "5791026"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7826000000932254,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "5791026",
+                    "36371",
+                    "89087",
+                    "79272",
+                    "64419",
+                    "79600",
+                    "2555",
+                    "89088",
+                    "20214",
+                    "89086"
+                ]
+            }
+        },
+        {
+            "query_index": 190,
+            "question": "when is fathers day",
+            "golden_parameters": [
+                "3394077"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.7903000005171634,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "3394077",
+                    "10467",
+                    "10468",
+                    "10472",
+                    "56974",
+                    "10469",
+                    "92103",
+                    "80872",
+                    "88576",
+                    "78373"
+                ]
+            }
+        },
+        {
+            "query_index": 191,
+            "question": "what does api stand for in software",
+            "golden_parameters": [
+                "279674"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0528000002523186,
+                "mrr": 0.2,
+                "hit_success": true,
+                "returned_ids": [
+                    "66872",
+                    "66871",
+                    "66877",
+                    "95839",
+                    "279674",
+                    "65141",
+                    "95846",
+                    "60184",
+                    "65145",
+                    "45899"
+                ]
+            }
+        },
+        {
+            "query_index": 192,
+            "question": "how violence has affected teenagers",
+            "golden_parameters": [
+                "1860275"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8422999999311287,
+                "mrr": 0.3333333333333333,
+                "hit_success": true,
+                "returned_ids": [
+                    "51212",
+                    "89210",
+                    "1860275",
+                    "34096",
+                    "181",
+                    "87930",
+                    "87925",
+                    "9803",
+                    "90913",
+                    "89214"
+                ]
+            }
+        },
+        {
+            "query_index": 193,
+            "question": "what does imagery do in a play",
+            "golden_parameters": [
+                "8340061"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.8441000009042909,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "8340061",
+                    "7302",
+                    "18871",
+                    "34007",
+                    "183",
+                    "18878",
+                    "184",
+                    "63703",
+                    "55478",
+                    "34009"
+                ]
+            }
+        },
+        {
+            "query_index": 194,
+            "question": "what does dry hump mean",
+            "golden_parameters": [
+                "1748646"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0324000013497425,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1748646",
+                    "99696",
+                    "99701",
+                    "58153",
+                    "99698",
+                    "58151",
+                    "33787",
+                    "33789",
+                    "15914",
+                    "58145"
+                ]
+            }
+        },
+        {
+            "query_index": 195,
+            "question": "oe manufacturer definition",
+            "golden_parameters": [
+                "6893890"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9763000016391743,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6893890",
+                    "26325",
+                    "26324",
+                    "89423",
+                    "60287",
+                    "60290",
+                    "58187",
+                    "11451",
+                    "60054",
+                    "46677"
+                ]
+            }
+        },
+        {
+            "query_index": 196,
+            "question": "what does nasdaq track",
+            "golden_parameters": [
+                "1188448"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 25.909399999363814,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "1188448",
+                    "24108",
+                    "46165",
+                    "62430",
+                    "13550",
+                    "62702",
+                    "13552",
+                    "96983",
+                    "47991",
+                    "13559"
+                ]
+            }
+        },
+        {
+            "query_index": 197,
+            "question": "what is the kawasaki disease genetic",
+            "golden_parameters": [
+                "6222637"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 4.008300000350573,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "6222637",
+                    "94439",
+                    "94442",
+                    "94444",
+                    "77318",
+                    "52831",
+                    "94445",
+                    "65216",
+                    "94441",
+                    "22227"
+                ]
+            }
+        },
+        {
+            "query_index": 198,
+            "question": "what is best for blocked bathroom sink",
+            "golden_parameters": [
+                "566792"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 0.9866000000329223,
+                "mrr": 1.0,
+                "hit_success": true,
+                "returned_ids": [
+                    "566792",
+                    "87656",
+                    "82644",
+                    "94410",
+                    "21681",
+                    "21679",
+                    "92524",
+                    "82240",
+                    "82643",
+                    "76822"
+                ]
+            }
+        },
+        {
+            "query_index": 199,
+            "question": "what is a hcv test",
+            "golden_parameters": [
+                "337110"
+            ],
+            "aigvs_metrics": {
+                "latency_ms": 1.0521999993216014,
+                "mrr": 0.5,
+                "hit_success": true,
+                "returned_ids": [
+                    "88276",
+                    "337110",
+                    "10094",
+                    "41055",
+                    "98146",
+                    "33973",
+                    "65173",
+                    "98153",
+                    "88278",
+                    "10944"
+                ]
+            }
+        }
+    ]
+}

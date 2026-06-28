@@ -4,9 +4,9 @@ import time
 import numpy as np
 from collections import deque
 from typing import Dict, List, Optional
-from src.aigvs.core.models import TextChunk
-from src.aigvs.storage import LocalJSONStorage
-from src.aigvs.engine.nodes import DisjointFamily, BaseNode, JointFamily
+from aigvs.core.models import TextChunk
+from aigvs.storage import LocalJSONStorage
+from aigvs.engine.nodes import DisjointFamily, BaseNode, JointFamily
 import aigvs_rust
 
 
@@ -272,7 +272,7 @@ class AIGVSPipeline:
 
             # BATCH INSERT OPTIMIZATION (Bypass python loop & FFI overhead)
             new_leaf_id = f"{trunk_id}_leaf_0"
-            from src.aigvs.engine.nodes import JointFamily
+            from aigvs.engine.nodes import JointFamily
             new_leaf = JointFamily(
                 node_id=new_leaf_id,
                 parent_id=trunk_id,
