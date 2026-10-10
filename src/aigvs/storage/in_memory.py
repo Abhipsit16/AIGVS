@@ -1,5 +1,5 @@
 from typing import Dict, Optional
-from aigvs.core.models import TextChunk
+from src.aigvs.core.models import TextChunk
 
 class InMemoryStorage:
     def __init__(self):
