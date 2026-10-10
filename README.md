@@ -108,6 +108,25 @@ Let `N` = total database chunks, `M` = number of communities, `b` = branching fa
 
 **Conclusion:** AIGVS mathematically scales logarithmically identically to the fastest pure-vector databases, but delivers the structured, cohesive relational intelligence of a Knowledge Graph with nearly zero global write-penalties.
 
+---
+
+## 7. Browser Interface
+
+AIGVS includes a local browser interface for ingestion, querying, deletion, and topology inspection.
+
+```bash
+python main.py --host 127.0.0.1 --port 8000
+```
+
+Then open `http://127.0.0.1:8000`.
+
+The interface uses deterministic local embeddings so the dashboard can be exercised without an external model service. It still relies on the AIGVS backend, so build or install the Rust extension before using the live index:
+
+```bash
+pip install maturin
+maturin develop
+```
+
 ```
 
 ```
